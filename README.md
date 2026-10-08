@@ -1,4 +1,4 @@
-## If You See This... We're Currently Under Development.
+## If You See This... We're Currently Under Development. We'll See You Soon -Developers
 
 <!--
 **Compassdash/Compassdash** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
