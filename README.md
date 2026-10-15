@@ -1,4 +1,16 @@
-## If You See This... We're Currently Under Development. We'll See You Soon -Developers
+## # Compass Dash
+
+🔧 **Compass Dash is being updated.**
+
+Some parts of the site may not work properly for a little while. Please check back soon.
+
+Your progress is safe and won't be lost.
+
+▶ [compassdash.github.io/Compassdash](https://compassdash.github.io/Compassdash/)
+
+Studying for GCSEs? Try **[Compass GCSE](https://compassdash.github.io/Compass-GCSE/)**.
+
+Made by **Rondellgames Inc.**
 
 <!--
 **Compassdash/Compassdash** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
