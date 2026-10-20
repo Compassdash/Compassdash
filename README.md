@@ -83,40 +83,7 @@ Maths · English · Science · Geography · French · Computing · Art & Design 
 - Works offline once it has loaded
 - A feedback form for reporting problems or suggesting ideas, saved in Supabase and read in the developer panel
 
-## Running it yourself
 
-Compass Dash is a single web page, so no build step or install is needed.
-
-| File | What it does |
-|------|--------------|
-| `index.html` | The whole site: content, styles and code |
-| `sw.js` | Offline support: lets the site keep working without internet |
-
-- **On GitHub Pages:** upload both files to the repository, then go to **Settings → Pages** and publish from the main branch.
-- **On your own computer:** open `index.html` in a browser. Offline mode only works over `https://` or `localhost`.
-
-### Student codes and class progress (optional)
-
-Student accounts, cloud saving, class progress and the leaderboard use [Supabase](https://supabase.com). The rest of the site works without it, and progress is then saved only on the device.
-
-To set it up, run the SQL files in your Supabase project's SQL Editor in the order given in the student-codes guide, finishing with `compass-dash-v2.6-update.sql` and then `compass-dash-v2.6.3-feedback.sql` and then `compass-dash-v2.6.6-features.sql`, then follow the rest of the guide.
-
-> ⚠️ **Keep the admin key private.** Don't upload the student-codes guide or the admin-key SQL file to a public repository, because they contain the admin key. The same goes for `change-dev-password.sql` once you have typed a password into it.
-
-### Admin security
-
-- The admin panel password is checked by the database, not inside the page, and is stored as a slow bcrypt hash. The admin panel needs Supabase to be set up.
-- Five wrong admin keys or admin panel passwords from one connection within 15 minutes lock admin sign-in from that connection for 15 minutes. Students on the same school network share a connection, so a student guessing can briefly lock a teacher out too.
-- The server only counts XP and answers a real player could have earned since their last sync. Anything above that never reaches the leaderboard, houses, challenges or class pages.
-- Anyone can change the numbers saved in their own browser. These checks stop those changes from reaching anyone else.
-
-## Version numbers
-
-Every update moves the version forward by one step, and each part only counts up to 9:
-
-`v2.6.0 → v2.6.1 → … v2.6.9 → v2.7.0 … v2.9.9 → v3.0.0`
-
-To see what changed in each update, open **Settings → About & changelog** in the site.
 
 ## Credits
 
