@@ -18,6 +18,12 @@ Maths · English · Science · Geography · French · Computing · Art & Design 
 
 ## Features
 
+### New in v2.6.9
+- **38 new lessons**: every subject has a new lesson for Year 7, Year 8 and Year 9, following the school's 2026-27 learning overviews
+- **Geography**: biomes, coasts, energy resources and climate change (Year 8), and tectonic hazards, urbanisation and globalisation (Year 9)
+- **English**: a creative writing strand, from descriptive writing (Year 7) to imagery, structure and vocabulary (Year 8) and perspective and symbolism (Year 9)
+- Each new lesson shows its **learning objectives** and **key topics**, explains every practice answer, and has its own **short assessment** as the topic test, plus flashcards and two activities
+
 ### New in v2.6.6
 - **Arabic**, a new subject, plus new French, Spanish and History topics
 - **Hear it**: French, Spanish and Arabic words read aloud by the device
