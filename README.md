@@ -16,81 +16,10 @@ Compass Dash helps students in Years 7–9 revise. Every subject has short lesso
 
 Maths · English · Science · Geography · French · Computing · Art & Design · Music · History · Spanish · Arabic
 
-## Features
-
-### New in v2.6.9
-- **38 new lessons**: every subject has a new lesson for Year 7, Year 8 and Year 9, following the school's 2026-27 learning overviews
-- **Geography**: biomes, coasts, energy resources and climate change (Year 8), and tectonic hazards, urbanisation and globalisation (Year 9)
-- **English**: a creative writing strand, from descriptive writing (Year 7) to imagery, structure and vocabulary (Year 8) and perspective and symbolism (Year 9)
-- Each new lesson shows its **learning objectives** and **key topics**, explains every practice answer, and has its own **short assessment** as the topic test, plus flashcards and two activities
-
-### New in v2.6.6
-- **Arabic**, a new subject, plus new French, Spanish and History topics
-- **Hear it**: French, Spanish and Arabic words read aloud by the device
-- **Interface languages**: English, French or Arabic menus (lessons stay in English)
-- **House Cup**: every week, every member of the winning house gets 10,000 XP
-- **Teacher tools**: Class Insights, Announcements and Shop XP
-- Half-price shop, a level every 100 XP, a UI transparency slider, and house colours only when you choose them
-
-### Learning
-- Lessons and cheat sheets for every topic
-- Practice questions, topic tests and mastery stages
-- Spaced review that brings back topics just as you're about to forget them
-- Five difficulty levels, from **Easy** to **Insane**
-- Player levels: a new level for every 100 XP earned, without spending any XP
-
-### Activities
-- Drag-and-drop **sorting**, **putting things in order**, **matching**, **labelling diagrams** (a plant cell, a circuit, a river, a compass and a colour wheel), **gap fills** and **number lines**
-- Every topic has at least one; drag a card, tap a card then its place, or use the keyboard
-
-### My learning path
-- Your next steps, chosen from your **year group**, how you are doing, how far you have got and your **weakest topics**
-- Keeps to topics for your year, and suggests harder ones only when you're doing well
-
-### Revision modes
-- Quiz, True/False, Endless, Speed drill and Stand-off
-- Mistake review, where you go back over questions you got wrong
-- Daily Challenge
-- Exam Countdown
-- Flashcards
-
-### Games
-- **Spike quiz:** run, jump and answer as the cube, in Stand-off and True/False
-- **Double Spike** and quick-time events
-- **Match-up** and **Speed round**
-- **Cyber-safety games** for Computing: spot dodgy emails, links, passwords and scams
-
-### Typed answers
-- Type your own answers as well as picking from options
-- Maths helpers for powers and standard form: ×10ⁿ, an **x²** power mode, x³ and x⁻ⁿ
-
-### Rewards
-- XP for every correct answer
-- A shop with characters, skins, trails, themes, pixel-art badges (including the **Golden Ticket**) and titles
-- Achievements to unlock
-- **My Stats:** accuracy, playtime, mastery and more
-
-### Houses
-- **North, East, South and West**, each with its own crest
-- The **House Cup**: every XP point a member earns counts for their house, this week and all time
-- **Team challenges** set by teachers: house against house, or a whole class towards one goal
-
-### For classes
-- 4-digit student codes and usernames, with progress saved to your account
-- **My class**: each student's class, assignments and quizzes, ticked off as they finish each task
-- **Teacher tools**: classes, students, assignments with due dates, quizzes (from the question bank or your own questions), challenges, and printable code slips
-- Progress tracking for each class and each student, and a class leaderboard
-- Usernames and titles are checked for words that aren't suitable for school
-
-### Settings and accessibility
-- Light and dark themes
-- A more readable font, larger text and high-contrast mode
-- Music and sound effects, each of which can be switched on or off
-- Works offline once it has loaded
-- A feedback form for reporting problems or suggesting ideas, saved in Supabase and read in the developer panel
-
-
-
 ## Credits
 
 Made by **Rondellgames inc.**
+- Jayque
+- Nick
+- Cade
+- Abdul
