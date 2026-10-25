@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'self' https://eqaxgofniwyhvwmdzwsm.supabase.co; worker-src 'self'; manifest-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="description" content="Compass Dash: free KS3 revision with lessons, quizzes and games for Years 7 to 9.">
 <title>Compass Dash</title>
 <script>try{document.documentElement.dataset.theme=localStorage.getItem("cgTheme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")}catch(e){}</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f6f7f9;--card:#fff;--line:#d9dee7;--tx:#17202e;--mut:#5b6678;--acc:#2563eb;--on:#fff;--good:#15803d;--bad:#c42b45;--gbg:#e6f4ec;--bbg:#fbe9ed;--cv1:#eef2f8;--cv2:#dfe6f1;--cvsh:rgba(37,99,235,.2);--cvbf:rgba(37,99,235,.07);--cvbl:rgba(37,99,235,.2);--cvgr:#cfd7e4;--cvgl:rgba(37,99,235,.2);--cvsp:#d92d4a;--cved:rgba(0,0,0,.35);color-scheme:light;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -1035,12 +1037,35 @@ body[data-sub]::after{opacity:0!important}
  .cmn{left:40px}.cml-r,.cml-l{left:84px;right:auto;text-align:left;align-items:flex-start;max-width:calc(100% - 92px)}.cm-now .cml-r,.cm-now .cml-l{left:90px;right:auto}}
 @media (prefers-reduced-motion:reduce){.cm-now .cmn::after{animation:none}}html.rm .cm-now .cmn::after{animation:none}
 .tlw{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+/* v2.7.0: privacy and safety: policy pages, the privacy-choices banner, the student agreement, error pages */
+.pol{max-width:820px;margin:0 auto}.pol .card{margin-bottom:12px}.pol h3{margin:0 0 8px}.pol ul{margin:6px 0;padding-left:22px}.pol li{margin:4px 0}
+.poltoc ol{margin:6px 0 0;padding-left:22px;columns:2;column-gap:28px}.poltoc li{break-inside:avoid;margin:3px 0}
+@media(max-width:600px){.poltoc ol{columns:1}}
+.lnk{background:none;border:0;padding:0;font:inherit;color:var(--acc);text-decoration:underline;cursor:pointer}
+.lnk:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:2px}
+#ckb{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;max-width:980px;margin:0 auto;background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:var(--r,14px);box-shadow:0 10px 40px rgba(0,0,0,.25);padding:16px 18px}
+#ckb.show{display:block}
+@media(prefers-reduced-motion:no-preference){html:not(.rm) #ckb.show{animation:ckIn .28s cubic-bezier(.2,.8,.2,1)}}
+@keyframes ckIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.ckin{display:flex;gap:16px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}.cktx{flex:1 1 420px;min-width:0}
+#ckb h2{font-size:1.1rem;margin:0 0 6px}#ckb p{margin:0 0 8px;font-size:.95rem}
+.ckbtns{display:flex;gap:8px;flex-wrap:wrap}.ckbtns .btn{flex:1 1 auto}
+.ckc{border-top:1px solid var(--line);margin-top:10px;padding-top:10px}
+.ckr{display:flex;gap:10px;align-items:flex-start;margin:8px 0;font-weight:400;cursor:pointer}.ckr input{margin-top:4px;width:18px;height:18px;flex:none;accent-color:var(--acc)}
+.ckr .mut{display:block;font-size:.88rem}
+.stbox{max-width:620px}.stlist{max-height:min(46vh,420px);overflow:auto;border:1px solid var(--line);border-radius:10px;padding:4px 14px;background:var(--bg);margin:8px 0 12px}
+.stlist p{margin:10px 0}.stpol h3{font-size:1rem;margin:14px 0 4px}.stpol ul{padding-left:20px}
+fieldset.stage{border:1px solid var(--line);border-radius:10px;padding:6px 12px 2px;margin:0 0 6px}fieldset.stage legend{padding:0 6px}
+.errp{text-align:center}.errc{font-size:4rem;font-weight:800;line-height:1;margin:0;color:var(--acc)}
+.foot .flinks{display:inline-flex;flex-wrap:wrap;gap:4px 10px;align-items:center}.foot a{color:inherit}
+.trep{font-size:.78rem;padding:2px 8px;margin-left:6px}
+html.a11y-hc #ckb{border:2px solid var(--tx)}
 </style>
 </head><body>
 <canvas id="bg" aria-hidden="true"></canvas><nav id="nav"><span class="logo" role="link" tabindex="0" onclick="go('home')" onkeydown="if(event.key==='Enter')go('home')" aria-label="Compass Dash home"><i class="lg"></i>Compass Dash</span><button id="menu" class="menu" aria-label="Open menu" aria-expanded="false" aria-controls="links" onclick="navT()"><svg class="h" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
 <div class="links" id="links"><button data-p="home">Learn</button><button data-p="tools">Study Tools</button><button data-p="shop">Shop</button><button data-p="ach">Achievements</button><button data-p="stats">My Stats</button><button data-p="settings">Settings</button><span class="nsep" aria-hidden="true"></span><button id="fbb" class="fbb" onclick="navT(false);fbOpen()" aria-label="Send feedback"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Feedback</button><button id="mu" onclick="toggleMusic()" aria-label="Turn music on or off"></button></div></nav>
 <div id="bkw" hidden><button class="back bkb" id="bk" onclick="goBack()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span id="bkt">Back</span></button></div>
-<a class="skip" href="#app" onclick="const a=$('app');a.setAttribute('tabindex','-1');a.focus()">Skip to content</a><div id="sr" class="vh" role="status" aria-live="polite" aria-atomic="true"></div><main id="app"><div class="skel" aria-label="Loading"><i></i><i></i><i></i><i></i></div></main><footer class="foot"><span id="fver">Compass Dash</span><span aria-hidden="true">·</span><button onclick="go('about')">About &amp; changelog</button><span aria-hidden="true">·</span><button onclick="fbOpen()">Send feedback</button><span class="cred">MADE BY JAYQUE &amp; NICK</span></footer>
+<a class="skip" href="#app" onclick="const a=$('app');a.setAttribute('tabindex','-1');a.focus()">Skip to content</a><div id="sr" class="vh" role="status" aria-live="polite" aria-atomic="true"></div><main id="app"><div class="skel" aria-label="Loading"><i></i><i></i><i></i><i></i></div></main><footer class="foot"><span id="fver">Compass Dash</span><span aria-hidden="true">·</span><button onclick="go('about')">About &amp; changelog</button><span aria-hidden="true">·</span><button onclick="fbOpen()">Send feedback</button><span aria-hidden="true">·</span><button onclick="go('privacy')">Privacy</button><span aria-hidden="true">·</span><button onclick="go('terms')">Terms</button><span aria-hidden="true">·</span><button onclick="go('cookies')">Cookies</button><span aria-hidden="true">·</span><button onclick="ckOpen()">Cookie settings</button><span aria-hidden="true">·</span><a class="fmail" href="mailto:compassdashedu@gmail.com?subject=Compass%20Dash%20support">Help: compassdashedu@gmail.com</a><span class="cred">MADE BY JAYQUE &amp; NICK</span></footer>
 <script>
 /* v2.6.2: drawn icons in place of emoji, so they look the same on every device and match the site.
    ic(name) gives an inline SVG that takes the colour of the text around it; emo(text) swaps any emoji
@@ -2055,14 +2080,14 @@ function peMig(o){if(!o||o.pv)return o;histMig(o);
  const a=o.ast;if(a){if(Array.isArray(a.vs))a.vs=a.vs.filter(i=>i!==8).map(i=>i===9?8:i);if(a.lk&&Array.isArray(a.lk.k))a.lk.k=a.lk.k.map(peKey).filter(x=>x!==null)}
  o.pv=1;return o}
 peMig(S);lgMig(S);
-let SVQ=0;const saveQ=()=>{try{localStorage.setItem("cg",JSON.stringify(S))}catch(e){if(!SVQ){SVQ=1;try{if(S.sq)S.sq={};localStorage.setItem("cg",JSON.stringify(S));return}catch(x){}try{notify("This device\u2019s storage is full, so progress cannot be saved here. Sign in with a student code to keep it in your account.","err")}catch(x){}}}};
+let SVQ=0;const saveQ=()=>{if(window.WIPED)return;try{localStorage.setItem("cg",JSON.stringify(S))}catch(e){if(!SVQ){SVQ=1;try{if(S.sq)S.sq={};localStorage.setItem("cg",JSON.stringify(S));return}catch(x){}try{notify("This device\u2019s storage is full, so progress cannot be saved here. Sign in with a student code to keep it in your account.","err")}catch(x){}}}};
 const save=()=>{try{lvCheck()}catch(e){}try{if(S.cd){S.cdDirty=1;cdPush()}}catch(e){}saveQ()};   /* v2.3.3: a signed-in student's progress also goes to the database */
 const $=id=>document.getElementById(id),app=$("app");
 let G=null,level=1;try{level=Math.min(5,Math.max(1,+JSON.parse(localStorage.getItem('cgSet')||'{}').lv||1))}catch(e){}
 const shuffle=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
 const bar=()=>`<div class="stats"><div class="stat"><b>${S.correct}</b><span>Correct answers</span></div><div class="stat"><b>${icn("fire")} ${S.best}</b><span>Best streak</span></div></div>`;
 const ST=(()=>{let o={};try{o=JSON.parse(localStorage.getItem("cgSet")||"{}")}catch(e){}if(o.v!==2){o.music=true;if(o.mv==null||o.mv<.2)o.mv=.5;o.v=2}return Object.assign({motion:!matchMedia("(prefers-reduced-motion:reduce)").matches,music:true,sfx:true,mv:.5,sv:.7,v:2},o)})();
-const saveST=()=>{try{localStorage.setItem("cgSet",JSON.stringify(ST))}catch(e){}};
+const saveST=()=>{if(window.WIPED)return;try{localStorage.setItem("cgSet",JSON.stringify(ST))}catch(e){}};
 /* v2.6.4: five composed soundtracks, one per difficulty, and sound packs that each have their own sounds */
 /* v2.6.9 audio engine: separate music and effects buses, a limiter on the way out so nothing clips, music that ducks
    under every effect, volume changes that glide instead of zipper, and an AudioContext that wakes up again after the
@@ -2259,11 +2284,12 @@ function needAdmin(){if(ADM)return true;
 function needBeta(){if(ADM||BETA)return true;
  notify("Unlock a tester account to use that","err");return false}
 const lvOf=()=>Math.floor(S.score/100)+1;
-async function adminLogin(){const e=$("aerr"),f=$("apw"),pw=f?f.value:"";if(!pw)return;
+async function adminLogin(){const e=$("aerr"),f=$("apw"),pw=f?f.value:"";if(!pw)return;if(rlHold("dev","aerr",null))return;
  if(!cdOn()){e.textContent="The admin panel signs in through the database, and the database is not set up on this site.";return}
  e.textContent="Checking…";
  try{const r=await cdRpc("cd_dev_login",{p_pw:pw});f.value="";
-  if(r&&r.ok){ADM=r.role==="dev";BETA=r.role==="beta";xsGrant();go("admin");return}
+  if(r&&r.ok){RL.ok("dev");ADM=r.role==="dev";BETA=r.role==="beta";xsGrant();go("admin");return}
+  if(r&&(r.error==="locked"||!r.error||r.error==="bad_pw"))RL.fail("dev",r.error==="locked"?(r.mins||15)*60:0);if(rlHold("dev","aerr",null)){f.focus();return}
   e.textContent=r&&r.error==="locked"?"Too many wrong tries. Admin sign-in is locked here for "+r.mins+" minute"+(r.mins===1?"":"s")+".":r&&r.error==="busy"?"Too many requests from this connection. Try again later.":"That password isn't right. Please try again.";f.focus()}
  catch(x){e.textContent=/\b404\b/.test(String(x.message))?"Run compass-dash-v2.6.8-features.sql in Supabase first, then try again.":"Could not reach the database. Check your connection and try again."}}
 const seg=(o,cur,fn)=>`<div class="seg" role="radiogroup">${o.map(a=>`<button role="radio" aria-checked="${cur===a[0]}" class="${cur===a[0]?"on":""}" onclick="${fn}('${a[0]}')">${a[1]}</button>`).join("")}</div>`;
@@ -2280,6 +2306,7 @@ app.innerHTML=`<h2>Settings</h2><div class="lay l11"><div><div class="card setca
 <div class="set"><div><b>Text size</b><span class="mut">Makes text and buttons bigger everywhere.</span></div>${seg([["1","Normal"],["2","Large"],["3","Larger"]],String(ST.ats||1),"setA11y.bind(null,'ats')")}</div>
 <div class="set"><div><b>High contrast</b><span class="mut">Stronger text, borders and focus outlines. Works in light and dark.</span></div>${seg([["1","On"],["0","Off"]],ST.ahc?"1":"0","setA11y.bind(null,'ahc')")}</div>
 <div class="set"><div><b>Keyboard shortcuts</b><span class="mut"><kbd>1</kbd>–<kbd>4</kbd> pick an answer (<kbd>1</kbd>–<kbd>5</kbd> in a quick-time event, <kbd>T</kbd>/<kbd>F</kbd> for true or false) · <kbd>Enter</kbd> next question · <kbd>Tab</kbd> moves between controls · <kbd>Esc</kbd> close a window</span></div></div></div>
+<h3 class="sec">Privacy and safety</h3><div class="card setcard"><div class="set"><div><b>Your data</b><span class="mut">See what is saved, download it, delete it, or ask for your account to be deleted.</span></div><button class="btn alt" onclick="go('mydata')">Open</button></div><div class="set"><div><b>Cookie settings</b><span class="mut">Choose whether optional services, like Google Fonts, can be used.</span></div><button class="btn alt" onclick="ckOpen()">Change</button></div><div class="set"><div><b>Policies</b><span class="mut">How we use information, and the rules for using Compass Dash.</span></div><span class="tlw"><button class="btn alt sm" onclick="go('privacy')">Privacy</button><button class="btn alt sm" onclick="go('terms')">Terms</button><button class="btn alt sm" onclick="go('cookies')">Cookies</button></span></div><div class="set"><div><b>Help and support</b><span class="mut">Questions, problems or data requests: <a href="mailto:compassdashedu@gmail.com?subject=Compass%20Dash%20support">compassdashedu@gmail.com</a></span></div></div></div>
 <h3 class="sec">About and tools</h3><div class="card"><div class="set"><div><b>Compass GCSE</b><span class="mut">Our GCSE revision site: practice by exam board, full papers and progress tracking.</span></div><a class="btn alt" href="https://compassdash.github.io/Compass-GCSE/" target="_blank" rel="noopener">Open Compass GCSE</a></div><div class="set"><div><b>About &amp; changelog</b><span class="mut">Compass Dash ${VER} and recent updates.</span></div><button class="btn alt" onclick="go('about')">Open</button></div><div class="set"><div><b>Admin panel</b><span class="mut">Password protected tools.</span></div><button class="btn alt" onclick="go('admin')">Open</button></div></div></div></div>`}
 function setMode(m){if(m==="auto"){try{localStorage.removeItem("cgTheme")}catch(e){}setTheme(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")}else setTheme(m,1);settings()}
 function setQFreq(v){if(!needAdmin())return;ST.qfreq=+v;ST.qte=true;saveST();admin();notify("Quick-time events set to "+({".1":"rare","0.1":"rare","0.22":"normal","0.45":"often","1":"every question"}[v]||v))}
@@ -2290,7 +2317,7 @@ function setQte(v){ST.qte=v==="1";saveST();settings();notify("Quick-time events 
 function setUia(v){ST.uia=Math.max(.5,Math.min(1,1-(+v||0)/100));saveST();a11yApply();const l=$("uia_l");if(l)l.textContent=Math.round((1-ST.uia)*100)+"%"}
 function a11yApply(){const h=document.documentElement;h.classList.toggle("rm",!ST.motion);{const a=ST.uia==null?1:ST.uia;h.style.setProperty("--uia",a);h.classList.toggle("uia",a<.999)}h.classList.toggle("a11y-font",!!ST.afont);h.classList.toggle("a11y-hc",!!ST.ahc);
  if(ST.ats>1)h.dataset.ts=ST.ats;else delete h.dataset.ts;
- if(ST.afont&&!$("lexend")){const l=document.createElement("link");l.id="lexend";l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap";document.head.appendChild(l)}
+ if(window.fontsApply)fontsApply();   /* v2.7.0: Google Fonts only with consent */
  if(window.applyCos)applyCos()}
 function setA11y(k,v){ST[k]=k==="ats"?+v:v==="1";saveST();a11yApply();settings()}
 function setMo(v){ST.motion=v==="1";setMotion(ST.motion);saveST();settings()}
@@ -3566,7 +3593,7 @@ const A_=()=>S.ast=S.ast||{},dstr=d=>d.getFullYear()+"-"+String(d.getMonth()+1).
 function dstreak(){const d=new Set(S.days||[]);let o=d.has(dayS())?0:d.has(dayS(-1))?-1:null,n=0;if(o===null)return 0;while(d.has(dayS(o))){n++;o--}return n}
 const AE={
 day(){const a=A_(),t=dayS();S.days=S.days||[];if(!S.days.includes(t)){S.days.push(t);if(S.days.length>500)S.days.shift()}a.bds=Math.max(a.bds||0,dstreak())},
-ans(ok,ms){const a=A_(),h=new Date().getHours(),t=dayS();AE.day();if(h>=22||h<4)a.nt=(a.nt||0)+1;else if(h>=4&&h<7)a.eb=(a.eb||0)+1;
+ans(ok,ms){const a=A_(),h=new Date().getHours(),t=dayS();AE.day();if(h>=18&&h<21)a.nt=(a.nt||0)+1;else if(h>=6&&h<8)a.eb=(a.eb||0)+1;   /* v2.7.0: evening and morning, never late at night */
 if(!a.dq||a.dq.d!==t)a.dq={d:t,n:0};a.dq.n++;a.mdq=Math.max(a.mdq||0,a.dq.n);
 if(ok){a.cs=(a.cs||0)+1;a.bs=Math.max(a.bs||0,a.cs);a.wr=0;if(a.pend&&a.cs>=5){a.cb=1;a.pend=0}if(ms!=null&&ms<5000){a.fast=(a.fast||0)+1;a.cf=(a.cf||0)+1;a.fs=Math.max(a.fs||0,a.cf)}else a.cf=0}
 else{a.cs=0;a.cf=0;a.wr=(a.wr||0)+1;if(a.wr>=3)a.pend=1}
@@ -3641,8 +3668,8 @@ P("collector",M,"🎁","Collector",2,25,x=>x.cl,"Unlock 25 achievements","You un
 P("showcase",M,"🖼️","Showcase Ready",0,5,x=>x.fe,"Add 5 achievements to your showcase","Your showcase is full!");
 const tot=D.length+3;
 P("completionist",M,"🥇","Completionist",3,Math.ceil(tot/2),x=>x.cl,"Unlock half of all achievements","You unlocked half of all achievements!");
-P("night-owl",X,"🦉","Night Owl",2,10,x=>x.nt,"Answer 10 questions late at night (10pm-4am)","You studied late into the night!",{sec:1,hint:"Some people do their best thinking after dark."});
-P("early-bird",X,"🐦","Early Bird",2,10,x=>x.eb,"Answer 10 questions early in the morning (4am-7am)","You are up with the sun!",{sec:1,hint:"Try a few questions before breakfast."});
+P("night-owl",X,"🦉","Evening Owl",2,10,x=>x.nt,"Answer 10 questions in the evening (6pm-9pm)","You made time to study in the evening!",{sec:1,hint:"A little revision after dinner goes a long way."});
+P("early-bird",X,"🐦","Early Bird",2,10,x=>x.eb,"Answer 10 questions early in the morning (6am-8am)","You are up with the sun!",{sec:1,hint:"Try a few questions before breakfast."});
 P("comeback",X,"🔄","Comeback Kid",1,1,x=>x.cb,"Get 5 correct in a row after 3 wrong in a row","You bounced back after a tough run!",{sec:1,hint:"A bad run isn't the end. Keep going after a few wrong answers."});
 P("weekend",X,"🛡️","Weekend Warrior",2,1,x=>x.ww,"Study on both days of a weekend","You studied all weekend!",{sec:1,hint:"Saturday and Sunday both count."});
 P("marathon",X,"🏃","Marathon",3,50,x=>x.mdq,"Answer 50 questions in one day","You answered 50 questions in a single day!",{sec:1,hint:"One very busy day of questions."});
@@ -3723,16 +3750,42 @@ function cdShell(h,wide){let m=$("fbm");if(!m){m=document.createElement("div");m
    device needs the code and the username together, because 4 digits alone would be too easy to guess. */
 const cdA=()=>({p_code:S.cd.code,p_user:S.cd.user});
 const CDBUSY="Too many tries from this connection. Wait a while, then try again.";
-/* words that are not suitable for school (the database checks the same list) */
-const cdSq=v=>String(v||"").toLowerCase().replace(/[0134578@$!|]/g,c=>"oieastbasii"["0134578@$!|".indexOf(c)]).replace(/([a-z])\1+/g,"$1");
-const RUDE=/(fuck|fuk|fck|shit|cunt|bitch|bastard|wank|twat|slut|whore|niga|niger|fagot|retard|rapist|porn|dildo|hentai|milf|pedoph|paedo|tits|bobs|boby|penis|vagina|horny|sexy|sexual|^sex|sex$|nude|naked|nazi|hitler|ashole|arsehole|dick|cock|pusy|boner|bolock|toser|spastic|kys|kilyourself|suicid|cocaine|heroin|onlyfans|wtf|stfu|piss)/;
-const cleanName=v=>!RUDE.test(cdSq(String(v||"").toLowerCase().replace(/[^a-z0-9@$!|]/g,"")));
+/* v2.7.0: moderation for anything other students can see. Before checking, text is normalised: accents and
+   look-alike letters from other alphabets become plain letters, numbers and symbols used as letters are read
+   as letters, and spaces, dots, underscores and repeated letters are dropped, so "f.u_c k", "fυck" (Greek υ) and
+   "fuuuck" are all caught. Innocent words that contain a rude one (Scunthorpe, Dickens, therapist, grape) are
+   taken out first, so they are not blocked. The database checks names too. */
+const HOMO={"а":"a","е":"e","о":"o","р":"p","с":"c","х":"x","у":"y","і":"i","ј":"j","ѕ":"s","к":"k","м":"m","т":"t","в":"b","н":"h","ԁ":"d","ɡ":"g","α":"a","ο":"o","ε":"e","ι":"i","κ":"k","ν":"v","ρ":"p","τ":"t","υ":"u","χ":"x","ı":"i","ß":"ss","ø":"o","œ":"oe","æ":"ae"};
+const modBase=v=>String(v||"").normalize("NFKD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^\x00-\x7f]/g,c=>HOMO[c]||c);
+const cdSq=v=>modBase(v).replace(/[0134578@$!|]/g,c=>"oieastbasii"["0134578@$!|".indexOf(c)]).replace(/([a-z])\1+/g,"$1");
+/* fine words that contain a rude one, written as they look once doubled letters are single */
+const MOD_OK=/scunthorpe|penistone|(?<!lov)esex|susex|middlesex|unisex|sext(?:ant|et|on)|dick(?:ens|inson|son)|benedick|cock(?:tail|pit|erel|ney|atoo|le|roach)|(?:han|pea|wood|hitch|wood|shuttle)cock|shitak|shitake|matsushita|therapist|analy[st]|analog|cumula|cumin|cumber|(?:g|d|sc|t)rape|rapeseed|nigeria|sniger|pisaro|pusycat|pusywilow|dumbo|dumbledore|arsenal|arsenic|pakistan|(?:rac|co|ty|puc)co?on|method|methan|methyl|(?:sea|tumble|duck)wed|smugly|snugly|scraper|skyscrap|grapes?|title|titan/g;
+const MOD_SWEAR=/fuck|fuk|fck|fvck|shit|cunt|bitch|bastard|wank|twat|slut|whore|dildo|hentai|milf|porn|tits|bobs|boby|penis|vagina|horny|sexy|sexual|^sex|sex$|nude|naked|ashole|arsehole|^arse|dick|cock|pusy|boner|bolock|toser|piss|^cum|cum$|blowjob|handjob|orgasm|^anal|anal$|rape|rapist|pedo|pedoph|paedo|onlyfans|wtf|stfu|thot/;
+const MOD_SLUR=/niga|niger|nigz|fagot|^fag|fag$|retard|spastic|spaz|trany|kike|chink|paki|^wog|gypo|^con$|^coon|coon$/;
+const MOD_HATE=/nazi|hitler|kkk|isis|jihad/;
+const MOD_HARM=/kys$|kysnow|kyspl|kilyourself|kilurself|killyourself|suicid|selfharm|cutyourself|godie|diepls|kil(?:you|him|her|them)|shootup|bomber|bombing|terorist|murder/;
+const MOD_BULLY=/idiot|stupid|loser|moron|dumbas|^dumb|dumb$|ugly|fatso|faty|fatboy|fatgirl|weirdo|freak|creep|hateyou|ihate|nobodylikes|nofriends|smely|stinky|cringe|bully/;
+const MOD_DRUG=/cocaine|heroin|^meth|meth$|wed$|^wed|stoner|crackhead|vape/;
+const MOD_STAFF=/admin|moderator|teacher|headteacher|principal|staf|oficial|compasdash|^support/;
+const modParts=v=>cdSq(v).replace(/[^a-z]/g,"").replace(MOD_OK,"_").split("_").filter(Boolean);
+const modHit=(v,L)=>modParts(v).some(p=>L.some(r=>r.test(p)));
+/* usernames and display names: everything above, plus no pretending to be staff and no contact details */
+const cleanName=v=>{const raw=String(v||"");if(!raw.trim())return true;
+ if(modHit(raw,[MOD_SWEAR,MOD_SLUR,MOD_HATE,MOD_HARM,MOD_BULLY,MOD_DRUG,MOD_STAFF]))return false;
+ if(/^(?:mr|mrs|ms|miss|sir|dr)[\s_.]/i.test(raw.trim()))return false;
+ if(/\d{6,}/.test(raw.replace(/[\s._-]/g,""))||/instagram|snapchat|tiktok|discord|whatsapp|https?|www|@/i.test(raw))return false;return true};
+/* text a teacher writes (class, quiz, assignment and challenge titles) and names typed in forms: checked word by
+   word for swearing and slurs only, so curriculum words ("Sex cells", "Nazi Germany", "Murder mystery") are fine */
+const MOD_HARD=/fuck|fuk|fck|fvck|shit|cunt|bitch|bastard|wank|twat|slut|whore|dildo|hentai|milf|porn|ashole|arsehole|blowjob|handjob|pedo|paedo|onlyfans|stfu|wtf/;
+const cleanText=v=>!String(v||"").split(/\s+/).some(w=>modHit(w,[MOD_HARD,MOD_SLUR]));
+/* phone numbers and email addresses come out of free text before it is sent */
+const redactPII=v=>String(v||"").replace(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g,"[email removed]").replace(/(?:\+?\d[\s-]?){7,}\d/g,"[number removed]");
 function cdRow(){const u=cdUser(),h=u&&S.cd.house&&HS[S.cd.house];return`<div class="set"><div><b>Student account</b><span class="mut">${u?"Signed in as <b>"+esc(u)+"</b>"+(h?" · "+h[0]+" house":"")+". Sign in on another device with your code and username.":"Have a 4-digit student code? Enter it to create your username. You can play without one."}</span></div><button class="btn alt" onclick="cdOpen()">${u?"Manage":"Enter code"}</button></div>`}
 function cdOpen(){const u=cdUser();
  if(u){const c=S.cd,h=c.house&&HS[c.house];return cdShell(`<h2>Student account</h2><div class="acct">${h?hsCrest(c.house,64):""}<div><p style="margin:0">Signed in as <b>${esc(u)}</b></p><p class="mut" style="margin:4px 0 0">Code <b class="mono">${esc(c.code)}</b>${h?" · "+h[0]+" house":""}${c.year?" · Year "+c.year:""}${c.cls?" · "+esc(c.cls.name):""}</p></div></div><p class="mut">To sign in on another device, enter this code and then your username. Keep your code to yourself. Signing out only affects this device.</p><div class="fbr"><button class="btn alt" onclick="fbClose()">Close</button><button class="btn" onclick="cdSignOut()">Sign out</button></div>`)}
  if(!cdOn())return cdShell(`<h2>Student codes</h2><p class="mut">Student codes are not switched on for this site yet. You can keep playing without one.</p><div class="fbr"><button class="btn" onclick="fbClose()">Close</button></div>`);
  cdShell(`<h2>Enter your student code</h2><p class="mut" style="margin-top:0">Your teacher gave you a 4-digit code. You do not need one to play.</p><label for="cdc">Student code</label><input id="cdc" class="pin" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="14" placeholder="1234" onkeydown="if(event.key==='Enter')cdNext()"><p class="fbe" id="cde" role="alert"></p><div class="fbr"><button class="btn alt" onclick="fbClose()">Not now</button><button class="btn" id="cdb" onclick="cdNext()">Continue</button></div>`)}
-async function cdNext(){const e=$("cde"),b=$("cdb"),i=$("cdc");if(!e||!i||CDM.busy)return;const code=i.value.trim(),n=code.replace(/[^A-Za-z0-9]/g,"");e.textContent="";
+async function cdNext(){const e=$("cde"),b=$("cdb"),i=$("cdc");if(!e||!i||CDM.busy)return;const code=i.value.trim(),n=code.replace(/[^A-Za-z0-9]/g,"");e.textContent="";if(rlHold("code","cde","cdb"))return;
  if(!/^\d{4}$/.test(n)&&n.length<6){e.textContent="Type the 4-digit code your teacher gave you.";return}   /* a code from before v2.6.0 still works once */
  CDM.busy=1;b.disabled=true;b.textContent="Checking…";
  try{const r=await cdRpc("cd_check",{p_code:code});
@@ -3744,19 +3797,21 @@ async function cdNext(){const e=$("cde"),b=$("cdb"),i=$("cdc");if(!e||!i||CDM.bu
 function cdUserStep(){cdShell(`<h2>Welcome back</h2><p class="mut" style="margin-top:0">Type the username that goes with this code to sign in.</p><label for="cdn">Username</label><input id="cdn" maxlength="16" autocomplete="username" spellcheck="false" onkeydown="if(event.key==='Enter')cdLoginGo()"><p class="fbe" id="cde" role="alert"></p><div class="fbr"><button class="btn alt" onclick="cdOpen()">Back</button><button class="btn" id="cdb" onclick="cdLoginGo()">Sign in</button></div>`)}
 async function cdLoginGo(){const e=$("cde"),b=$("cdb"),i=$("cdn");if(!e||!i||CDM.busy)return;const u=i.value.trim();e.textContent="";
  if(!/^[A-Za-z0-9_]{3,16}$/.test(u)){e.textContent="Type your username: 3 to 16 letters, numbers or underscores.";return}
+ if(rlHold("login","cde","cdb"))return;
  CDM.busy=1;b.disabled=true;b.textContent="Signing in…";
  try{const r=await cdRpc("cd_login",{p_code:CDM.code,p_user:u});
-  if(r.ok){const moved=CDM.code.replace(/[^A-Za-z0-9]/g,"").toUpperCase()!==r.code;cdSignIn(r.code,r.username,"Welcome back, ",r);if(moved)cdShowCode(r.code)}
+  if(!r.ok&&(r.error==="no_match"||r.error==="locked"))RL.fail("login",r.error==="locked"?900:0);
+  if(r.ok){RL.ok("login");RL.ok("code");const moved=CDM.code.replace(/[^A-Za-z0-9]/g,"").toUpperCase()!==r.code;cdSignIn(r.code,r.username,"Welcome back, ",r);if(moved)cdShowCode(r.code)}
   else e.textContent=({no_match:"That code and username do not go together. Check both and try again.",locked:"Too many wrong tries for this username. Wait 15 minutes, then try again.",busy:CDBUSY})[r.error]||"Could not sign in."}
  catch(x){e.textContent="Could not reach the student code service. Try again in a moment."}
- CDM.busy=0;if(b.isConnected){b.disabled=false;b.textContent="Sign in"}}
+ CDM.busy=0;if(b.isConnected){b.disabled=false;b.textContent="Sign in"}rlHold("login","cde","cdb")}
 /* a code from before v2.6.0 has been swapped for a 4-digit one: the student needs to know it */
 function cdShowCode(c){cdShell(`<h2>Your new student code</h2><p class="mut" style="margin-top:0">Student codes are now 4 digits. Yours is:</p><p class="bigcode mono">${esc(c)}</p><p class="mut">Write it down. To sign in on another device, enter this code and then your username.</p><div class="fbr"><button class="btn" onclick="fbClose()">Got it</button></div>`)}
 const hsPick=()=>Object.keys(HS).map(k=>`<button type="button" class="hsb${CDM.h===k?" on":""}" style="--hc:${HS[k][1]}" aria-pressed="${CDM.h===k}" onclick="cdPickH('${k}')">${hsCrest(k,34)}<span>${HS[k][0]}</span></button>`).join("");
 const yrPick=()=>[7,8,9].map(y=>`<button type="button" class="${CDM.y===y?"on":""}" aria-pressed="${CDM.y===y}" onclick="cdPickY(${y})">Year ${y}</button>`).join("");
 function cdPickH(k){CDM.h=CDM.h===k?"":k;const e=$("hpk");if(e)e.innerHTML=hsPick()}
 function cdPickY(y){CDM.y=CDM.y===y?0:y;const e=$("ypk");if(e)e.innerHTML=yrPick()}
-function cdNameStep(){cdShell(`<h2>Choose your username</h2><p class="mut" style="margin-top:0">Code accepted. Pick a username: 3 to 16 letters, numbers or underscores. It cannot be changed later, nobody else can use it, and it must be suitable for school.</p><label for="cdn">Username</label><input id="cdn" maxlength="16" autocomplete="off" spellcheck="false" onkeydown="if(event.key==='Enter')cdCreate()">
+function cdNameStep(){cdShell(`<h2>Choose your username</h2><p class="mut" style="margin-top:0">Code accepted. Pick a username: 3 to 16 letters, numbers or underscores. It cannot be changed later, nobody else can use it, and it must be suitable for school. Do not use your real name, or anything that could identify you. Your username, house, year and progress are saved to your school account so your teacher can see how you are doing; other students see your username, house and XP. <button class="lnk" onclick="go(\'privacy\');fbClose()">Privacy Policy</button></p><label for="cdn">Username</label><input id="cdn" maxlength="16" autocomplete="off" spellcheck="false" onkeydown="if(event.key==='Enter')cdCreate()">
 <label>Your house <span class="mut">(if your school uses houses: your teacher can change it)</span></label><div class="hpick" id="hpk">${hsPick()}</div>
 <label>Your year</label><div class="seg" id="ypk">${yrPick()}</div><p class="fbe" id="cde" role="alert"></p><div class="fbr"><button class="btn alt" onclick="fbClose()">Cancel</button><button class="btn" id="cdb" onclick="cdCreate()">Create username</button></div>`)}
 async function cdCreate(){const e=$("cde"),b=$("cdb"),i=$("cdn");if(!e||!i||CDM.busy)return;const u=i.value.trim();e.textContent="";
@@ -3764,7 +3819,8 @@ async function cdCreate(){const e=$("cde"),b=$("cdb"),i=$("cdn");if(!e||!i||CDM.
  if(!cleanName(u)){e.textContent="That username is not allowed. Please choose a different one.";return}
  CDM.busy=1;b.disabled=true;b.textContent="Creating…";
  try{const r=await cdRpc("cd_register",{p_code:CDM.code,p_user:u,p_house:CDM.h||null});
-  if(r.ok){cdSignIn(r.code,r.username,"Username created: ",r);if(CDM.y)cdSetMe(null,CDM.y)}
+  if(r.error==="invalid_code")RL.fail("code");
+  if(r.ok){RL.ok("code");cdSignIn(r.code,r.username,"Username created: ",r);if(CDM.y)cdSetMe(null,CDM.y)}
   else e.textContent=({name_taken:"That username is taken. Try another one.",code_used:"That code has just been used by someone else.",invalid_code:"That code is not valid.",bad_name:"Use 3 to 16 letters, numbers or underscores.",rude_name:"That username is not allowed. Please choose a different one.",busy:CDBUSY})[r.error]||"Could not create the username."}
  catch(x){e.textContent="Could not reach the student code service. Try again in a moment."}
  CDM.busy=0;if(b.isConnected){b.disabled=false;b.textContent="Create username"}}
@@ -3775,22 +3831,22 @@ async function cdSetMe(h,y){if(!cdUser())return;try{const r=await cdRpc("cd_set_
 function cdSignIn(code,user,lead,info){
  if(!S.cd){try{localStorage.setItem("cgGuest",JSON.stringify(S))}catch(e){}}   /* keep this device's own progress for when the student signs out */
  S.cd={code,user};cdInfo(info||{});S.nm=user;S.cdRev=0;S.cdDirty=0;CDP.ready=0;cdBaseSet(null,0);saveQ();fbClose();notify(lead+user);
- const lh=S.house;cdLoad().then(()=>{cdPendingTake();return cdPushNow()}).then(()=>{cdSync(1);BRD.rows=null;HSE.d=null;MY.d=null;if(!S.cd.house&&HS[lh])cdSetMe(lh,null).then(()=>applyCos());applyCos();cdRefresh()})}
+ const lh=S.house;cdLoad().then(()=>{cdPendingTake();return cdPushNow()}).then(()=>{cdSync(1);BRD.rows=null;HSE.d=null;MY.d=null;if(!S.cd.house&&HS[lh])cdSetMe(lh,null).then(()=>applyCos());applyCos();cdRefresh()});stuWait()}
 async function cdSignOut(){fbClose();if(S.cdDirty){notify("Saving your progress…","info");await cdPushNow()}cdSync(1);
- let held=false;if(S.cdDirty&&S.cd){try{localStorage.setItem("cgPending",JSON.stringify({code:S.cd.code,user:S.cd.user,p:cdProg(),base:cdBaseGet()}));held=true}catch(e){}}   /* v2.6.9: offline sign-out keeps the unsent answers for the next sign-in here */
+ let held=false;if(S.cdDirty&&S.cd){try{localStorage.setItem("cgPending",JSON.stringify({code:S.cd.code,user:S.cd.user,p:cdProg(),base:cdBaseGet(),t:Date.now()}));held=true}catch(e){}}   /* v2.6.9: offline sign-out keeps the unsent answers for the next sign-in here */
  cdBaseSet(null,0);cdGuest();notify(held?"Signed out. Some answers could not reach your account yet; they will be saved the next time you sign in on this device.":"Signed out. Your progress is saved to your account",held?"info":"ok");cdRefresh()}
-function cdPendingTake(){let o=null;try{o=JSON.parse(localStorage.getItem("cgPending")||"null")}catch(e){}if(!o||!S.cd||o.code!==S.cd.code)return;
+function cdPendingTake(){let o=null;try{o=JSON.parse(localStorage.getItem("cgPending")||"null")}catch(e){}if(o&&o.t&&Date.now()-o.t>2592e6){try{localStorage.removeItem("cgPending")}catch(e){}return}if(!o||!S.cd||o.code!==S.cd.code)return;
  try{localStorage.removeItem("cgPending")}catch(e){}const merged=cdMerge(cdProg(),o.p,o.base);cdUse(merged,{cd:S.cd,cdRev:S.cdRev,cdDirty:1});cdBaseSet(CDP.base,CDP.baseRev);notify("Answers from your last visit have been added to your account","info");cdPushNow()}
 /* the code or username no longer match (the teacher reset or reissued it): sign out here, keeping the account safe */
-function cdLost(){if(!S.cd)return;cdGuest();HSE.d=null;MY.d=null;notify("You have been signed out because your code or username changed. Ask your teacher, then sign in again.","info");cdRefresh()}
+function cdLost(){if(!S.cd)return;cdBaseSet(null,0);cdGuest();HSE.d=null;MY.d=null;notify("You have been signed out because your code or username changed. Ask your teacher, then sign in again.","info");cdRefresh()}
 /* ---- v2.3.3: each student's full progress lives in the database, not just on one device ----
    Saving uploads it (a few seconds after a change, and straight away when the page is hidden), opening the
    site or signing in downloads it. A revision number stops an out-of-date device overwriting newer progress. */
 var CDP={ready:0,tm:0,busy:0,again:0,gen:0,sent:""};
 /* key order independent, and playtime counted by the minute, so "nothing changed" is recognised and no needless upload is made */
 const cdJ=o=>JSON.stringify(Object.assign({},o,{secs:Math.floor((o.secs||0)/60)}),(k,v)=>v&&typeof v==="object"&&!Array.isArray(v)?Object.keys(v).sort().reduce((a,x)=>(a[x]=v[x],a),{}):v);
-const cdProg=()=>{const o=JSON.parse(JSON.stringify(S));delete o.cd;delete o.cdRev;delete o.cdDirty;return o};
-function cdUse(p,keep){p=lgMig(peMig(Object.assign({},p||{})));Object.keys(S).forEach(k=>delete S[k]);Object.assign(S,freshState(),p,keep||{});   /* mutate, never swap the object */
+const cdProg=()=>{const o=JSON.parse(JSON.stringify(S));delete o.cd;delete o.cdRev;delete o.cdDirty;delete o.nm;return o};   /* v2.7.0: the display name stays on this device */
+function cdUse(p,keep){p=lgMig(peMig(Object.assign({},p||{})));const lnm=S.nm;Object.keys(S).forEach(k=>delete S[k]);Object.assign(S,freshState(),p,keep||{});if(lnm!=null&&keep&&keep.cd&&S.nm==null)S.nm=lnm;   /* mutate, never swap the object */
  SBX=null;saveQ();chMigrate();syncChar();applyCos();if(window.sbxBanner)sbxBanner()}
 function cdGuest(){let g={};try{g=JSON.parse(localStorage.getItem("cgGuest")||"{}")||{};localStorage.removeItem("cgGuest")}catch(e){}
  delete g.cd;delete g.cdRev;delete g.cdDirty;CDP.ready=0;CDP.sent="";clearTimeout(CDP.tm);cdUse(g)}
@@ -3822,6 +3878,7 @@ function cdMerge(theirs,mine,base){const T=theirs||{},M=mine||{},B=base||{},hasB
   if(m===undefined){out[k]=t;return}if(t===undefined){out[k]=m;return}
   switch(k){
    case "eq":case "nm":case "cd":case "lvl":out[k]=mineChanged(k)?m:t;return;              /* a preference: the device that changed it wins */
+   case "cons":case "ckc":out[k]=String((m&&m.t)||"")>=String((t&&t.t)||"")?m:t;return;   /* v2.7.0: newest agreement wins */
    case "rz":case "best":case "rvE":case "rvS":case "plv":case "cupWins":out[k]=mx(t,m);return;
    case "mis":out[k]=uni(t,m).slice(-60);return;
    case "ach":{const o=Object.assign({},t);Object.keys(m||{}).forEach(i=>{o[i]=o[i]?Math.min(o[i],m[i]):m[i]});out[k]=o;return}
@@ -3875,7 +3932,9 @@ async function cdVerify(){if(!cdOn()||!S.cd||!S.cd.code)return;
   if(r.ok){cdInfo(r);saveQ();cdRefresh();if(r.code!==was)setTimeout(()=>cdShowCode(r.code),700);await cdLoad();await cdPushNow();cdSync(1)}
   else if(r.error==="no_match")cdLost()}catch(e){}}
 /* ---- admin: codes are managed on the Codes tab of Teacher tools ---- */
-const cdKey=()=>{try{return sessionStorage.getItem("cdAK")||""}catch(e){return""}};
+const cdKey=()=>{try{const k=sessionStorage.getItem("cdAK")||"";if(!k)return"";const t=+sessionStorage.getItem("cdAKt")||0;
+ if(t&&Date.now()-t>1200000){sessionStorage.removeItem("cdAK");sessionStorage.removeItem("cdAKt");setTimeout(()=>notify("Teacher tools locked after 20 minutes without use","info"),0);return""}
+ sessionStorage.setItem("cdAKt",Date.now());return k}catch(e){return""}};   /* v2.7.0: locks after 20 idle minutes */
 function cdAdminRow(){return`<div class="set"><div><b>Teacher tools</b><span class="mut">Classes, students, assignments, quizzes, house challenges and the 4-digit student codes.</span></div><button class="btn alt" onclick="go('teach')">Open</button></div>`}
 function cdAdmin(){go("teach","codes")}
 const cdAddN=()=>tcDo("cd_admin_add",{p_count:Math.max(1,Math.min(200,+$("cdnn").value||1)),p_class:+$("cdnc").value||null},r=>"Added "+r.codes.length+" new code"+(r.codes.length===1?"":"s")+": "+r.codes.slice(0,12).join(", ")+(r.codes.length>12?" …":""),["codes","cls"]);
@@ -3888,7 +3947,7 @@ function cdCopyFree(){const t=(TC.d.codes||[]).filter(r=>!r.username&&(TC.f==="a
  try{navigator.clipboard.writeText(t);notify(t?"Free codes copied":"There are no free codes","info")}catch(e){}}
 function cdSave(name,type,data){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([data],{type}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
 async function cdXlsx(){const rows=[["Code","Username","Class","House","Year","Status","Used on","Old code"]].concat((TC.d.codes||[]).map(r=>[r.code,r.username||"",clsName(r.class_id),r.house&&HS[r.house]?HS[r.house][0]:"",r.year||"",r.username?"Used":"Free",r.used_at?new Date(r.used_at).toLocaleString():"",r.old_code||""]));
- try{if(!window.XLSX)await new Promise((ok,no)=>{const s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js";s.onload=ok;s.onerror=no;document.head.appendChild(s)});
+ try{if(!window.XLSX)await new Promise((ok,no)=>{const s=document.createElement("script");s.src="vendor/xlsx-0.18.5.full.min.js";s.integrity="sha384-vtjasyidUo0kW94K5MXDXntzOJpQgBKXmE7e2Ga4LG0skTTLeBi97eFAXsqewJjw";s.onload=ok;s.onerror=no;document.head.appendChild(s)});
   const wb=XLSX.utils.book_new(),ws=XLSX.utils.aoa_to_sheet(rows);ws["!cols"]=[{wch:8},{wch:18},{wch:16},{wch:8},{wch:6},{wch:8},{wch:22},{wch:16}];XLSX.utils.book_append_sheet(wb,ws,"Student codes");XLSX.writeFile(wb,"compass-dash-student-codes.xlsx")}
  catch(e){cdSave("compass-dash-student-codes.csv","text/csv",rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(",")).join("\r\n"));notify("Excel could not load, so a CSV (opens in Excel) was downloaded instead.","info")}}
 /* ===== v2.2.9: Class progress, leaderboard and teacher dashboard =====
@@ -3925,6 +3984,7 @@ function boardLoad(force){if(BRD.busy)return;BRD.busy=1;if(force)BRD.rows=null;
   .then(()=>{BRD.busy=0;if(window.CURP==="board")board()})}
 const boardMode=m=>{BRD.mode=m;board()};
 function board(){const me=cdUser(),k=BRD.mode==="wk"?"wk":"xp",R=BRD.rows;
+ if(cdOn()&&!me)return app.innerHTML=`<h2>Class leaderboard</h2><p class="lead">Sign in with your student code to see the leaderboard. To keep everyone safe, it is only shown to signed-in students.</p><p><button class="btn" onclick="cdOpen()">Enter student code</button></p>${bar()}`;   /* v2.7.0 */
  if(!cdOn())return app.innerHTML=`<h2>Class leaderboard</h2><p class="lead">The leaderboard is not switched on for this site yet.</p>${bar()}`;
  const list=R?R.slice().sort((a,b)=>(+b[k]||0)-(+a[k]||0)):[];
  app.innerHTML=`<h2>Class leaderboard</h2><p class="lead">${me?`You are on the board as <b>${esc(me)}</b>. Your score updates as you play.`:"Enter your student code in Settings to appear on the board. You can keep playing without one."}</p>
@@ -3932,7 +3992,7 @@ ${seg([["wk","This week"],["all","All time"]],BRD.mode==="wk"?"wk":"all","boardM
 <div class="card" style="margin-top:14px">${R===null?`<p class="mut" style="margin:0">Loading the board…</p>`
  :BRD.err?`<p class="mut" style="margin:0">Could not reach the leaderboard. Try again in a moment.</p>`
  :!list.length?`<p class="mut" style="margin:0">Nobody has earned any XP yet. Answer a few questions and come back.</p>`
- :`<div class="lbw">${list.map((r,i)=>`<div class="lbr${r.name===me?" me":""}"><span class="lbp">${i<3&&(+r[k]||0)>0?[icn("award","md1"),icn("award","md2"),icn("award","md3")][i]:i+1}</span><span class="lbn">${r.house&&HS[r.house]?hsCrest(r.house,16)+" ":""}${esc(r.name)}${r.name===me?' <span class="mut">(you)</span>':""}</span><span class="lbm mut">${r.mast||0} topic${+r.mast===1?"":"s"} mastered · played ${brdAgo(r.last_seen)}</span><span class="lbx">${(+r[k]||0).toLocaleString()} XP</span></div>`).join("")}</div>`}</div>
+ :`<div class="lbw">${list.map((r,i)=>`<div class="lbr${r.name===me?" me":""}"><span class="lbp">${i<3&&(+r[k]||0)>0?[icn("award","md1"),icn("award","md2"),icn("award","md3")][i]:i+1}</span><span class="lbn">${r.house&&HS[r.house]?hsCrest(r.house,16)+" ":""}${esc(r.name)}${r.name===me?' <span class="mut">(you)</span>':""}${r.name!==me&&/^[A-Za-z0-9_]{3,16}$/.test(r.name||"")?`<button class="btn alt sm trep" onclick="repUser('${r.name}')" aria-label="Report the username ${r.name}">Report</button>`:""}</span><span class="lbm mut">${r.mast||0} topic${+r.mast===1?"":"s"} mastered · played ${brdAgo(r.last_seen)}</span><span class="lbx">${(+r[k]||0).toLocaleString()} XP</span></div>`).join("")}</div>`}</div>
 <p class="mut">${BRD.mode==="wk"?"Weekly XP starts again every Monday.":"Total XP earned since the account was made."} <button class="btn alt sm" onclick="boardLoad(1)">Refresh</button></p>`;
  if(R===null&&!BRD.busy)boardLoad()}
 /* ---- v2.3.4: admin self-test for student codes and saved progress ----
@@ -4001,8 +4061,6 @@ async function cdTest(){if(CDT.busy)return;
    if(S.cdDirty)cdPushNow();return[true,`Signed in as ${cdUser()}: newer changes on this device are being saved now.`]});
   CDT.busy=0;cdTestView(L,1)}}
 function cdTestKey(){const k=$("cdk");if(!k||!k.value.trim())return;try{sessionStorage.setItem("cdAK",k.value.trim())}catch(e){}cdTest()}
-/* titles a teacher types: whole words only, so "Dickens" is fine but swearing is not (the database checks the same) */
-const cleanText=v=>!/[^a-z](fuck|fuk|fck|shit|cunt|bitch|bastard|wank|twat|slut|whore|niga|fagot|retard|rapist|porn|dildo|hentai|milf|pedoph|paedo|stfu|wtf)/.test(" "+cdSq(String(v||"").toLowerCase().replace(/[^a-z0-9@$!|]+/g," "))+" ");
 /* v2.4.9: manage a student from Class progress. Each action asks the database, which checks the admin
    key again, so nothing here depends on the page alone. Needs class-manage-update.sql to have been run. */
 const CLSERR={bad_key:"The admin key was not accepted.",bad_name:"A name must be 3 to 16 letters, numbers or underscores.",
@@ -4019,9 +4077,9 @@ function clsReset(code,now){if(!confirm("Start "+now+" again from nothing?\n\nTh
 function clsRemove(code,now){if(!confirm("Remove "+now+" from the class?\n\nEverything they have done is deleted and code "+code+" can be given to someone else. This cannot be undone."))return;
  clsDo("cd_admin_remove",{p_code:code},()=>now+" was removed and "+code+" is free again")}
 function clsPage(){teach("stu")}
-function clsCsv(){const R=tcSel(),h=["Student","Code","Class","House","Year","XP","This week","Mastered","Answered","Correct","Accuracy %","Last active"];
- const rows=[h].concat(R.map(r=>{const s=r.stats||{};return[r.name,r.code,clsName(r.class_id),r.house&&HS[r.house]?HS[r.house][0]:"",r.year||"",s.xp||0,r.wk||0,s.mast||0,s.ans||0,s.cor||0,s.ans?Math.round(s.cor/s.ans*100):"",r.last_seen?new Date(r.last_seen).toLocaleString():""]}));
- cdSave("compass-dash-class-progress.csv","text/csv",rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(",")).join("\r\n"))}
+function clsCsv(){const R=tcSel(),h=["Student","Class","House","Year","XP","This week","Mastered","Answered","Correct","Accuracy %","Last active"];
+ const rows=[h].concat(R.map(r=>{const s=r.stats||{};return[r.name,clsName(r.class_id),r.house&&HS[r.house]?HS[r.house][0]:"",r.year||"",s.xp||0,r.wk||0,s.mast||0,s.ans||0,s.cor||0,s.ans?Math.round(s.cor/s.ans*100):"",r.last_seen?new Date(r.last_seen).toLocaleString():""]}));
+ cdSave("compass-dash-class-progress.csv","text/csv",rows.map(r=>r.map(v=>'"'+String(v).replace(/^([=+\-@\t\r])/,"'$1").replace(/"/g,'""')+'"').join(",")).join("\r\n"))}
 /* ===== v2.6.3: the feedback list (developer panel > Feedback). It needs the admin key, like Teacher tools. ===== */
 let FBA={rows:null,n:null,t:0,f:"all"};
 function fbAdmRow(){return`<div class="set"><div><b>Feedback</b><span class="mut">Everything people send with the feedback form, saved in Supabase.${FBA.n?` <b>${FBA.n} new.</b>`:""}</span></div><button class="btn alt" onclick="fbAdmOpen()">Open feedback</button></div>`}
@@ -4057,22 +4115,12 @@ function fbAdmCsv(){const rows=[["When","Stars","Category","Message","Page","Fea
 /* ===== Feedback =====
    v2.6.3: saved in Supabase (the cd_feedback table), so there is no monthly limit. Until
    compass-dash-v2.6.3-feedback.sql has been run there, it still goes to Formspree, so nothing is lost. */
-const FB_URL="https://formspree.io/f/moejjovz";/* Formspree form endpoint, only used until the Supabase table exists */
-function fbPayload(e){return{_subject:"[CompassDash] "+e.r+"/5 "+(e.c||"Feedback"),rating:e.r+" / 5 stars",
- category:e.c||"Not selected",message:e.m,page:e.page,feature:e.feature||"n/a",
- submitted:new Date(e.t).toString(),version:e.ver,_gotcha:""}}
-async function fbPostFS(e){if(!FB_URL)throw new Error("not set up");
- const r=await fetch(FB_URL,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(fbPayload(e))});
- if(r.status===429)throw new Error("too many submissions");
- const j=await r.json().catch(()=>({}));
- if(!r.ok||j.ok===false)throw new Error((j.errors&&j.errors[0]&&j.errors[0].message)||("HTTP "+r.status));
- return true}
 const FBERR={too_many:"too many messages in a few minutes, please wait a little",busy:"a lot of feedback has been sent today, please try again tomorrow",too_long:"it is too long",empty:"it is empty",bad_rating:"choose a star rating"};
 async function fbPost(e){
  if(cdOn()){try{const r=await cdRpc("cd_feedback_send",{p_rating:e.r,p_cat:e.c||null,p_msg:e.m,p_page:e.page||null,p_feature:e.feature||null,p_ver:e.ver});
    if(r&&r.ok)return true;throw new Error(FBERR[r&&r.error]||"it was not saved")}
-  catch(x){if(!/HTTP 404/.test(String(x&&x.message)))throw x}}   /* 404: the Supabase table isn't set up yet */
- return fbPostFS(e)}
+  catch(x){throw x}}
+ throw new Error("feedback is not available right now. Please email "+SUPPORT)}   /* v2.7.0: no third-party fallback */
 const FB_CATS=["Bug Report","Feature Request","Suggestion","Other"];let FB={r:0,ctx:{}};
 function fbCtx(){const p=window.CURP||"home",n={home:"Learn (home)",subject:"Subject page",topic:"Topic lesson",stats:"My Stats",settings:"Settings",ach:"Achievements",revise:"Revision mode",mist:"Mistake review",admin:"Admin panel"}[p]||p;let f="";try{const i=window.CURI;if(p==="subject")f=SUBJ[i].n;else if(p==="topic")f=SUBJ[i[0]].n+" > "+SUBJ[i[0]].t[i[1]].n;if(QZ)f="Quiz: "+QZ.title+" ("+MN[QZ.mode]+")"}catch(e){}return{page:n,feature:f}}
 function fbOpen(){if(FB.busy){notify("Still sending your last feedback\u2026","info");return}   /* v2.5.6: one at a time */
@@ -4080,7 +4128,7 @@ FB={r:0,ctx:fbCtx()};let m=$("fbm");if(!m){m=document.createElement("div");m.id=
 m.innerHTML=`<div class="fbx" role="dialog" aria-modal="true" aria-labelledby="fbtt"><button class="mx" onclick="fbClose()" aria-label="Close">×</button><h2 id="fbtt">Send feedback</h2><p class="mut" style="margin-top:0">Tell us what's working and what isn't.</p>
 <label>Rating</label><div class="stars" role="radiogroup" aria-label="Rating">${[1,2,3,4,5].map(k=>`<button type="button" role="radio" aria-checked="false" aria-label="${k} star${k>1?"s":""}" onclick="fbStar(${k})">★</button>`).join("")}</div>
 <label for="fbc">Category <span class="mut">(optional)</span></label><select id="fbc"><option value="">Choose a category</option>${FB_CATS.map(c=>`<option>${c}</option>`).join("")}</select>
-<label for="fbt">Your feedback</label><textarea id="fbt" maxlength="1000" placeholder="Describe your feedback" oninput="$('fbn').textContent=this.value.length+' / 1000'"></textarea><div class="mut" id="fbn" style="text-align:right;font-size:.8rem">0 / 1000</div>
+<label for="fbt">Your feedback</label><textarea id="fbt" maxlength="1000" placeholder="Describe your feedback" oninput="$('fbn').textContent=this.value.length+' / 1000'"></textarea><div class="mut" id="fbn" style="text-align:right;font-size:.8rem">0 / 1000</div><p class="mut" style="font-size:.85rem;margin:4px 0 0">Please don’t include your name, student code or other personal details. Need a reply? Email <a href="mailto:compassdashedu@gmail.com?subject=Compass%20Dash%20feedback">compassdashedu@gmail.com</a>.</p>
 <input id="fbh" class="fbh" tabindex="-1" autocomplete="off" aria-hidden="true"><p class="fbe" id="fbe" role="alert"></p>
 <div class="fbr"><button class="btn alt" onclick="fbClose()">Cancel</button><button class="btn" id="fbs" onclick="fbSend()">Submit Feedback</button></div></div>`;mdOpen("fbm")}
 function fbStar(k){FB.r=k;document.querySelectorAll("#fbm .stars button").forEach((b,i)=>{b.classList.toggle("on",i<k);b.setAttribute("aria-checked",i===k-1)})}
@@ -4094,7 +4142,7 @@ if(msg.length<10){e.textContent="Please write at least 10 characters.";return}
 if($("fbh").value){fbClose();return}                 /* honeypot: a bot filled the hidden field */
 let last=0;try{last=+localStorage.getItem("cgFb")||0}catch(x){}
 if(Date.now()-last<30000){e.textContent="Please wait a few seconds before sending again.";return}
-const entry={t:Date.now(),r:FB.r,c:$("fbc").value||"",m:msg,page:FB.ctx.page,feature:FB.ctx.feature||"",ver:VER};
+const entry={t:Date.now(),r:FB.r,c:$("fbc").value||"",m:redactPII(msg),page:FB.ctx.page,feature:FB.ctx.feature||"",ver:VER};
 FB.busy=1;b.disabled=true;b.textContent="Sending\u2026";
 try{await fbPost(entry)}
 catch(x){FB.busy=0;b.disabled=false;b.textContent="Submit Feedback";
@@ -4112,7 +4160,8 @@ notify("Feedback sent \u2014 thank you")}
 // VERSIONING RULE: every update increases the version by exactly 0.01 — the last number goes up by one
 // (next: v2.7.0, v2.7.1, ...). Each of the last two numbers only goes up to 9, then rolls over:
 // after v2.5.9 comes v2.6.0, and after v2.9.9 comes v3.0.0 (that is how v1.9.9 was followed by v2.0.0).
-const VER="v2.6.9",CL=[
+const VER="v2.7.0",CL=[
+["v2.7.0","25 Oct 2026","Privacy and safety",["New Privacy Policy, Terms of Service and Cookie Policy pages, linked from the bottom of every page and from Settings","Privacy choices: accept, reject or customise optional services. Google Fonts now only load if you allow them, and every choice is recorded with its date and policy version","Students agree to how their information is used the first time they sign in, and students under 13 need a parent or carer’s consent (or their school’s)","Your data (Settings): see what is saved, download it, delete it from this device, or ask for your account to be deleted","Usernames are checked more carefully for rude words, bullying, pretending to be staff and contact details, and you can report a username","Repeated wrong sign-in attempts now wait longer each time, and Teacher tools lock after 20 minutes without use","Safer pages: a Content-Security-Policy limits where the site can load from, and there are proper 404, 403 and 500 pages","Help and support: compassdashedu@gmail.com"]],
 ["v2.6.9","24 Oct 2026","The smooth update",["The game is crisp on phones and high-density screens, and runs at a steady 60 fps even with backgrounds and effects equipped (a blur over the canvas was dropping it to about 20)","Motion like motion graphics: every right answer gets its leap however fast you answer, springy squash and stretch, an eased slow-motion arc, dust on landing, and a real crash with a freeze-frame, a shake and a flash","Scenes fade in and crossfade, the timer bar glides, pages reveal in a staggered sweep, menus and windows close as smoothly as they open, and timed questions pause while the tab is hidden","Sound for everything: right and wrong answers in every mode, streaks, landing, bumps, timeouts, level-ups, achievements, purchases, equipping, the House Cup, a passed test, quick-time events with a heartbeat and a tick in the last five seconds","Cleaner mix: effects sit above the music, music ducks under them, a limiter stops clipping, volume changes glide, tracks change on the bar, and music comes back after a phone interruption","Practice adapts to you: each topic learns how you are doing and picks questions near your level, harder as you improve and gentler when you slip (tests and the Daily Challenge stay fixed)","After a mistake: Practise 5 like this, Fix these now at the end of a quiz, explanations tied to the question, mistakes cleared by any right answer and grouped by topic, and a slip brings the topic back tomorrow","Review sessions mix what is due with your weakest topics and latest mistakes, explain every answer and end with a topic-by-topic summary","Sync that keeps everything: progress from two devices is merged, nothing played offline is lost, unsent progress goes up every minute, stats never inflate, a damaged save is kept aside, and the site warns if the device is full","Accessibility that works: Motion off stops every animation, windows keep keyboard focus and close on Escape, shortcuts never fire behind a window, focus follows the question and the Next button, screen readers hear results and page titles, arrow keys work in Settings, Hear it is its own button, and contrast is fixed on chips, badges, buttons and placeholders"]],
 ["v2.6.8","20 Oct 2026","House XP for teachers",["Teacher tools has a House XP tab: each house\u2019s XP this week and all time, how many House Cups it has won, every winner with how many members collected the prize, and each house\u2019s total for recent weeks"]],
 ["v2.6.7","19 Oct 2026","House Cup and polish",["The House Cup prize is now 5,000 XP for every member of the winning house","Animated effects and particle effects now keep the new detailed background instead of switching back to the old one when you equip, try or buy them","Home is tidier: no repeated review card when your learning path already shows those reviews, and accuracy never shows above 100%","Subject page headings are easier to read over the new backgrounds"]],
@@ -4212,7 +4261,7 @@ function mdClose(id,after){const m=$(id);if(!m||!m.classList.contains("show"))re
  const a=m.animate([{opacity:1},{opacity:0}],{duration:160,easing:"ease-out",fill:"forwards"}),bx=box?box.animate([{transform:"scale(1)"},{transform:"scale(.96)"}],{duration:160,easing:"ease-out",fill:"forwards"}):null;m._cl=bx?[a,bx]:[a];
  a.onfinish=()=>{if(m._cl&&m._cl[0]!==a)return;m._cl=null;try{a.cancel();if(bx)bx.cancel()}catch(e){}done()}}
 document.addEventListener("keydown",e=>{const m=mdTop()||(window.QT&&QT.on&&QT.el)||null;if(!m)return;
- if(e.key==="Escape"){if(m===QT.el)return;e.preventDefault();const id=m.id;if(id==="cupm"){mdClose(id,()=>{if(window.CURP==="home")home()})}else mdClose(id);return}
+ if(e.key==="Escape"){if(m===QT.el||m.dataset.lock)return;e.preventDefault();const id=m.id;if(id==="cupm"){mdClose(id,()=>{if(window.CURP==="home")home()})}else mdClose(id);return}
  if(e.key!=="Tab")return;const F=[...m.querySelectorAll("a[href],button:not([disabled]),input:not([disabled]):not([type=hidden]):not([tabindex='-1']),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex='-1'])")].filter(x=>x.offsetParent!==null);
  if(!F.length)return;const i=F.indexOf(document.activeElement);if(e.shiftKey&&(i<=0)){e.preventDefault();F[F.length-1].focus()}else if(!e.shiftKey&&(i===F.length-1||i<0)){e.preventDefault();F[0].focus()}});
 /* focus flow in quizzes: the question when it appears, the Next button once it is answered */
@@ -4236,7 +4285,7 @@ function resetProgress(){const nm=S.nm,cd=S.cd,rev=S.cdRev;                /* th
  save();chMigrate();syncChar();applyCos();
  go(window.CURP||"stats",window.CURI,true);           /* re-render where we are, no history entry */
  notify("Progress reset")}
-function resetAll(){if(confirm("Reset progress on this device?\n\nThis clears stats, mastery, achievements, mistakes, playtime and shop purchases. Your settings, theme and display name are kept. This cannot be undone."))resetProgress()}
+function resetAll(){if(confirm((cdUser()?"Reset progress for "+cdUser()+" on every device?\n\nYou are signed in, so this also resets your account: your teacher will see your XP and stats start again. ":"Reset progress on this device?\n\n")+"This clears stats, mastery, achievements, mistakes, playtime and shop purchases. Your settings, theme and display name are kept. This cannot be undone."))resetProgress()}
 /* v2.6.6: announcements from a teacher, shown on the Learn page until they end or the student closes them */
 let ANN={d:null,t:0};
 function annLoad(){if(!cdOn()||!cdUser()||Date.now()-ANN.t<6e4)return;ANN.t=Date.now();cdRpc("cd_anns",cdA()).then(r=>{if(r&&r.ok){ANN.d=r.rows||[];const e=$("annw");if(e&&window.CURP==="home")e.outerHTML=annHtml()}}).catch(()=>{})}
@@ -4448,7 +4497,7 @@ function bugRun(){const out=[],t0=performance.now(),snap=JSON.stringify(S),e0=ER
   SUBJ.forEach((u,s)=>u.t.forEach((t,i)=>{if(!TYR[s]||!TYR[s][i])bad.push(u.n+" › "+t.n+": no year group set for learning paths")}));
   [7,8,9].forEach(y=>{const was=S.yr;S.yr=y;try{const L=pathSteps(12);if(L.some(x=>junk.test(x.h+x.w)))bad.push("Year "+y+" path shows “undefined” or “NaN”");if(L.some(x=>x.s!=null&&tYear(x.s,x.t)>y&&!/^Stretch/.test(x.h)))bad.push("Year "+y+" path suggests a topic from a later year")}finally{S.yr=was}});
   note.push("4 houses · paths for Years 7, 8 and 9")});
- chk2("Pages",(bad,note)=>{const P=[["home"],["stats"],["settings"],["about"],["shop"],["inv"],["ach"],["daily"],["exam"],["flash"],["revise"],["mist"],["houses"],["path"],["mine"],["teach"],["acts"]];
+ chk2("Pages",(bad,note)=>{const P=[["home"],["stats"],["settings"],["about"],["shop"],["inv"],["ach"],["daily"],["exam"],["flash"],["revise"],["mist"],["houses"],["path"],["mine"],["teach"],["acts"],["privacy"],["terms"],["cookies"],["mydata"],["notfound"]];
   SUBJ.forEach((u,s)=>{P.push(["subject",s]);P.push(["learn",s]);P.push(["acts",s]);u.t.forEach((_,t)=>P.push(["topic",[s,t]]))});Object.keys(EXM).forEach(k=>P.push(["act",k]));
   const miss=new Set();
   P.forEach(([p,i])=>{const nm=p==="learn"?SUBJ[i].n+" cheat sheet":pname(p,i);const e1=ERRLOG.length;
@@ -4458,7 +4507,7 @@ function bugRun(){const out=[],t0=performance.now(),snap=JSON.stringify(S),e0=ER
    const tw=document.createTreeWalker(app,NodeFilter.SHOW_TEXT),tx=[];let tn;while(tn=tw.nextNode())tx.push(tn.nodeValue);
    if(junk.test(tx.join(" ")))bad.push(nm+": shows “undefined” or “NaN”");
    (h.match(/\son(?:click|input|change|keydown)="([A-Za-z_$][\w$]*)\(/g)||[]).forEach(m=>{const f=m.replace(/^\s*on\w+="/,"").slice(0,-1);
-    if(miss.has(f)||/^(if|for|while|return|this|event)$/.test(f))return;let ok=false;try{ok=new Function("return typeof "+f)()==="function"}catch(e){}if(!ok){miss.add(f);bad.push(nm+": a button calls "+f+"(), which does not exist")}})});
+    if(miss.has(f)||/^(if|for|while|return|this|event)$/.test(f))return;let ok=typeof window[f]==="function",ev=1;if(!ok){try{ok=new Function("return typeof "+f)()==="function"}catch(e){ev=0}}if(!ok&&ev){miss.add(f);bad.push(nm+": a button calls "+f+"(), which does not exist")}})});
   note.unshift(P.length+" pages opened")});
  /* put everything back exactly as it was */
  Object.keys(S).forEach(k=>delete S[k]);Object.assign(S,JSON.parse(snap));saveQ();syncChar();applyCos();
@@ -5698,9 +5747,10 @@ function tcLoad(force){const need=TCNEED[TC.tab].filter(k=>force||!TC.d[k]),hs=T
   hs?cdRpc("cd_houses").then(r=>{HSE.d=r&&r.houses?r:{houses:[],chal:[]};HSE.t=Date.now()}):0])
   .catch(e=>{TC.err=/\b404\b|not exist|schema cache/i.test(String(e&&e.message))?"sql":1})
   .then(()=>{TC.busy--;if(TC.bad){try{sessionStorage.removeItem("cdAK")}catch(e){}}if(window.CURP==="teach"||window.CURP==="class")teach()})}
-async function tcUnlock(){const k=$("cdk"),e=$("tce");if(!k||!k.value.trim())return;e.textContent="Checking…";
- try{const r=await cdRpc("cd_admin_check",{p_key:k.value.trim()});
-  if(r&&r.ok){try{sessionStorage.setItem("cdAK",k.value.trim())}catch(x){}TC.bad=0;TC.err=0;TC.d={};teach()}else e.textContent=r&&r.error==="locked"?"Too many wrong tries. Admin sign-in is locked here for "+r.mins+" minute"+(r.mins===1?"":"s")+".":"That key was not accepted."}
+async function tcUnlock(){const k=$("cdk"),e=$("tce");if(!k||!k.value.trim())return;if(rlHold("admin","tce",null))return;e.textContent="Checking…";
+ try{const r=await cdRpc("cd_admin_check",{p_key:k.value.trim()});k.value="";
+  if(r&&!r.ok&&(r.error==="bad_key"||r.error==="locked")){RL.fail("admin",r.error==="locked"?(r.mins||15)*60:0);if(rlHold("admin","tce",null))return}
+  if(r&&r.ok){RL.ok("admin");tcSeen();try{sessionStorage.setItem("cdAK",k.value.trim())}catch(x){}TC.bad=0;TC.err=0;TC.d={};teach()}else e.textContent=r&&r.error==="locked"?"Too many wrong tries. Admin sign-in is locked here for "+r.mins+" minute"+(r.mins===1?"":"s")+".":"That key was not accepted."}
  catch(x){e.textContent=/\b404\b/.test(String(x.message))?"Run compass-dash-v2.6-update.sql in Supabase first, then try again.":"Could not reach the student code service."}}
 function tcLock(){try{sessionStorage.removeItem("cdAK")}catch(e){}TC.d={};teach()}
 /* run a teacher action, then reload what it changed */
@@ -6205,6 +6255,180 @@ function path(){const y=myYr(),ab=ability(),T=allT(),yy=y||7,mine=T.filter(x=>tY
  return`<div class="tcsb"><span>${u.i} ${esc(u.n)} <span class="mut">(${L2.length})</span></span><span class="pb"><i style="width:${p}%"></i></span><b>${p}%</b></div>`}).join("")}</div>`}
 XPAGES.path=path;XON.path="tools";XPAGES.tools=tools;XNAME.tools="Study tools";XNAME.path="My learning path";
 
-setTheme(document.documentElement.dataset.theme||"light");a11yApply();netShow();setTimeout(()=>{try{SCN.preload()}catch(e){}},1500);try{if("serviceWorker"in navigator&&(location.protocol==="https:"||location.hostname==="localhost"))navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}muLabel();S.own=(S.own||[]).filter(x=>!/^bundle-/.test(x));S.mis=(S.mis||[]).filter(id=>{const[a,b,c]=String(id).split(".").map(Number);return!!(SUBJ[a]&&SUBJ[a].t[b]&&(c>=1000?GENS[SUBJ[a].t[b].n]:SUBJ[a].t[b].f[c]))});{const f=$("fver");if(f)f.textContent="Compass Dash "+VER}try{localStorage.removeItem("cgFbLog")}catch(e){}chMigrate();syncChar();applyCos();go("home");cdVerify();
+/* ===== v2.7.0: Privacy, safety and security =====
+   Privacy Policy, Terms of Service and Cookie Policy pages; a storage/cookie consent banner; the student
+   agreement shown at first sign-in (with parent or carer consent for under-13s); Your data (download, delete,
+   request deletion); sign-in rate limiting; reporting usernames; and the support address. Choices are kept on
+   this device, and a signed-in student's agreement is kept in their progress, so it reaches their account
+   through the existing sync. */
+window.WIPED=0;   /* set while this device's data is being deleted, so nothing writes it back */
+const SUPPORT="compassdashedu@gmail.com",POLV="1.0",POLD="25 October 2026",CKV="1.0";
+const mailto=(sub,body)=>"mailto:"+SUPPORT+"?subject="+encodeURIComponent(sub||"Compass Dash support")+(body?"&body="+encodeURIComponent(body):"");
+const supLink=(sub,txt)=>`<a href="${mailto(sub)}">${txt||SUPPORT}</a>`;
+
+/* ---------- policies ---------- */
+const POL={
+privacy:{t:"Privacy Policy",lead:"How Compass Dash collects, uses and protects information about you. Written for students, parents, carers and schools.",s:[
+["Who we are",`Compass Dash is a free revision website for students in Years 7 to 9 (ages 11 to 14). It is made and run by the Compass Dash team. If your school gives you a student code, your school decides how Compass Dash is used in class, and we look after student information on the school’s behalf. You can contact us at any time: ${supLink("Privacy question")}.`],
+["The short version",`<ul><li>You can use Compass Dash without an account, and then everything stays on your own device.</li><li>With a student code we store a username you choose (not your real name), your house, year group and class, and your learning progress, so your teacher can see how you are doing and you can carry on from another device.</li><li>We never show adverts, never sell information, and never use it to track you around the internet.</li><li>You can download your information, delete it from your device, or ask us to delete your account, from Settings › Your data.</li></ul>`],
+["What we collect",`<b>On your device (no account needed).</b> Your progress (answers, mastery, XP, achievements, items from the shop), your settings (theme, sound, accessibility, language) and your privacy choices are saved in your browser’s local storage so the site works. This stays on your device.<br><br><b>If you use a student code.</b> We store your 4-digit student code, the username you chose, your house, year group and class if set, your learning progress (the same information as above, including your XP), summary statistics for leaderboards, assignment results, the date you agreed to this policy and, for students under 13, who gave consent (a parent or carer’s name, or your school).<br><br><b>Feedback.</b> If you send feedback, we store your star rating, category, message, the page you were on and the version of the site. Please do not put personal information in feedback.<br><br><b>Teachers.</b> Teacher tools use an admin key supplied by the school. We do not create teacher accounts or collect teachers’ names.`],
+["What we do not collect",`We do not ask for your real name, email address, phone number, home address, date of birth, photos or location. The display name you can set on your profile stays on your device and is not sent to us. We do not use analytics, advertising or tracking tools, and we do not build profiles of you for marketing. Compass Dash never rewards playing late at night.`],
+["How we use information",`<ul><li>To run the site: saving your progress, showing your learning path, marking answers and choosing what to revise next.</li><li>For your school: so teachers can set work, see progress and results, and run house competitions.</li><li>To keep people safe: checking usernames are suitable for school, stopping repeated wrong sign-in attempts, and dealing with reports.</li><li>To improve Compass Dash: reading feedback and fixing problems.</li></ul>We rely on your school’s task of educating you and, where needed, on consent. For students under 13 we ask for a parent or carer’s consent before an account is used, unless the school has already collected it.`],
+["Who can see your information",`<ul><li><b>Your teachers</b> (using the school’s admin key) can see your code, username, house, year group, class, progress and assignment results.</li><li><b>Other signed-in students</b> can see your username, house, XP, topics mastered and when you last played on the leaderboard, and house totals in house competitions. They cannot see your code or your answers. The leaderboard is not shown to anyone who is not signed in.</li><li><b>The Compass Dash team</b> can see account information and feedback to run and support the site.</li><li><b>Service providers</b> that host the site for us: GitHub Pages (the website) and Supabase (the database for student accounts and feedback). Like any website, they receive your device’s internet address when it connects. Google Fonts is only used if you allow it. They only use information to provide their service.</li></ul>We never sell or rent information to anyone.`],
+["How long we keep it",`Information on your device stays until you delete it (Settings › Your data) or clear your browser. Account information is kept while your school uses Compass Dash, and is deleted when your school or you ask us to, or when a teacher deletes the account. Feedback is kept until it has been dealt with and is then deleted.`],
+["Keeping it safe",`Student codes and usernames are checked by the database every time they are used. Repeated wrong sign-in attempts are slowed down and then blocked for a while. Teacher tools need the school’s admin key and lock again after 20 minutes without use. Feedback has personal details such as email addresses and phone numbers removed before it is sent. Connections are encrypted (HTTPS), and the site limits where it may load content from.`],
+["Your rights",`You (and your parent or carer) can ask to see the information we hold about you, to correct it, to delete it, or to object to how it is used. The quickest ways are Settings › Your data, where you can download your information or ask for your account to be deleted, or emailing ${supLink("Data request")}. We reply within one month. If you are unhappy with how we handle your information, please tell us first; you can also complain to the data protection authority where you live.`],
+["Children",`Compass Dash is designed for children aged 11 to 14, so privacy is set high by default: optional services are off until someone chooses to turn them on, leaderboards only show usernames, usernames are checked for unsuitable words and personal information, and students can report a username. Students under 13 need a parent or carer’s consent (or their school’s) before using an account. Parents and carers can contact us at any time to see or delete their child’s information.`],
+["Laws we follow",`We aim to meet the data protection laws that apply to schools and children where Compass Dash is used, including the UK GDPR and the Age Appropriate Design Code, and Qatar’s Personal Data Privacy Protection Law (Law No. 13 of 2016).`],
+["Changes to this policy",`If we change this policy we will update the version and date below and ask signed-in students to read and agree to the new version.`]]},
+terms:{t:"Terms of Service",lead:"The rules for using Compass Dash. By using the site you agree to them.",s:[
+["Using Compass Dash",`Compass Dash is a free learning website for students, their teachers and their families. You may use it for learning and teaching. You can play without an account; a student code from your school adds an account so your progress is saved online.`],
+["Be kind and stay safe",`<ul><li>Choose a username that is suitable for school. Do not use your real full name, rude words, or anything that could upset or make fun of someone.</li><li>Do not bully, threaten or harass anyone, and do not pretend to be a teacher or another student.</li><li>If you see a username that worries you, use Report on the leaderboard or tell a teacher.</li></ul>`],
+["Your account",`Keep your student code to yourself, like a password. Do not sign in as someone else or try to guess other people’s codes. Teachers must keep the admin key secret and only share it with staff who need it. Tell your teacher or ${supLink("Account problem","us")} straight away if you think someone else has used your account.`],
+["Fair play",`Do not try to break, overload, copy or interfere with the site, its database or other people’s progress, or use tools to answer questions or earn XP automatically. XP, items and badges are just for fun: they have no money value and cannot be swapped or sold.`],
+["Teachers and schools",`Schools are responsible for deciding to use Compass Dash with their students, for telling families about it and for collecting any consent they need. Teachers should only use student information for teaching, and should delete accounts students no longer need.`],
+["Our content",`We work hard to make lessons and questions accurate and suitable for Years 7 to 9, but mistakes can happen. If you spot one, please send feedback. Compass Dash is provided as it is, and we may change, pause or stop parts of it.`],
+["If these terms are broken",`We or your school may remove a username, reset an account or stop someone using an account if these terms are broken.`],
+["Changes and contact",`We may update these terms; the version and date are shown below. Questions? Email ${supLink("Terms question")}.`]]},
+cookies:{t:"Cookie Policy",lead:"Compass Dash does not use cookies. It does use your browser’s storage, and you choose whether optional services can be used.",s:[
+["Cookies",`Compass Dash does not set any cookies, and we do not use advertising, analytics or tracking cookies.`],
+["Storage on your device",`Like cookies, the browser’s local storage can save information on your device. We only use it for things the site needs to work, so these are always on:<ul><li><b>Progress</b> (cg, cgGuest, cgBase, cgPending, cg_bad): your answers, mastery, XP, achievements and items; a copy of this device’s own progress while someone is signed in; the last copy your account confirmed; answers waiting to reach your account (removed after 30 days); and a damaged save kept so it can be repaired.</li><li><b>Study tools</b> (cgDaily, cgExam, cgExamPv, cgCards): the daily challenge, exam countdown dates and flashcard ratings.</li><li><b>Settings</b> (cgSet, cgTheme, cgXs, cgXsSeen): theme, sound, language and accessibility choices.</li><li><b>Privacy and safety</b> (cgConsent, cgConsentLog, cgRL, cgFb): your choices on this banner, the count of wrong sign-in attempts, and when you last sent feedback.</li><li><b>Session</b> (session storage, cleared when the tab closes): the teacher admin key while Teacher tools is unlocked, and usernames you have already reported.</li><li><b>Offline copy</b>: a service worker keeps a copy of the site so it opens without internet. It never stores student account data.</li></ul>Compass Dash shares its web address (compassdash.github.io) with our sister site Compass GCSE, so the two sites’ storage sits side by side in your browser; each only uses its own.`],
+["Optional services",`<b>Google Fonts</b> provides the Inter and Lexend fonts. Loading them sends your device’s internet address to Google. It is off unless you choose Accept all or switch it on in Customise; without it, the site uses fonts already on your device.`],
+["Changing your choices",`You can change your choices at any time with Cookie settings at the bottom of every page, or in Settings › Your data. We record each choice with the date and the version of this policy, so we can show what was agreed.`]]}};
+function polPage(k){const P=POL[k];
+ app.innerHTML=`<article class="pol"><h2>${P.t}</h2><p class="lead">${P.lead}</p><p class="mut">Version ${POLV} · last updated ${POLD}</p>
+<nav class="card poltoc" aria-label="On this page"><b>On this page</b><ol>${P.s.map((x,i)=>`<li><a href="#pol${i}" onclick="event.preventDefault();polTo(${i})">${x[0]}</a></li>`).join("")}</ol></nav>
+${P.s.map((x,i)=>`<section class="card" aria-labelledby="pol${i}"><h3 id="pol${i}" tabindex="-1">${x[0]}</h3><div>${x[1]}</div></section>`).join("")}
+<div class="card"><p style="margin:0">Questions or requests: ${supLink(P.t)}. ${k==="cookies"?`<button class="btn alt sm" onclick="ckOpen()">Cookie settings</button>`:""} ${k!=="privacy"?`<button class="btn alt sm" onclick="go('privacy')">Privacy Policy</button>`:""} ${k!=="terms"?`<button class="btn alt sm" onclick="go('terms')">Terms of Service</button>`:""} ${k!=="cookies"?`<button class="btn alt sm" onclick="go('cookies')">Cookie Policy</button>`:""}</p></div></article>`}
+function polTo(i){const h=$("pol"+i);if(!h)return;h.scrollIntoView({behavior:ST.motion?"smooth":"auto",block:"start"});try{h.focus({preventScroll:true})}catch(e){}}
+XPAGES.privacy=()=>polPage("privacy");XPAGES.terms=()=>polPage("terms");XPAGES.cookies=()=>polPage("cookies");
+Object.assign(XNAME,{privacy:"Privacy Policy",terms:"Terms of Service",cookies:"Cookie Policy",mydata:"Your data",notfound:"Page not found"});
+Object.assign(XON,{privacy:"settings",terms:"settings",cookies:"settings",mydata:"settings"});
+
+/* ---------- storage and cookie consent ---------- */
+const PCK={get(){try{const o=JSON.parse(localStorage.getItem("cgConsent")||"null");return o&&o.v===CKV?o:null}catch(e){return null}},
+ set(ext,how){const o={v:CKV,t:new Date().toISOString(),ext:!!ext,how};try{localStorage.setItem("cgConsent",JSON.stringify(o));
+  const h=JSON.parse(localStorage.getItem("cgConsentLog")||"[]");h.push(o);localStorage.setItem("cgConsentLog",JSON.stringify(h.slice(-20)))}catch(e){}return o}};
+const extOK=()=>{const c=PCK.get();return!!(c&&c.ext)};
+/* fonts from Google only with consent; without it the system fonts in each font stack are used */
+function fontsApply(){const want=extOK()?[["inter","Inter"]].concat(ST.afont?[["lexend","Lexend"]]:[]):[];
+ ["inter","lexend"].forEach(id=>{if(!want.some(w=>w[0]===id)){const l=$(id);if(l)l.remove()}});
+ want.forEach(([id,f])=>{if($(id))return;const l=document.createElement("link");l.id=id;l.rel="stylesheet";l.crossOrigin="anonymous";l.referrerPolicy="no-referrer";l.href="https://fonts.googleapis.com/css2?family="+f+":wght@400;600;700&display=swap";document.head.appendChild(l)})}
+function ckBanner(){let b=$("ckb");if(!b){b=document.createElement("section");b.id="ckb";b.setAttribute("aria-labelledby","ckbt");document.body.appendChild(b)}
+ const c=PCK.get();
+ b.innerHTML=`<div class="ckin"><div class="cktx"><h2 id="ckbt">Your privacy choices</h2><p>Compass Dash saves your progress and settings on this device so the site works. That is always on, and is never used for adverts or tracking. With your permission we also load fonts from Google, which shares your device’s internet address with Google. <button class="lnk" onclick="go('cookies')">Cookie Policy</button> · <button class="lnk" onclick="go('privacy')">Privacy Policy</button></p>
+<div id="ckc" class="ckc" hidden><label class="ckr"><input type="checkbox" checked disabled> <span><b>Essential storage</b> <span class="mut">Always on. Saves your progress, settings and privacy choices on this device.</span></span></label>
+<label class="ckr"><input type="checkbox" id="ckf"${c&&c.ext?" checked":""}> <span><b>Google Fonts</b> <span class="mut">Nicer fonts, loaded from Google. Off means the site uses the fonts on your device.</span></span></label>
+<button class="btn sm" onclick="ckSet($('ckf').checked,'custom')">Save my choices</button></div></div>
+<div class="ckbtns"><button class="btn alt" onclick="ckSet(false,'reject')">Reject optional</button><button class="btn alt" id="ckcu" aria-expanded="false" aria-controls="ckc" onclick="ckCust()">Customise</button><button class="btn" onclick="ckSet(true,'accept')">Accept all</button></div></div>`;
+ b.className="show"}
+function ckCust(){const c=$("ckc"),b=$("ckcu");if(!c)return;c.hidden=!c.hidden;b.setAttribute("aria-expanded",String(!c.hidden));if(!c.hidden)$("ckf").focus()}
+function ckOpen(){ckBanner();const b=$("ckb");if(b){const c=$("ckc");if(c&&c.hidden)ckCust()}}
+function ckSet(ext,how){const o=PCK.set(ext,how);fontsApply();
+ if(cdUser()){S.ckc=o;save()}   /* a signed-in student's choice also reaches their account */
+ const b=$("ckb");if(b){b.className="";b.innerHTML=""}
+ notify(ext?"Choices saved: Google Fonts on":"Choices saved: only essential storage","info");srSay("Privacy choices saved");
+ if(window.CURP==="mydata"||window.CURP==="cookies")go(window.CURP,window.CURI,1)}
+
+/* ---------- sign-in rate limiting (this device; the database also limits attempts) ---------- */
+const RL={get(id){try{return(JSON.parse(localStorage.getItem("cgRL")||"{}")[id])||{n:0,u:0}}catch(e){return{n:0,u:0}}},
+ put(id,v){try{const o=JSON.parse(localStorage.getItem("cgRL")||"{}");if(v)o[id]=v;else delete o[id];localStorage.setItem("cgRL",JSON.stringify(o))}catch(e){}},
+ wait(id){return Math.max(0,Math.ceil((this.get(id).u-Date.now())/1000))},
+ /* 3 free tries, then 30 s, 60 s, 2 min … up to 15 minutes; a success clears it */
+ fail(id,secs){const r=this.get(id);r.n++;if(secs)r.u=Math.max(r.u,Date.now()+secs*1000);else if(r.n>=3)r.u=Date.now()+Math.min(900,30*Math.pow(2,r.n-3))*1000;this.put(id,r);return this.wait(id)},
+ ok(id){this.put(id,null)},
+ msg(id){const w=this.wait(id);return w?"Too many tries. Wait "+(w>=60?Math.ceil(w/60)+" minute"+(Math.ceil(w/60)>1?"s":""):w+" second"+(w>1?"s":""))+", then try again.":""}};
+/* shows the wait on the form and keeps its button off until it is over */
+function rlHold(id,eId,bId){const e=$(eId),b=$(bId),m=RL.msg(id);if(!m)return false;if(e)e.textContent=m;if(b)b.disabled=true;
+ clearTimeout(rlHold.t);rlHold.t=setTimeout(function tick(){const e2=$(eId),b2=$(bId);if(!e2||!e2.isConnected)return;const m2=RL.msg(id);
+  if(m2){e2.textContent=m2;rlHold.t=setTimeout(tick,1000)}else{e2.textContent="";if(b2)b2.disabled=false}},1000);return true}
+
+/* Teacher tools: the unlock time starts the 20-minute idle lock (see cdKey) */
+function tcSeen(){try{sessionStorage.setItem("cdAKt",Date.now())}catch(e){}}
+
+/* ---------- the student agreement (first sign-in, and again when the policy changes) ---------- */
+const stuOK=()=>{const c=S.cons;return!!(c&&c.v===POLV&&c.ok&&(c.age==="13+"||c.pc))};
+let STC={age:"",step:1};
+/* waits for the account to load (so an agreement made on another device counts), then checks */
+function stuWait(n){n=n|0;if(!cdUser())return;if(CDP.ready||n>=8||!navigator.onLine)return stuCheck();clearTimeout(stuWait.t);stuWait.t=setTimeout(()=>stuWait(n+1),1500)}
+function stuCheck(){if(!cdUser()||stuOK()||DST)return;if($("stm")&&$("stm").classList.contains("show"))return;STC={age:"",step:1};stuShow()}
+function stuShell(h){let m=$("stm");if(!m){m=document.createElement("div");m.id="stm";m.dataset.lock="1";document.body.appendChild(m)}
+ m.innerHTML=`<div class="fbx stbox" role="dialog" aria-modal="true" aria-labelledby="stt">${h}</div>`;if(!m.classList.contains("show"))mdOpen("stm");else{const f=m.querySelector("input,button");if(f)f.focus()}}
+function stuShow(){const u=esc(cdUser());
+ if(STC.step===1)return stuShell(`<h2 id="stt">Before you start, ${u}</h2><p class="mut" style="margin-top:0">Please read this. It explains what happens to your information when you use your student account.</p>
+<div class="stlist"><p><b>What we save:</b> your username, house, year group and class, and your learning progress: answers, mastery, XP, achievements and shop items.</p>
+<p><b>Why:</b> so you can carry on from any device, your teacher can set work and see how you are doing, and your house can earn points.</p>
+<p><b>Who can see it:</b> your teachers can see your progress and results. Other students only see your username, house and XP on leaderboards. Nobody else can see your code.</p>
+<p><b>What we never do:</b> show adverts, sell your information, or ask for your real name, email or address.</p>
+<p><b>Your choices:</b> you can download your information or ask us to delete it in Settings › Your data, or email ${supLink("Student account question")}.</p></div>
+<p class="mut">Read the full <button class="lnk" onclick="stuPol('privacy')">Privacy Policy</button> and <button class="lnk" onclick="stuPol('terms')">Terms of Service</button>.</p>
+<fieldset class="stage"><legend><b>How old are you?</b></legend><label class="ckr"><input type="radio" name="sta" value="13+"${STC.age==="13+"?" checked":""} onchange="STC.age=this.value"> 13 or older</label><label class="ckr"><input type="radio" name="sta" value="u13"${STC.age==="u13"?" checked":""} onchange="STC.age=this.value"> Under 13</label></fieldset>
+<label class="ckr"><input type="checkbox" id="stok"> <span>I have read this, I will follow the rules in the Terms of Service, and I agree to my information being used like this.</span></label>
+<p class="fbe" id="ste" role="alert"></p><div class="fbr"><button class="btn alt" onclick="stuNo()">Play without an account</button><button class="btn" onclick="stuNext()">Continue</button></div>`);
+ stuShell(`<h2 id="stt">Ask your parent or carer</h2><p class="mut" style="margin-top:0">Because you are under 13, a parent or carer needs to agree before you use a student account. Please show them this screen.</p>
+<div class="stlist"><p><b>For parents and carers:</b> your child’s school uses Compass Dash for revision. With a student account we store a username (not their real name), their house, year group and class, and their learning progress, so they can carry on at home and their teacher can see their progress. Other students only see the username, house and XP. We never show adverts or sell information. You can ask to see or delete your child’s information at any time at ${supLink("Parent or carer request")}. Full details are in the <button class="lnk" onclick="stuPol('privacy')">Privacy Policy</button>.</p></div>
+<label for="stpn">Parent or carer’s name</label><input id="stpn" maxlength="60" autocomplete="off" spellcheck="false">
+<label class="ckr"><input type="checkbox" id="stpc"> <span>I am this student’s parent or carer, I have read the information above, and I give my consent.</span></label>
+<p class="mut" style="margin:10px 0 4px">Or, if your school has already collected consent from your parent or carer:</p>
+<label class="ckr"><input type="checkbox" id="stsc"> <span>My school has my parent or carer’s consent for Compass Dash.</span></label>
+<p class="fbe" id="ste" role="alert"></p><div class="fbr"><button class="btn alt" onclick="STC.step=1;stuShow()">Back</button><button class="btn alt" onclick="stuNo()">Not now</button><button class="btn" onclick="stuNext()">Agree and continue</button></div>`)}
+/* the full policy opens inside the agreement, so nothing is lost */
+function stuPol(k){const P=POL[k];stuShell(`<h2 id="stt">${P.t}</h2><p class="mut" style="margin-top:0">Version ${POLV} · ${POLD}</p><div class="stlist stpol">${P.s.map(x=>`<h3>${x[0]}</h3><div>${x[1]}</div>`).join("")}</div><div class="fbr"><button class="btn" onclick="stuShow()">Back</button></div>`)}
+function stuNext(){const e=$("ste");e.textContent="";
+ if(STC.step===1){if(!STC.age){e.textContent="Choose your age group.";return}if(!$("stok").checked){e.textContent="Tick the box to agree, or choose Play without an account.";return}
+  if(STC.age==="u13"){STC.step=2;return stuShow()}return stuSave(null)}
+ const n=$("stpn").value.trim(),pc=$("stpc").checked,sc=$("stsc").checked;
+ if(sc&&!pc)return stuSave({by:"school"});
+ if(!pc){e.textContent="A parent or carer needs to tick the box (or tick that your school has consent).";return}
+ if(n.length<2||!cleanText(n)){e.textContent="Type the parent or carer’s name.";return}
+ stuSave({by:"parent",name:n.slice(0,60)})}
+function stuSave(pc){S.cons={v:POLV,t:new Date().toISOString(),ok:1,age:STC.age,pc:pc||null};save();cdPush();
+ mdClose("stm");notify("Thank you. Your account is ready.");srSay("Agreement saved")}
+/* not agreeing keeps the student playing on this device only */
+function stuNo(){mdClose("stm",()=>{cdSignOutQuiet().then(()=>notify("You are playing without an account. Your progress stays on this device.","info"))})}
+async function cdSignOutQuiet(){if(!cdUser())return;try{await cdSignOut()}catch(e){}}
+
+/* ---------- Your data ---------- */
+function myKeys(){const out=[];try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(/^cg/.test(k))out.push([k,(localStorage.getItem(k)||"").length])}}catch(e){}return out.sort()}
+function mydata(){const u=cdUser(),c=PCK.get(),K=myKeys(),kb=Math.max(1,Math.round(K.reduce((a,x)=>a+x[1],0)/1024)),sc=S.cons;
+ app.innerHTML=`<h2>Your data</h2><p class="lead">What Compass Dash keeps about you, and your choices.</p><div class="lay l11"><div>
+<div class="card"><h3 style="margin-top:0">On this device</h3><p>Your progress, settings and privacy choices (about ${kb} KB) are saved in this browser so the site works.</p><p class="mut" style="margin-bottom:0">${K.map(x=>`<code>${esc(x[0])}</code>`).join(" · ")||"Nothing saved yet."}</p></div>
+<div class="card"><h3 style="margin-top:0">Your account</h3>${u?`<p>Signed in as <b>${esc(u)}</b>${S.cd.year?" · Year "+S.cd.year:""}${S.cd.house&&HS[S.cd.house]?" · "+HS[S.cd.house][0]+" house":""}${S.cd.cls?" · "+esc(S.cd.cls.name):""}. Your progress is also saved to your account so you can use it on other devices, and your teachers can see it.</p><p class="mut" style="margin-bottom:0">${sc&&sc.ok?"You agreed to the Privacy Policy (version "+esc(sc.v)+") on "+esc(new Date(sc.t).toLocaleDateString())+(sc.pc?(sc.pc.by==="parent"?", with consent from a parent or carer":", with consent collected by your school"):"")+".":"You have not agreed to the current Privacy Policy yet."}</p>`:`<p style="margin-bottom:0">You are not signed in, so nothing is saved online. Everything stays on this device.</p>`}</div>
+<div class="card"><h3 style="margin-top:0">Privacy choices</h3><p>${c?(c.ext?"Google Fonts: on.":"Google Fonts: off. Only essential storage is used.")+` <span class="mut">Chosen ${esc(new Date(c.t).toLocaleDateString())}.</span>`:"You have not made a choice yet, so only essential storage is used."}</p><button class="btn alt" onclick="ckOpen()">Cookie settings</button></div>
+</div><div>
+<div class="card"><h3 style="margin-top:0">Download your data</h3><p>A file with everything this device has saved about you${u?", including your account details (but not your code)":""}.</p><button class="btn" onclick="myExport()">Download my data</button></div>
+${u?`<div class="card"><h3 style="margin-top:0">Delete your account</h3><p>Ask us to delete your student account and the progress saved to it. Your teacher can also delete it for you.</p><p class="fbe" id="mde" role="alert"></p><div class="fbr" style="justify-content:flex-start"><button class="btn alt danger" id="mdb" onclick="myDelReq()">Request account deletion</button><a class="btn alt" href="${mailto("Account deletion request","Please delete the Compass Dash account for the username: "+u)}">Email instead</a></div></div>`:""}
+<div class="card dz"><div><b>Delete data on this device</b><span class="mut">Removes your progress, settings and choices from this browser${u?" and signs you out (your account is not deleted)":""}. This cannot be undone.</span></div><button class="btn alt danger sm" onclick="myWipe()">Delete</button></div>
+<div class="card"><h3 style="margin-top:0">Help</h3><p style="margin-bottom:0">Read the <button class="lnk" onclick="go('privacy')">Privacy Policy</button>, <button class="lnk" onclick="go('terms')">Terms of Service</button> and <button class="lnk" onclick="go('cookies')">Cookie Policy</button>, or email ${supLink("Help with my data")}.</p></div>
+</div></div>`}
+XPAGES.mydata=mydata;
+function myExport(){const o={exported:new Date().toISOString(),site:"Compass Dash "+VER,account:cdUser()?{username:cdUser(),house:S.cd.house||null,year:S.cd.year||null,class:S.cd.cls?S.cd.cls.name:null}:null,progress:cdProg(),settings:ST,privacyChoices:PCK.get(),privacyChoiceHistory:(()=>{try{return JSON.parse(localStorage.getItem("cgConsentLog")||"[]")}catch(e){return[]}})()};
+ delete o.progress.cdBase;const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(o,null,2)],{type:"application/json"}));a.download="compass-dash-my-data.json";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);notify("Your data has been downloaded")}
+async function myDelReq(){const u=cdUser(),e=$("mde"),b=$("mdb");if(!u||!b)return;
+ if(!confirm("Ask for your account ("+u+") and its progress to be deleted? Your teacher will no longer see your results."))return;
+ b.disabled=true;b.textContent="Sending…";e.textContent="";
+ try{await fbPost({t:Date.now(),r:1,c:"Data deletion request",m:"Please delete the student account for username "+u+" and all progress saved to it.",page:"Your data",feature:"Account deletion",ver:VER});
+  S.delReq=new Date().toISOString();save();b.textContent="Request sent";notify("Request sent. We will delete your account within one month.","info")}
+ catch(x){b.disabled=false;b.textContent="Request account deletion";e.innerHTML="Could not send the request. Please use Email instead, or ask your teacher."}}
+async function myWipe(){if(!confirm("Delete all Compass Dash data from this browser? Your progress here cannot be brought back."))return;
+ if(cdUser()){try{if(S.cdDirty)await cdPushNow()}catch(e){}}
+ try{myKeys().forEach(([k])=>localStorage.removeItem(k));sessionStorage.clear()}catch(e){}
+ try{if(window.caches)(await caches.keys()).forEach(k=>caches.delete(k))}catch(e){}
+ window.WIPED=1;location.reload()}
+
+/* ---------- reporting a username ---------- */
+async function repUser(name){name=String(name||"");if(!/^[A-Za-z0-9_]{3,16}$/.test(name))return;
+ if(!confirm("Report the username “"+name+"” as unkind or unsuitable? A teacher or the Compass Dash team will check it."))return;
+ const k="cgRep:"+name.toLowerCase();try{if(sessionStorage.getItem(k))return notify("You have already reported this username","info")}catch(e){}
+ try{await fbPost({t:Date.now(),r:1,c:"Username report",m:"Reported username: "+name+(cdUser()?" (reported by "+cdUser()+")":""),page:fbCtx().page,feature:"Report a username",ver:VER});try{sessionStorage.setItem(k,"1")}catch(e){}notify("Thank you. The username has been reported.")}
+ catch(e){notify("Could not send the report. Please tell your teacher, or email "+SUPPORT,"err")}}
+
+/* ---------- page not found, and deep links such as #/privacy ---------- */
+XPAGES.notfound=()=>{app.innerHTML=`<div class="hero errp"><p class="errc" aria-hidden="true">404</p><h2>Page not found</h2><p>We could not find that page. It may have moved, or the link may be wrong.</p><p><button class="btn" onclick="go('home')">Go to Learn</button> <button class="btn alt" onclick="fbOpen()">Tell us</button></p><p class="mut">Need help? ${supLink("Page not found")}</p></div>`};
+function hashGo(){const m=/^#\/([a-z]+)$/.exec(location.hash||"");if(!m)return false;const p=m[1];
+ if(p==="home"||XPAGES[p]||["settings","about","shop","ach","stats"].includes(p))go(p);else go("notfound");return true}
+addEventListener("hashchange",()=>{if(/^#\//.test(location.hash))hashGo()});
+
+setTheme(document.documentElement.dataset.theme||"light");a11yApply();netShow();setTimeout(()=>{try{SCN.preload()}catch(e){}},1500);try{if("serviceWorker"in navigator&&(location.protocol==="https:"||location.hostname==="localhost"))navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}muLabel();S.own=(S.own||[]).filter(x=>!/^bundle-/.test(x));S.mis=(S.mis||[]).filter(id=>{const[a,b,c]=String(id).split(".").map(Number);return!!(SUBJ[a]&&SUBJ[a].t[b]&&(c>=1000?GENS[SUBJ[a].t[b].n]:SUBJ[a].t[b].f[c]))});{const f=$("fver");if(f)f.textContent="Compass Dash "+VER}try{localStorage.removeItem("cgFbLog")}catch(e){}chMigrate();syncChar();applyCos();if(!hashGo())go("home");cdVerify();if(!PCK.get())setTimeout(ckBanner,700);fontsApply();stuWait();
 setTimeout(()=>{if(!hcPop())updPop()},1600);
 </script></body></html>
