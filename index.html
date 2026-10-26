@@ -800,7 +800,6 @@ input.pin{font-size:1.5rem;letter-spacing:.35em;text-align:center;max-width:220p
 .fbx input:focus,#tcb input:focus,#tcb textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
 #tcb textarea{min-height:0;resize:vertical}
 .tchd{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}.tchd h2{margin:0}
-.tct{margin:10px 0 16px}
 .tcf{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}.tcf input:not([type=number]){flex:1;min-width:180px}
 .tcf2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tcf3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .tcgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:14px}
@@ -997,8 +996,6 @@ fieldset.stage{border:1px solid var(--line);border-radius:10px;padding:6px 12px 
 .trep{font-size:.78rem;padding:2px 8px;margin-left:6px}
 html.a11y-hc #ckb{border:2px solid var(--tx)}
 /* ===== v2.7.5: Teacher Mode ===== */
-.tcgrp{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:6px 0}.tcgrp>span{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);min-width:64px}
-.tcgrp .chips{margin:0}
 .tmtiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
 .tmtile .ic2 .ico{width:28px;height:28px;color:var(--acc)}
 button.stat.tmst{font:inherit;color:inherit;text-align:left;cursor:pointer}button.stat.tmst:hover{border-color:var(--acc)}
@@ -1091,11 +1088,67 @@ body.tmpon{overflow:hidden}
 .ljvs{display:flex;justify-content:center;align-items:center;gap:14px;font-size:1.1rem;margin-top:12px}
 .spin{display:inline-block;width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px}@keyframes spin{to{transform:rotate(360deg)}}
 @media(max-width:700px){.tmslk{min-width:0}.tmpbar{flex-wrap:wrap}.tmpd{top:96px}}
+/* ===== v2.7.7: Teacher Panel ===== */
+#nav .links button.tpl{display:inline-flex;align-items:center;gap:6px;border:1.5px solid color-mix(in srgb,var(--acc) 45%,var(--line));border-radius:999px;padding-inline:12px}
+#nav .links button.tpl .ico{width:16px;height:16px}
+body.tmode #bg,body.tmode #nav,body.tmode #bkw,body.tmode .foot,body.tmode #pchip,body.tmode #calcb{display:none!important}
+body.tmode{background:var(--bg)}
+body.tmode main#app{max-width:none;width:100%;padding:0;margin:0}
+.tp{display:grid;grid-template-columns:252px minmax(0,1fr);min-height:100vh}
+.tpnav{position:sticky;top:0;height:100vh;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;padding:18px 14px;background:var(--card);border-right:1px solid var(--line);z-index:30}
+.tpbrand{display:flex;align-items:center;gap:10px;padding:6px 8px;border:0;background:none;color:var(--tx);font:inherit;text-align:left;cursor:pointer;border-radius:10px}
+.tpbrand .lg{display:block;width:36px;height:36px;flex:none}.tpbrand .lg svg{width:100%;height:100%}
+.tpbrand b{display:block;font-size:1rem;line-height:1.2}.tpbrand small{display:block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.tpis,.tpfoot{display:flex;flex-direction:column;gap:3px}
+.tpfoot{margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+.tpi{display:flex;align-items:center;gap:11px;width:100%;padding:10px 12px;border:0;border-radius:10px;background:none;color:var(--tx);font:inherit;font-weight:600;font-size:.95rem;text-align:left;cursor:pointer;white-space:nowrap}
+.tpi .ico{width:20px;height:20px;flex:none;color:var(--mut)}
+.tpi:hover{background:color-mix(in srgb,var(--acc) 8%,transparent)}
+.tpi.on{background:color-mix(in srgb,var(--acc) 14%,transparent);color:var(--acc)}.tpi.on .ico{color:var(--acc)}
+.tpi[aria-pressed=true]{color:var(--acc)}.tpi[aria-pressed=true] .ico{color:var(--acc)}
+.tpi:focus-visible,.tpbrand:focus-visible,.tprow:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.tpver{color:var(--mut);font-size:.72rem;padding:6px 12px 0}
+.tpmain{min-width:0;box-sizing:border-box;padding:28px clamp(16px,3vw,40px) 64px}
+.tpmain>*{max-width:1320px;margin-left:auto;margin-right:auto}
+.tphd{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.tphd h1{font-size:1.75rem;letter-spacing:-.01em;line-height:1.2;margin:0}
+.tphd .btn .ico{width:16px;height:16px;vertical-align:-3px}
+.tpcrumb{margin:0 0 4px;font-size:.85rem;color:var(--mut)}
+.tpsub{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 auto 18px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.tpsub .chips{margin:0}
+.tpjump{max-width:260px}
+.tplock{min-height:80vh;display:flex;align-items:center;justify-content:center}
+.tplock .card{max-width:520px;width:100%;padding:28px}
+.tplock h1{font-size:1.6rem;margin:6px 0 8px}
+.tplk{display:inline-flex;width:46px;height:46px;border-radius:12px;align-items:center;justify-content:center;background:color-mix(in srgb,var(--acc) 14%,transparent);color:var(--acc)}.tplk .ico{width:24px;height:24px}
+.tpnote{font-size:.85rem;margin-bottom:0}
+.tpmg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.tpcat h2{font-size:1.15rem;margin:0 0 4px}.tpcat>p{margin:0 0 10px}
+.tprow{display:flex;align-items:center;gap:12px;width:100%;padding:12px 10px;border:0;border-top:1px solid var(--line);background:none;color:var(--tx);font:inherit;text-align:left;cursor:pointer;border-radius:8px}
+.tprow:hover{background:color-mix(in srgb,var(--acc) 7%,transparent)}
+.tpri{width:38px;height:38px;flex:none;display:flex;align-items:center;justify-content:center;border-radius:10px;background:color-mix(in srgb,var(--acc) 11%,transparent);font-size:1.2rem}.tpri .ico{width:20px;height:20px;color:var(--acc)}
+.tprt{flex:1;min-width:0}.tprt b{display:block}.tprt small{display:block;color:var(--mut);font-size:.84rem;line-height:1.35}
+.tpc{font-weight:800;font-size:.85rem;padding:2px 9px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+.tprow>.ico:last-child{width:18px;height:18px;color:var(--mut)}
+html.tpbig .tpmain{zoom:1.25}
+/* tablets and small laptops: the sidebar becomes a top bar */
+@media(max-width:1100px){.tp{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr}
+ .tpnav{height:auto;flex-direction:row;align-items:center;gap:6px;padding:8px 12px;border-right:0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:thin}
+ .tpbrand small,.tpbrand b{display:none}.tpbrand{padding:4px}
+ .tpis,.tpfoot{flex-direction:row;gap:2px}.tpfoot{margin:0 0 0 auto;padding:0 0 0 8px;border-top:0;border-left:1px solid var(--line)}
+ .tpi{width:auto;padding:9px}.tpver{display:none}
+ .tpis .tpi{flex-direction:column;justify-content:center;gap:3px;min-width:66px;padding:7px 8px;font-size:.74rem;text-align:center}
+ .tpfoot .tpi span{display:none}
+ .tpmain{padding-top:20px}}
+@media(max-width:700px){.tpbrand{display:none}.tpnav{padding:6px 8px}
+ .tpis .tpi{min-width:0;padding:6px 5px;font-size:.66rem}.tpis .tpi span{white-space:normal;max-width:60px;line-height:1.15}
+ .tphd h1{font-size:1.45rem}.tpjump{max-width:none;width:100%}}
+@media print{.tpnav,.tpsub,.tphd .btn{display:none!important}.tp{display:block}}
 .sw3.bgth{width:100%;max-width:220px;height:100%;object-fit:cover;border-radius:6px;background:none}
 </style>
 </head><body>
 <canvas id="bg" aria-hidden="true"></canvas><nav id="nav"><span class="logo" role="link" tabindex="0" onclick="go('home')" onkeydown="if(event.key==='Enter')go('home')" aria-label="Compass Dash home"><i class="lg"></i>Compass Dash</span><button id="menu" class="menu" aria-label="Open menu" aria-expanded="false" aria-controls="links" onclick="navT()"><svg class="h" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-<div class="links" id="links"><button data-p="home">Learn</button><button data-p="tools">Study Tools</button><button data-p="shop">Shop</button><button data-p="ach">Achievements</button><button data-p="stats">My Stats</button><button data-p="settings">Settings</button><span class="nsep" aria-hidden="true"></span><button id="fbb" class="fbb" onclick="navT(false);fbOpen()" aria-label="Send feedback"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Feedback</button><button id="mu" onclick="toggleMusic()" aria-label="Turn music on or off"></button></div></nav>
+<div class="links" id="links"><button data-p="home">Learn</button><button data-p="tools">Study Tools</button><button data-p="shop">Shop</button><button data-p="ach">Achievements</button><button data-p="stats">My Stats</button><button data-p="settings">Settings</button><button data-p="teach" class="tpl" title="For teachers: needs the admin key"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>Teacher Panel</button><span class="nsep" aria-hidden="true"></span><button id="fbb" class="fbb" onclick="navT(false);fbOpen()" aria-label="Send feedback"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Feedback</button><button id="mu" onclick="toggleMusic()" aria-label="Turn music on or off"></button></div></nav>
 <div id="bkw" hidden><button class="back bkb" id="bk" onclick="goBack()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span id="bkt">Back</span></button></div>
 <a class="skip" href="#app" onclick="const a=$('app');a.setAttribute('tabindex','-1');a.focus()">Skip to content</a><div id="sr" class="vh" role="status" aria-live="polite" aria-atomic="true"></div><main id="app"><div class="skel" aria-label="Loading"><i></i><i></i><i></i><i></i></div></main><footer class="foot"><span id="fver">Compass Dash</span><span aria-hidden="true">·</span><button onclick="go('about')">About &amp; changelog</button><span aria-hidden="true">·</span><button onclick="fbOpen()">Send feedback</button><span aria-hidden="true">·</span><button onclick="go('privacy')">Privacy</button><span aria-hidden="true">·</span><button onclick="go('terms')">Terms</button><span aria-hidden="true">·</span><button onclick="go('cookies')">Cookies</button><span aria-hidden="true">·</span><button onclick="ckOpen()">Cookie settings</button><span aria-hidden="true">·</span><a class="fmail" href="mailto:compassdashedu@gmail.com?subject=Compass%20Dash%20support">Help: compassdashedu@gmail.com</a><span class="cred">MADE BY JAYQUE &amp; NICK</span></footer>
 <script>
@@ -2329,7 +2382,7 @@ app.innerHTML=`<h2>Settings</h2><div class="lay l11"><div><div class="card setca
 <div class="set"><div><b>Language</b><span class="mut">Menus, buttons and headings. Lessons and questions stay in English.</span></div><div class="seg nc" dir="ltr" role="radiogroup" aria-label="Language">${[["en","English"],["fr","Français"],["ar","العربية"]].map(a=>`<button role="radio" aria-checked="${(ST.lang||"en")===a[0]}" class="${(ST.lang||"en")===a[0]?"on":""}" onclick="setLang('${a[0]}')">${a[1]}</button>`).join("")}</div></div>
 <div class="set"><div><b>Quick-time events</b><span class="mut">Occasional spike challenges during practice.</span></div>${seg([["1","On"],["0","Off"]],ST.qte===false?"0":"1","setQte")}</div><div class="set"><div><b>Double Spikes</b><span class="mut">Occasional two-question challenges in the Spike quiz.</span></div>${seg([["1","On"],["0","Off"]],ST.dbl===false?"0":"1","setDbl")}</div><div class="set"><div><b>Motion</b><span class="mut">Animated background and cube.</span></div>${seg([["1","On"],["0","Off"]],ST.motion?"1":"0","setMo")}</div><div class="set"><div><b>House colours</b><span class="mut">Colour the site in your house colour${myHouse()?" ("+HS[myHouse()][0]+")":""}. Off unless you turn it on. A UI theme from the shop takes priority.</span></div>${seg([["1","On"],["0","Off"]],ST.hacc===true?"1":"0","setHacc")}</div>
 <div class="set"><div><b>UI transparency</b><span class="mut">See more of the background behind cards and menus.</span></div><span><input type="range" min="0" max="50" step="5" value="${Math.round((1-(ST.uia==null?1:ST.uia))*100)}" aria-label="UI transparency" oninput="setUia(this.value)"><span class="mut" id="uia_l">${Math.round((1-(ST.uia==null?1:ST.uia))*100)}%</span></span></div>
-</div><h3 class="sec">Student and teacher login</h3><div class="card setcard">${cdRow()}<div class="set"><div><b>Teacher tools</b><span class="mut">Classes, assignments, quizzes, house challenges and student codes. Needs the admin key.</span></div><button class="btn alt" onclick="go('teach')">Open</button></div></div></div><div><div class="card setcard"><div class="set"><div><b>Sound effects</b><span class="mut">Clicks, answers, jumps and crashes.</span></div><span>${seg([["1","On"],["0","Off"]],ST.sfx?"1":"0","setSfx")}<input type="range" min="0" max="100" value="${Math.round(ST.sv*100)}" aria-label="Sound effects volume" oninput="setVol('sv',this.value)"><span class="mut" id="sv_l">${Math.round(ST.sv*100)}%</span></span></div>
+</div><h3 class="sec">Student and teacher login</h3><div class="card setcard">${cdRow()}<div class="set"><div><b>Teacher Panel</b><span class="mut">Lessons, the Question Library, the whiteboard, live quizzes and class management. Needs the admin key.</span></div><button class="btn alt" onclick="go('teach')">Open</button></div></div></div><div><div class="card setcard"><div class="set"><div><b>Sound effects</b><span class="mut">Clicks, answers, jumps and crashes.</span></div><span>${seg([["1","On"],["0","Off"]],ST.sfx?"1":"0","setSfx")}<input type="range" min="0" max="100" value="${Math.round(ST.sv*100)}" aria-label="Sound effects volume" oninput="setVol('sv',this.value)"><span class="mut" id="sv_l">${Math.round(ST.sv*100)}%</span></span></div>
 <div class="set"><div><b>Music</b><span class="mut">A different soundtrack for each difficulty, from calm at Easy to a boss fight at Insane.</span></div><span>${seg([["1","On"],["0","Off"]],ST.music?"1":"0","setMus")}<input type="range" min="0" max="100" value="${Math.round(ST.mv*100)}" aria-label="Music volume" oninput="setVol('mv',this.value)"><span class="mut" id="mv_l">${Math.round(ST.mv*100)}%</span></span></div></div>
 <h3 class="sec">Accessibility</h3><div class="card setcard"><div class="set"><div><b>Easy-read font</b><span class="mut">A clearer font with more space between letters and lines. Helpful for dyslexia.</span></div>${seg([["1","On"],["0","Off"]],ST.afont?"1":"0","setA11y.bind(null,'afont')")}</div>
 <div class="set"><div><b>Text size</b><span class="mut">Makes text and buttons bigger everywhere.</span></div>${seg([["1","Normal"],["2","Large"],["3","Larger"]],String(ST.ats||1),"setA11y.bind(null,'ats')")}</div>
@@ -2413,7 +2466,7 @@ let NAVH=[];
 const eqp=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 function pname(p,i){if(p==="subject")return SUBJ[i]?SUBJ[i].n:"Subject";
  if(p==="topic")return(i&&TP(i[0],i[1]))?TP(i[0],i[1]).n:"Topic";
- return{home:"Learn",stats:"My Stats",settings:"Settings",admin:"Admin panel",ach:"Achievements",revise:"Revision mode",mist:"Mistake review",about:"About",learn:"Cheat sheet",shop:"XP Shop",inv:"My items",daily:"Daily Challenge",exam:"Exam Countdown",flash:"Flashcards",board:"Class leaderboard",class:"Teacher tools"}[p]||XNAME[p]||"Back"}
+ return{home:"Learn",stats:"My Stats",settings:"Settings",admin:"Admin panel",ach:"Achievements",revise:"Revision mode",mist:"Mistake review",about:"About",learn:"Cheat sheet",shop:"XP Shop",inv:"My items",daily:"Daily Challenge",exam:"Exam Countdown",flash:"Flashcards",board:"Class leaderboard",class:"Teacher Panel"}[p]||XNAME[p]||"Back"}
 function backTo(){if(QZ&&QZ.back)return QZ.back;
  if(M)return["subject",M.i];if(SR)return["subject",SR.i];
  if(G&&G.t)return["subject",subOf(G.t)];
@@ -3087,7 +3140,7 @@ function go(p,i,nb){dsTestEnd();if(window.PVW&&p!=="shop")pvEnd(1);if(window.qte
  const pp=window.CURP,pi=window.CURI;
  if(!nb&&pp&&!(pp===p&&eqp(pi,i))){NAVH.push([pp,pi]);if(NAVH.length>25)NAVH.shift()}
  if(p==="home")NAVH=[];
- window.CURP=p;window.CURI=i;try{clearTimeout(ATT)}catch(e){}if(G)clearInterval(G.tm);G=null;M=null;SR=null;if(QZ&&QZ.tm)clearInterval(QZ.tm);QZ=null;cubeIdle();const on={subject:"home",learn:"home",topic:"home",revise:"tools",mist:"tools",admin:"settings",about:"settings",inv:"shop",daily:"tools",exam:"tools",flash:"tools",board:"tools",class:"settings"}[p]||XON[p]||p;document.querySelectorAll("nav button[data-p]").forEach(b=>{const a=b.dataset.p===on;b.classList.toggle("on",a);a?b.setAttribute("aria-current","page"):b.removeAttribute("aria-current")});if(window.navT)navT(false);const PAGES=Object.assign({home,subject,learn,stats,settings,admin,topic,revise,mist,ach,about,shop,inv,daily,exam,flash,board,class:clsPage},XPAGES);
+ window.CURP=p;window.CURI=i;document.body.classList.toggle("tmode",p==="teach");document.documentElement.classList.toggle("tpbig",p==="teach"&&!!ST.tpBig);try{clearTimeout(ATT)}catch(e){}if(G)clearInterval(G.tm);G=null;M=null;SR=null;if(QZ&&QZ.tm)clearInterval(QZ.tm);QZ=null;cubeIdle();const on={subject:"home",learn:"home",topic:"home",revise:"tools",mist:"tools",admin:"settings",about:"settings",inv:"shop",daily:"tools",exam:"tools",flash:"tools",board:"tools",class:"settings"}[p]||XON[p]||p;document.querySelectorAll("nav button[data-p]").forEach(b=>{const a=b.dataset.p===on;b.classList.toggle("on",a);a?b.setAttribute("aria-current","page"):b.removeAttribute("aria-current")});if(window.navT)navT(false);const PAGES=Object.assign({home,subject,learn,stats,settings,admin,topic,revise,mist,ach,about,shop,inv,daily,exam,flash,board,class:clsPage},XPAGES);
  if(!PAGES[p]){p="home";i=null}
  PAGES[p](i);
  try{const si=p==="subject"?i:(p==="topic"&&i)?i[0]:null;
@@ -3766,7 +3819,7 @@ addEventListener("pagehide",()=>ptFlush(1));
 /* v2.6.8: My Stats says who this device is logged in as */
 function loginCard(){const u=cdUser(),c=S.cd||{},h=u&&c.house&&HS[c.house],role=ADM?"Developer":BETA?"Beta tester":"",tk=!!cdKey();
  const det=u?[h?h[0]+" house":"",c.year?"Year "+c.year:"",c.cls&&c.cls.name?esc(c.cls.name):""].filter(Boolean).join(" · "):"";
- return `<div class="card lgin"><div class="lgav">${h?hsCrest(c.house,40):icn("user")}</div><div class="lgtx"><span class="mut lgl">Logged in as</span><b class="nc">${u?esc(u):"Guest"}</b><small class="mut">${u?(det||"Student account"):"Not signed in. Progress is saved on this device only."}</small>${role||tk?`<span class="lgtags">${role?`<span class="lgtag">${role}</span>`:""}${tk?`<span class="lgtag">Teacher tools</span>`:""}</span>`:""}</div><button class="btn alt sm" onclick="cdOpen()">${u?"Manage":"Sign in"}</button></div>`}
+ return `<div class="card lgin"><div class="lgav">${h?hsCrest(c.house,40):icn("user")}</div><div class="lgtx"><span class="mut lgl">Logged in as</span><b class="nc">${u?esc(u):"Guest"}</b><small class="mut">${u?(det||"Student account"):"Not signed in. Progress is saved on this device only."}</small>${role||tk?`<span class="lgtags">${role?`<span class="lgtag">${role}</span>`:""}${tk?`<span class="lgtag">Teacher Panel</span>`:""}</span>`:""}</div><button class="btn alt sm" onclick="cdOpen()">${u?"Manage":"Sign in"}</button></div>`}
 function stats(){const T=allT(),m=T.filter(x=>stage(...x)===4).length,ac=S.played?Math.min(100,Math.round(S.correct/S.played*100)):0,at=T.filter(x=>R(...x).a>=3).map(x=>[...x,R(...x).c/R(...x).a,R(...x).a]).sort((a,b)=>b[2]-a[2]),li=a=>a.length?"<ul class='flags'>"+a.map(x=>`<li>${TP(x[0],x[1]).n}: <b>${Math.round(x[2]*100)}%</b> <span class="mut">(${x[3]} answers)</span></li>`).join("")+"</ul>":"<p class='mut'>Answer 3+ questions in a topic to see this.</p>",cnt=STG.map((_,g)=>T.filter(x=>stage(...x)===g).length),A=defs(),U=A.filter(d=>S.ach[d.id]).sort((a,b)=>S.ach[b.id]-S.ach[a.id]),p=Math.round(U.length/A.length*100);
 app.innerHTML=`<h2>My stats</h2>${loginCard()}<div class="lay l11">${profileCard()}${ptCard()}</div>
 <div class="stats st4"><div class="stat"><b>${ac}%</b><span>Overall accuracy</span></div><div class="stat"><b>${S.correct}/${S.played}</b><span>Correct answers</span></div><div class="stat"><b>${m}/${T.length}</b><span>Topics mastered</span></div><div class="stat"><b>${(S.days||[]).length}</b><span>Days studied</span></div></div><div class="mrow mrow2">${STG.map((n,i)=>`<div class="mchip s${i}"><b>${cnt[i]}</b><span>${n}</span></div>`).join("")}</div>
@@ -3976,9 +4029,9 @@ async function cdVerify(){if(!cdOn()||!S.cd||!S.cd.code)return;
   else if(r.error==="no_match")cdLost()}catch(e){}}
 /* ---- admin: codes are managed on the Codes tab of Teacher tools ---- */
 const cdKey=()=>{try{const k=sessionStorage.getItem("cdAK")||"";if(!k)return"";const t=+sessionStorage.getItem("cdAKt")||0;
- if(t&&Date.now()-t>1200000){sessionStorage.removeItem("cdAK");sessionStorage.removeItem("cdAKt");setTimeout(()=>notify("Teacher tools locked after 20 minutes without use","info"),0);return""}
+ if(t&&Date.now()-t>1200000){sessionStorage.removeItem("cdAK");sessionStorage.removeItem("cdAKt");setTimeout(()=>notify("Teacher Panel locked after 20 minutes without use","info"),0);return""}
  sessionStorage.setItem("cdAKt",Date.now());return k}catch(e){return""}};   /* v2.7.0: locks after 20 idle minutes */
-function cdAdminRow(){return`<div class="set"><div><b>Teacher tools</b><span class="mut">Teacher Mode: lessons, the Question Library, the whiteboard and live quizzes, plus classes, assignments and student codes.</span></div><button class="btn alt" onclick="go('teach')">Open</button></div>`}
+function cdAdminRow(){return`<div class="set"><div><b>Teacher Panel</b><span class="mut">Lessons, the Question Library, the whiteboard, live quizzes and class management, in its own Teacher Panel.</span></div><button class="btn alt" onclick="go('teach')">Open</button></div>`}
 const cdAddN=()=>tcDo("cd_admin_add",{p_count:Math.max(1,Math.min(200,+$("cdnn").value||1)),p_class:+$("cdnc").value||null},r=>"Added "+r.codes.length+" new code"+(r.codes.length===1?"":"s")+": "+r.codes.slice(0,12).join(", ")+(r.codes.length>12?" …":""),["codes","cls"]);
 const cdAddList=()=>{const a=($("cdl").value||"").split(/[\s,;]+/).filter(Boolean);if(!a.length)return;
  const bad=a.filter(c=>!/^[1-9]\d{3}$/.test(c));if(bad.length)return notify("Codes must be 4 digits from 1000 to 9999: "+bad.slice(0,5).join(", "),"err");
@@ -4127,7 +4180,7 @@ let FBA={rows:null,n:null,t:0,f:"all"};
 function fbAdmRow(){return`<div class="set"><div><b>Feedback</b><span class="mut">Everything people send with the feedback form, saved in Supabase.${FBA.n?` <b>${FBA.n} new.</b>`:""}</span></div><button class="btn alt" onclick="fbAdmOpen()">Open feedback</button></div>`}
 function fbAdmOpen(){if(!needAdmin())return;if(!cdOn())return fbAdmMsg("Supabase is not set up on this site.");if(!cdKey())return fbAdmKey();
  cdShell(`<h2>Feedback</h2><p class="mut">Loading\u2026</p>`,1);fbAdmLoad()}
-function fbAdmKey(err){cdShell(`<h2>Feedback</h2><p class="mut" style="margin-top:0">Enter the admin key (the same one Teacher tools uses).</p><label for="fbk">Admin key</label><input id="fbk" type="password" autocomplete="off" onkeydown="if(event.key==='Enter')fbAdmKeyGo()"><p class="fbe" id="fbke" role="alert">${err||""}</p><div class="fbr"><button class="btn" onclick="fbAdmKeyGo()">Unlock</button></div>`)}
+function fbAdmKey(err){cdShell(`<h2>Feedback</h2><p class="mut" style="margin-top:0">Enter the admin key (the same one the Teacher Panel uses).</p><label for="fbk">Admin key</label><input id="fbk" type="password" autocomplete="off" onkeydown="if(event.key==='Enter')fbAdmKeyGo()"><p class="fbe" id="fbke" role="alert">${err||""}</p><div class="fbr"><button class="btn" onclick="fbAdmKeyGo()">Unlock</button></div>`)}
 function fbAdmKeyGo(){const v=($("fbk")||{}).value||"";if(!v.trim())return;try{sessionStorage.setItem("cdAK",v.trim())}catch(e){}fbAdmOpen()}
 function fbAdmMsg(t){cdShell(`<h2>Feedback</h2><p>${t}</p>`,1)}
 async function fbAdmLoad(){let r;
@@ -4202,8 +4255,9 @@ notify("Feedback sent \u2014 thank you")}
 // VERSIONING RULE: every update increases the version by exactly 0.01 — the last number goes up by one
 // (next: v2.7.0, v2.7.1, ...). Each of the last two numbers only goes up to 9, then rolls over:
 // after v2.5.9 comes v2.6.0, and after v2.9.9 comes v3.0.0 (that is how v1.9.9 was followed by v2.0.0).
-const VER="v2.7.6",CL=[
-["v2.7.6","26 Oct 2026","Living backgrounds",["Every background is now its own place: Volcano erupts with lava fountains, glowing flows and lightning in the ash, Event Horizon is a black hole with a blazing accretion disk, and the rest have their own scenery and movement","The shop shows a picture of each background's scene","Titles now come with your level and update as you level up, from Learner at Level 0 to Compass Legend at Level 50. Anyone who bought a title gets the XP back","Admin Panel: Unlock all achievements, and Re-lock for the shop now keeps what you owned before"]],
+const VER="v2.7.7",CL=[
+["v2.7.7","27 Oct 2026","Teacher Panel",["Teacher Mode is now the Teacher Panel, with its own layout and navigation, separate from the student site: Dashboard, Question Library, Lessons, Whiteboard, Live and Manage","Manage groups classes, students, codes, assignments, quizzes, house tools, insights and announcements into four clear sections","A Teacher Panel tab in the main menu, a Big screen option for projectors and classroom displays, and a layout that fits tablets and phones"]],
+["v2.7.6","26 Oct 2026","Living backgrounds",["Every background is now its own place: Volcano erupts with lava fountains, glowing flows and lightning in the ash, Event Horizon is a black hole with a blazing accretion disk, and the rest have their own scenery and movement","A new main background: a valley town with a school whose clock tells the real time and whose flag flies in your colour, with sunbeams, clouds and a paper plane by day and stars, the moon and a moving aurora by night","The shop shows a picture of each background's scene","Titles now come with your level and update as you level up, from Learner at Level 0 to Compass Legend at Level 50. Anyone who bought a title gets the XP back","Admin Panel: Unlock all achievements, and Re-lock for the shop now keeps what you owned before"]],
 ["v2.7.5","25 Oct 2026","Teacher Mode",["Teacher tools is now Teacher Mode, with a dashboard","Question Library: search every question with its answer and explanation, write your own, and generate new ones with AI for Years 7 to 9 at Easy, Medium, Hard or Challenge, which wait for your approval before anyone sees them","Saved lessons with text, questions, polls and whiteboards, presented fullscreen with answers revealed a step at a time","A whiteboard you can save, reopen and draw over slides with","Live quizzes, polls, team competitions and 1v1 battles, with live scoring and your class’s participation and accuracy","Students join from My class with a PIN","Quizzes can use questions from your library","Old code that nothing used has been removed"]],
 ["v2.7.4","25 Oct 2026","Teacher tools fix",["Fixed Teacher tools not opening after entering the admin key"]],
 ["v2.7.3","25 Oct 2026","Fix for signed-in students",["Fixed the site locking up for signed-in students: the agreement pop-up now shows on screen instead of hiding at the bottom of the page","Offline support is back"]],
@@ -4903,7 +4957,7 @@ function applyCos(){let hk="";try{hk=myHouse()}catch(e){}const th=eqV("theme"),d
  if(window.cvRead)cvRead()}
 (function(){const c=$("bg"),x=c.getContext("2d");
 let anim=ST.motion;window.setMotion=v=>{anim=v;document.documentElement.classList.toggle("rm",!v);if(!v){const q=Math.PI/2;cu.air=0;cu.y=0;cu.vy=0;cu.dx=0;cu.sq=0;cu.sv=0;cu.tilt=0;cu.tt=0;cu.r=Math.round(cu.r/q)*q;cu.r0=cu.r;cu.rT=0;cu.pop=0;cu.hit=0;qs.shake=0;qs.stop=0;qte=null;toIdle()}};
-let W,H,t=0,sp=[],sh=[],pl=[],tr=[],cu={y:0,vy:0,r:0,r0:0,rT:0,air:0,big:0,sq:0,dx:0,tilt:0,tt:0,jt:0,jT:48,A:0};const SZ=44,SPD=6;
+let W,H,t=0,sp=[],tr=[],cu={y:0,vy:0,r:0,r0:0,rT:0,air:0,big:0,sq:0,dx:0,tilt:0,tt:0,jt:0,jT:48,A:0};const SZ=44,SPD=6;
 let ch=0,hf=1;const oc=document.createElement("canvas");oc.width=oc.height=160;const og=oc.getContext("2d");  /* world speed: 1 = running, 0 = stood still facing the spike */
 window.setChar=i=>{const n=i==="gx"?(xsOn()?"gx":0):(CH[i]&&(owns("char-"+CH[i].n.toLowerCase())||PVW==="char-"+CH[i].n.toLowerCase()))?i:0;
  if(n!==ch){ch=n;cu.r=cu.rT=cu.r0=0;cu.hit=0;if(t>30&&window.charHello)charHello()}};
@@ -5085,87 +5139,7 @@ function aStar4(cx,cy,r,c){x.fillStyle=c;x.beginPath();x.moveTo(cx,cy-r);x.quadr
 const ASKY={clouds:["#5aa9f5","#bfe3ff"],rain:["#475569","#94a3b8"],stars:["#0b1026","#27306b"],aurora:["#050b1f","#14254d"],meteor:["#1b0b33","#4c1d2e"],ripple:["#1e1b4b","#4338ca"]};
 function csky(n){const b=cbg(n);if(b)return b;const a=eqV("anim");if(a&&ASKY[a])return ASKY[a][n];const p=eqV("part");if(p)return(p==="#f97316"?["#0f172a","#3b1209"]:["#0f172a","#1e293b"])[n];return null}
 window.csky=csky;
-let HX=0;const STR=Array.from({length:46},(_,i)=>[(i*.6180339)%1,((i*.7548776)%1)*.62,i%3?1:1.6]);
-/* default animated sky: sun + drifting clouds (light) or moon, twinkling stars and a faint aurora (dark),
-   with three parallax layers of mountains and hills. Everything heavy is drawn once into small offscreen
-   canvases (cached per size/colours); each frame only blits them, so it stays cheap on school laptops. */
-let BG2_c=null;
-const BG2_rgb=h=>{h=String(h||"").trim();let m=h.match(/^rgba?\(([^)]+)\)/i);if(m){const p=m[1].split(",").map(v=>parseFloat(v)||0);return[p[0],p[1],p[2]]}
- h=h.replace("#","");if(h.length===3)h=h.split("").map(c=>c+c).join("");const n=parseInt(h.slice(0,6),16);return isNaN(n)?[100,116,139]:[n>>16&255,n>>8&255,n&255]};
-const BG2_mix=(p,q,t)=>p.map((v,i)=>v+(q[i]-v)*t);
-const BG2_css=(c,al)=>"rgba("+c.map(v=>Math.max(0,Math.min(255,Math.round(v)))).join(",")+","+(al==null?1:al)+")";
-const BG2_sh=(c,k)=>c.map(v=>k<0?v*(1+k):v+(255-v)*k);   /* k<0 darker, k>0 lighter */
-const BG2_cv=(w,h)=>{const c=document.createElement("canvas");c.width=Math.max(1,Math.ceil(w));c.height=Math.max(1,Math.ceil(h));return c};
-function BG2_build(gy,a,b,dflt,dk){
- const s=Math.min(1.4,Math.max(.55,H/900)),P=Math.max(W,1100)|0,A=BG2_rgb(a),B=BG2_rgb(b),o={P,s,dk};
- let sd=97;const rnd=()=>(sd=(sd*16807)%2147483647)/2147483647,TAU=Math.PI*2;
- /* --- parallax ranges: far mountains, mid hills, near hills with trees --- */
- const L=[{top:gy-H*.4,sp:.12},{top:gy-H*.27,sp:.3},{top:gy-H*.16,sp:.62}],TG=[115,150,135];
- const col=dk?[BG2_mix(BG2_sh(B,.13),A,.15),BG2_sh(B,.05),BG2_sh(B,-.32)]:[BG2_mix(BG2_sh(B,-.07),A,.3),BG2_mix(BG2_sh(B,dflt?-.1:-.13),TG,.06),BG2_mix(BG2_sh(B,dflt?-.16:-.2),TG,.12)];
- o.L=L.map((l,i)=>{const hgt=gy-l.top,c=BG2_cv(P,hgt+2),g=c.getContext("2d"),N=Math.ceil(P/4),ys=new Float32Array(N+1);
-  const waves=[];for(let k=0;k<4;k++)waves.push([(i?1:2)+(rnd()*(i?3:3)|0)+k*(i?1:3),rnd()*TAU,(.4+rnd()*.6)/(1+k*(i?.6:.9))]);
-  let wsum=0;waves.forEach(w=>wsum+=w[2]);
-  for(let j=0;j<=N;j++){const X=j*P/N;let m=0;waves.forEach(([n,ph,w])=>{const v=i===0?(1-Math.abs(Math.sin(Math.PI*n*X/P+ph))):.5+.5*Math.sin(TAU*n*X/P+ph);m+=v*w});m/=wsum;
-   ys[j]=m}
-  {let lo=1e9,hi=-1e9;for(let j=0;j<=N;j++){lo=Math.min(lo,ys[j]);hi=Math.max(hi,ys[j])}const r0=[0,.12,.28][i],r1=[.72,.7,.72][i];for(let j=0;j<=N;j++)ys[j]=hgt*(r0+(r1-r0)*(1-(ys[j]-lo)/(hi-lo||1)))}
-  const prof=X=>{const f=((X%P)+P)%P/P*N,j=Math.floor(f),t=f-j;return ys[j]+(ys[Math.min(N,j+1)]-ys[j])*t};
-  const gr=g.createLinearGradient(0,0,0,hgt),cc=col[i];gr.addColorStop(0,BG2_css(cc));gr.addColorStop(1,BG2_css(dk?BG2_sh(cc,i===2?-.2:-.1):BG2_mix(cc,B,.45)));
-  g.fillStyle=gr;g.beginPath();g.moveTo(0,hgt+2);for(let j=0;j<=N;j++)g.lineTo(j*P/N,ys[j]);g.lineTo(P,hgt+2);g.closePath();g.fill();
-  if(i===0){/* sunlit/moonlit ridge */
-   g.strokeStyle=BG2_css(dk?BG2_sh(cc,.18):BG2_sh(cc,.35),.7);g.lineWidth=1.5;g.beginPath();for(let j=0;j<=N;j++)g.lineTo(j*P/N,ys[j]+1);g.stroke()}
-  if(i===1){/* gentle shading on the hills' far sides */
-   g.fillStyle=BG2_css(dk?[0,0,0]:BG2_sh(cc,-.25),dk?.12:.1);for(let j=0;j<N;j++){if(ys[j+1]>ys[j]){g.fillRect(j*P/N,ys[j],P/N+.5,hgt-ys[j])}}}
-  if(i===2){/* tree line */
-   const n=Math.round(P/(34*s));g.fillStyle=BG2_css(dk?BG2_sh(cc,-.15):BG2_sh(cc,-.1));
-   for(let t=0;t<n;t++){const X=(t+rnd()*.6)*P/n,th=(9+rnd()*14)*s,pine=rnd()<.55;if(rnd()<.25)continue;
-    for(const dx of[0,-P,P]){const xx=X+dx;if(xx<-30||xx>P+30)continue;const y=prof(X)+2;g.beginPath();
-     if(pine){g.moveTo(xx-th*.42,y);g.lineTo(xx,y-th*1.5);g.lineTo(xx+th*.42,y)}else{g.arc(xx,y-th*.55,th*.55,0,TAU);g.rect(xx-1,y-th*.3,2,th*.3)}g.fill()}}}
-  return{c,top:l.top,sp:l.sp}});
- if(dk){
-  /* stars in three twinkle groups */
-  const st=[];if(typeof STR!=="undefined")STR.forEach(([u,v,r])=>st.push([u,v,r]));for(let k=0;k<90;k++)st.push([rnd(),Math.pow(rnd(),1.4)*.6,rnd()<.12?1.5:rnd()<.5?1:.7]);
-  o.S=[0,1,2].map(gi=>{const c=BG2_cv(W,H*.66),g=c.getContext("2d");st.forEach(([u,v,r],k)=>{if(k%3!==gi)return;const X=u*W,Y=v*H,rr=r*.9*Math.max(.8,s);
-   g.fillStyle="rgba(255,255,255,.95)";g.beginPath();g.arc(X,Y,rr,0,TAU);g.fill();if(r>1.2){g.fillStyle="rgba(200,220,255,.18)";g.beginPath();g.arc(X,Y,rr*3.2,0,TAU);g.fill();g.fillStyle="rgba(255,255,255,.35)";g.fillRect(X-rr*3,Y-.4,rr*6,.8);g.fillRect(X-.4,Y-rr*3,.8,rr*6)}});return c});
-  /* moon with glow and craters */
-  const R=26*s,G=R*4.2,c=BG2_cv(G*2,G*2),g=c.getContext("2d");let rg=g.createRadialGradient(G,G,R*.8,G,G,G);rg.addColorStop(0,"rgba(220,230,255,.32)");rg.addColorStop(.35,"rgba(200,215,255,.1)");rg.addColorStop(1,"rgba(200,215,255,0)");g.fillStyle=rg;g.fillRect(0,0,G*2,G*2);
-  rg=g.createRadialGradient(G-R*.35,G-R*.35,R*.1,G,G,R);rg.addColorStop(0,"#fbfcff");rg.addColorStop(.75,"#e3e8f2");rg.addColorStop(1,"#c9d1e0");g.fillStyle=rg;g.beginPath();g.arc(G,G,R,0,TAU);g.fill();
-  [[-.35,-.2,.22],[.25,.3,.16],[.3,-.35,.12],[-.1,.45,.1],[-.45,.25,.09],[.05,-.02,.08]].forEach(([dx,dy,r])=>{g.fillStyle="rgba(150,160,185,.35)";g.beginPath();g.arc(G+dx*R,G+dy*R,r*R,0,TAU);g.fill();g.fillStyle="rgba(255,255,255,.35)";g.beginPath();g.arc(G+dx*R-r*R*.25,G+dy*R-r*R*.25,r*R*.55,0,TAU);g.fill()});
-  rg=g.createRadialGradient(G-R*.5,G-R*.5,R*.6,G-R*.2,G-R*.2,R*1.5);rg.addColorStop(0,"rgba(20,30,60,0)");rg.addColorStop(1,"rgba(20,30,60,.35)");g.fillStyle=rg;g.beginPath();g.arc(G,G,R,0,TAU);g.fill();
-  o.M=c;o.MG=G;
-  /* aurora ribbon (tiles horizontally) */
-  const AW=P,AH=H*.32,ac=BG2_cv(AW,AH),ag=ac.getContext("2d"),gr=ag.createLinearGradient(0,0,0,AH);gr.addColorStop(0,"rgba(120,200,255,0)");gr.addColorStop(.35,"rgba(110,220,200,.05)");gr.addColorStop(.56,"rgba(120,235,190,.12)");gr.addColorStop(.69,"rgba(120,235,190,0)");
-  const bot=X=>AH*(.84+.08*Math.sin(TAU*2*X/AW)+.04*Math.sin(TAU*5*X/AW+1)),tp=X=>AH*(.25+.15*Math.sin(TAU*3*X/AW+2)+.06*Math.sin(TAU*7*X/AW));
-  ag.fillStyle=gr;ag.beginPath();ag.moveTo(0,bot(0));for(let X=0;X<=AW;X+=8)ag.lineTo(X,bot(X));for(let X=AW;X>=0;X-=8)ag.lineTo(X,tp(X));ag.closePath();ag.fill();
-  ag.save();ag.clip();for(let X=0;X<AW;X+=5+rnd()*9){ag.globalAlpha=.25+rnd()*.6;ag.fillRect(X,0,1.5+rnd()*2.5,AH)}ag.restore();
-  o.A=ac;
- }else{
-  /* sun with a wide soft glow */
-  const R=30*s,G=R*5,c=BG2_cv(G*2,G*2),g=c.getContext("2d");let rg=g.createRadialGradient(G,G,R*.6,G,G,G);rg.addColorStop(0,"rgba(255,244,200,.55)");rg.addColorStop(.25,"rgba(255,240,195,.22)");rg.addColorStop(1,"rgba(255,240,195,0)");g.fillStyle=rg;g.fillRect(0,0,G*2,G*2);
-  rg=g.createRadialGradient(G,G,0,G,G,R);rg.addColorStop(0,"#fffdf0");rg.addColorStop(.8,"#fff3c4");rg.addColorStop(1,"rgba(255,236,170,.9)");g.fillStyle=rg;g.beginPath();g.arc(G,G,R,0,TAU);g.fill();o.M=c;o.MG=G;
-  /* three cloud shapes, flat bottoms, light tops, slightly shaded bellies */
-  o.C=[0,1,2].map(ci=>{const w=(170+ci*60)*s,h=w*.46,c=BG2_cv(w,h),g=c.getContext("2d"),base=h*.86,n=4+ci,bl=[];
-   for(let k=0;k<n;k++){const f=(k+.5)/n,r=h*(.16+.3*Math.sin(Math.PI*f)+rnd()*.06);bl.push([w*(.1+.8*f)+(rnd()-.5)*w*.04,base-r*.55-Math.sin(Math.PI*f)*h*.1,r])}
-   const pass=(dy,col)=>{g.fillStyle=col;g.beginPath();bl.forEach(([cx,cy,r])=>{g.moveTo(cx+r,cy+dy);g.arc(cx,cy+dy,r,0,TAU)});g.fill()};
-   g.save();g.beginPath();g.rect(0,0,w,base);g.clip();pass(0,dflt?"rgba(208,222,238,.95)":"rgba(222,230,240,.92)");pass(-h*.06,"rgba(248,251,255,.98)");pass(-h*.12,"rgba(255,255,255,1)");g.restore();
-   g.fillStyle=dflt?"rgba(208,222,238,.95)":"rgba(222,230,240,.92)";g.beginPath();g.ellipse(w*.5,base,w*.4,h*.05,0,0,Math.PI);g.fill();return c});
-  o.CL=[[.08,.12,0,.12,.9],[.42,.2,1,.07,.75],[.7,.09,2,.1,.85],[.95,.27,0,.05,.6],[.27,.31,1,.04,.5]];
- }
- return o}
-function bgScene(k,gy,a,b,dflt,fx){const dk=ALUM(a)<.35;HX+=.35*k;
- const key=W+"x"+H+"|"+(gy|0)+"|"+a+"|"+b+"|"+(dflt?1:0);if(!BG2_c||BG2_c.key!==key){BG2_c=BG2_build(gy,a,b,dflt,dk);BG2_c.key=key}
- const o=BG2_c,P=o.P,t=HX*.02;
- /* an animated effect (rain, clouds, aurora...) brings its own sky: keep only the scenery under it */
- if(fx){}else if(dk){
-  const ao=(HX*.05)%P;x.globalAlpha=.75+.25*Math.sin(t*.37);x.drawImage(o.A,-ao,H*.04);x.drawImage(o.A,P-ao,H*.04);
-  o.S.forEach((c,i)=>{x.globalAlpha=.6+.4*Math.sin(t*[1,1.53,2.17][i]+i*2.1);x.drawImage(c,0,0)});
-  x.globalAlpha=1;x.drawImage(o.M,W*.8-o.MG,H*.16-o.MG);
- }else{
-  x.drawImage(o.M,W*.78-o.MG,H*.18-o.MG);
-  const span=W+o.C[2].width;o.CL.forEach(([u,v,ci,sp,al])=>{const cv=o.C[ci],px=((u*span-HX*sp)%span+span)%span-cv.width;x.globalAlpha=al;x.drawImage(cv,px,v*H)});
- }
- x.globalAlpha=1;
- o.L.forEach(l=>{const off=((HX*l.sp)%P+P)%P;x.drawImage(l.c,-off,l.top);x.drawImage(l.c,P-off,l.top)});
- x.globalAlpha=1}
+const STR=Array.from({length:46},(_,i)=>[(i*.6180339)%1,((i*.7548776)%1)*.62,i%3?1:1.6]);
 /* ===== v2.7.6: themed backgrounds. Every shop background is its own place, not just a sky colour:
    Volcano erupts, Event Horizon is a black hole with a glowing accretion disk, and so on.
    Each theme has b() which draws everything that stays still once into offscreen canvases (cached per
@@ -5474,6 +5448,104 @@ window.bgThumb=it=>{const id=it.id.slice(3);if(!BTH[id])return"";if(BT_TH[id])re
   BTH[id].b(o,w,h,gy,s,1100);BTH[id].d(g,o,BTH[id].th||460,0,w,h,gy,s);g.globalAlpha=1;g.setLineDash([]);g.fillStyle=BTH[id].gd;g.fillRect(0,gy,w,h-gy);
   g.fillStyle="#2563eb";g.fillRect(w*.2,gy-38,38,38);g.fillStyle="#fff";g.fillRect(w*.2+22,gy-30,8,8);
   return BT_TH[id]=c.toDataURL()}catch(e){return""}};
+/* ===== v2.7.6: the main background, shown when no shop background is on. A valley with snow-capped mountains,
+   pine forests, mist, and a little town with a school whose clock shows the real time and whose flag (in your
+   accent colour) flies in the wind. By day: sunbeams, clouds, birds and a paper plane gliding past. By night: stars,
+   the moon, a moving aurora, shooting stars, lit windows and fireflies. An animated effect from the shop brings its
+   own sky, so then only the land is drawn and the effect is never doubled up. Static parts are drawn once per
+   size and colours; each frame only blits them and draws the moving bits. */
+const BT_rgb=h=>{h=String(h||"").trim();const m=h.match(/^rgba?\(([^)]+)\)/i);if(m){const p=m[1].split(",").map(v=>parseFloat(v)||0);return[p[0],p[1],p[2]]}
+ h=h.replace("#","");if(h.length===3)h=h.split("").map(c=>c+c).join("");const n=parseInt(h.slice(0,6),16);return isNaN(n)?[100,116,139]:[n>>16&255,n>>8&255,n&255]};
+const BT_mix=(p,q,t)=>p.map((v,i)=>v+(q[i]-v)*t),BT_sh=(c,k)=>c.map(v=>k<0?v*(1+k):v+(255-v)*k);   /* k<0 darker, k>0 lighter */
+const BT_css=(c,al)=>"rgba("+c.map(v=>Math.max(0,Math.min(255,Math.round(v)))).join(",")+","+(al==null?1:al)+")";
+const BM={key:"",o:null};
+/* paint a soft vertical haze over what is already in a layer: clear at the top, the colour at the bottom */
+function BM_haze(g,P,hh,col,a0,a1){g.globalCompositeOperation="source-atop";const gr=g.createLinearGradient(0,0,0,hh);gr.addColorStop(0,BT_css(col,a0));gr.addColorStop(1,BT_css(col,a1));g.fillStyle=gr;g.fillRect(0,0,P,hh);g.globalCompositeOperation="source-over"}
+function BM_build(w,h,gy,a,b,dflt,dk){
+ const s=Math.min(1.4,Math.max(.55,h/900)),P=Math.max(w,1100)|0,A=BT_rgb(a),B=BT_rgb(b),o={s,P,dk};
+ /* colours come from the sky, so the land suits light, dark and any effect's sky */
+ const far=dk?BT_mix(BT_sh(B,.1),[60,80,130],.25):BT_mix(BT_sh(B,-.12),[120,138,192],.38),
+  mid=dk?BT_mix(BT_sh(B,-.12),[20,50,70],.3):BT_mix(BT_sh(B,-.22),[92,150,130],.45),
+  twn=dk?BT_mix(BT_sh(B,-.28),[18,38,52],.35):BT_mix(BT_sh(B,-.27),[108,164,112],.52),
+  nr=dk?BT_mix(BT_sh(B,-.45),[10,24,30],.35):BT_mix(BT_sh(B,-.34),[80,142,88],.62);
+ o.gd=BT_css(dk?BT_sh(nr,-.35):BT_mix(BT_sh(nr,-.22),[96,80,60],.25));
+ const sky=dflt?(dk?[[0,"#060a13"],[.55,"#0c1424"],[1,"#18263b"]]:[[0,"#c5ddf6"],[.6,"#e3edf9"],[1,"#f4f1ec"]]):null;
+ if(sky)o.sky=BT_sky(w,h,sky);
+ if(dk){o.S=BT_stars(w,h,240,201,.72);
+  const mw=BT_cv(w,h*.7),g=mw.getContext("2d"),r=BT_sd(202);g.translate(w*.45,h*.3);g.rotate(-.42);g.globalCompositeOperation="lighter";
+  for(let i=0;i<70;i++){const X=(r()-.5)*w*1.6,Y=(r()-.5)*h*.1,R=(40+r()*70)*s;g.drawImage(BT_glow("140,170,255",.045),X-R,Y-R,R*2,R*2)}
+  g.fillStyle="rgba(255,255,255,.55)";for(let i=0;i<500;i++)g.fillRect((r()-.5)*w*1.6,(r()+r()+r()-1.5)*h*.05,.9,.9);o.mw=mw;
+  o.moon=BT_orb(26*s,"200,215,255","#fbfcff","#e3e8f2","#c4ccdb",1);
+  o.ray=(()=>{const c=BT_cv(32,200),q=c.getContext("2d"),gr=q.createLinearGradient(0,0,0,200);gr.addColorStop(0,"rgba(167,139,250,0)");gr.addColorStop(.35,"rgba(129,140,248,.35)");gr.addColorStop(.75,"rgba(74,222,170,.9)");gr.addColorStop(1,"rgba(74,222,170,0)");q.fillStyle=gr;q.fillRect(0,0,32,200);
+   q.globalCompositeOperation="destination-in";const sd=q.createLinearGradient(0,0,32,0);sd.addColorStop(0,"rgba(0,0,0,0)");sd.addColorStop(.5,"rgba(0,0,0,1)");sd.addColorStop(1,"rgba(0,0,0,0)");q.fillStyle=sd;q.fillRect(0,0,32,200);return c})()}
+ else{o.sun=BT_orb(34*s,"255,226,150","#fffbe8","#ffe9a3","#ffc94a",0);
+  o.C=[0,1,2].map(i=>BT_cloud((170+i*70)*s,"rgba(255,255,255,.98)","rgba(214,226,243,.95)",210+i));
+  o.Cf=[0,1].map(i=>BT_cloud((90+i*40)*s,"rgba(255,255,255,.8)","rgba(226,234,246,.75)",215+i))}
+ /* far mountains with snow caps and a misty foot */
+ const fh=h*.42;o.far=BT_land(P,fh,[BT_css(BT_sh(far,dk?.06:.08)),BT_css(far)],BT_pf(P,220,5,1),.18,.95,(g,y)=>{
+  g.globalCompositeOperation="source-atop";g.fillStyle=dk?"rgba(214,226,255,.22)":"rgba(255,255,255,.92)";g.beginPath();g.moveTo(0,0);
+  for(let X=0;X<=P;X+=6)g.lineTo(X,fh*.34+Math.sin(X*.045)*fh*.02+Math.sin(X*.13)*fh*.012);g.lineTo(P,0);g.fill();
+  g.globalCompositeOperation="source-over";
+  BM_haze(g,P,fh,dk?BT_sh(B,.05):BT_sh(B,.15),0,dk?.55:.75)});
+ o.fog=BT_fog(P,h*.14,dk?"150,170,210":"255,255,255",221);
+ /* mid hills under pine forest */
+ const mh=h*.29;o.mid=BT_land(P,mh,[BT_css(BT_sh(mid,.05)),BT_css(mid)],BT_pf(P,222,4),.2,.82,(g,y,at)=>{const r=BT_sd(223),pc=BT_css(BT_sh(mid,dk?-.25:-.18)),dense=BT_pf(P,224,3);
+  for(let t=0;t<P/(13*s);t++){const X=t*13*s+r()*8;if(dense(X)<.35)continue;at(X,q=>BT_pine(g,q,y(X)+5,(20+r()*16)*s,pc))}BM_haze(g,P,mh,dk?BT_sh(B,.02):BT_sh(B,.1),0,dk?.35:.5)});
+ /* the town: houses, trees and the school */
+ const th=h*.22,u=13*s,sx=P*.55;o.th=th;o.win=[];
+ const wall=dk?["#3a4157","#33394d","#3f3a52"]:["#f5ead8","#eedcc5","#e3edf5","#f3e3c3"],roof=dk?["#25203a","#2b2440","#1f2a3a"]:["#c2561a","#9a3412","#5b6b84","#a8432a"];
+ o.town=BT_land(P,th,BT_css(twn),BT_pf(P,225,3),.15,.48,(g,y,at)=>{const r=BT_sd(226),ti=BT_css(BT_sh(twn,dk?-.3:-.2)),win=(X,Y,ww,wh)=>{g.fillStyle=dk?(r()<.7?"#fcd581":"#20263a"):"#a9cbe8";g.fillRect(X,Y,ww,wh);if(dk)o.win.push([X,Y,ww,wh])};
+  for(let t=0;t<P/(26*s);t++){const X=t*26*s+r()*14;if(Math.abs(X-sx)<u*10||Math.abs(X-sx-P)<u*10||Math.abs(X-sx+P)<u*10){r();r();r();r();continue}const k=r();
+   if(k<.42){const hw=(2.2+r()*1.4)*u,hh=(1.7+r()*1)*u,wi=(r()*4)|0,ri=(r()*4)|0;at(X,q=>{const Y=y(X)+4;g.fillStyle=wall[wi%wall.length];g.fillRect(q-hw/2,Y-hh,hw,hh);g.fillStyle=roof[ri%roof.length];g.beginPath();g.moveTo(q-hw/2-u*.3,Y-hh);g.lineTo(q,Y-hh-u*1.2);g.lineTo(q+hw/2+u*.3,Y-hh);g.fill();
+    win(q-hw/2+u*.4,Y-hh+u*.5,u*.55,u*.55);win(q+hw/2-u*.95,Y-hh+u*.5,u*.55,u*.55);g.fillStyle=dk?"#1a1424":"#7c4a2a";g.fillRect(q-u*.3,Y-u*.9,u*.6,u*.9)})}
+   else if(k<.8)at(X,q=>BT_tree(g,q,y(X)+4,(1.6+r()*1.2)*u,ti,dk?"#1b1a20":"#6b4f32"));else at(X,q=>BT_pine(g,q,y(X)+4,(2.2+r()*1.4)*u,ti))}
+  /* the school: a long building, a clock tower and a flagpole */
+  at(sx,q=>{const Y=y(sx)+4,bw=15*u,bh=4.2*u;g.fillStyle=dk?"#3b4258":"#f1e4cf";g.fillRect(q-bw/2,Y-bh,bw,bh);g.fillStyle=dk?"#2a2f42":"#c9b79c";g.fillRect(q-bw/2,Y-bh,bw,u*.45);
+   g.fillStyle=dk?"#282236":"#a8432a";g.fillRect(q-bw/2-u*.3,Y-bh-u*.5,bw+u*.6,u*.55);
+   for(let rI=0;rI<2;rI++)for(let cI=0;cI<12;cI++){const wx=q-bw/2+u*.75+cI*u*1.2;if(Math.abs(wx+u*.3-q)<u*1.8)continue;win(wx,Y-bh+u*.95+rI*u*1.45,u*.6,u*.8)}
+   const tw=3*u,tH=9.2*u;g.fillStyle=dk?"#434b63":"#f6ecdc";g.fillRect(q-tw/2,Y-tH,tw,tH);g.fillStyle=dk?"#282236":"#9a3412";g.beginPath();g.moveTo(q-tw/2-u*.4,Y-tH);g.lineTo(q,Y-tH-u*3);g.lineTo(q+tw/2+u*.4,Y-tH);g.fill();
+   g.fillStyle=dk?"#fef3c7":"#ffffff";g.beginPath();g.arc(q,Y-tH+u*1.6,u*1.05,0,BT_TAU);g.fill();g.strokeStyle=dk?"#8b8fa8":"#475569";g.lineWidth=u*.14;g.stroke();
+   g.fillStyle=dk?"#1b1726":"#6b4226";g.beginPath();g.moveTo(q-u*.75,Y);g.lineTo(q-u*.75,Y-u*1.6);g.arc(q,Y-u*1.6,u*.75,Math.PI,0);g.lineTo(q+u*.75,Y);g.fill();
+   g.fillStyle=dk?"#9aa3b8":"#64748b";g.fillRect(q+bw/2+u*1.2,Y-u*11,u*.18,u*11);o.sch=[sx,Y,tH,bw]})});
+ /* near hills: bushes, a fence, flowers by day */
+ const nh=h*.13;o.near=BT_land(P,nh,[BT_css(BT_sh(nr,.06)),BT_css(nr)],BT_pf(P,227,3),.12,.62,(g,y,at)=>{const r=BT_sd(228),bc=BT_css(BT_sh(nr,dk?-.25:-.14)),bl=BT_css(BT_sh(nr,dk?.06:.1));
+  for(let t=0;t<P/(38*s);t++){const X=t*38*s+r()*24,R=(7+r()*9)*s;if(r()<.35)continue;at(X,q=>{const Y=y(X)+R*.5;g.fillStyle=bc;g.beginPath();g.arc(q,Y,R,0,BT_TAU);g.arc(q+R*.9,Y+R*.2,R*.75,0,BT_TAU);g.arc(q-R*.8,Y+R*.25,R*.7,0,BT_TAU);g.fill();g.fillStyle=bl;g.beginPath();g.arc(q-R*.25,Y-R*.35,R*.45,0,BT_TAU);g.fill()})}
+  const fc=dk?"rgba(20,24,34,.9)":"rgba(120,86,56,.85)";g.fillStyle=fc;for(let X=P*.08;X<P*.3;X+=16*s){g.fillRect(X,y(X)-12*s,2.5*s,14*s)}g.strokeStyle=fc;g.lineWidth=1.6*s;for(const dy of[-9,-4]){g.beginPath();for(let X=P*.08;X<P*.3;X+=4)g.lineTo(X,y(X)+dy*s);g.stroke()}
+  if(!dk)for(let t=0;t<P/(5*s);t++){const X=t*5*s+r()*5;at(X,q=>{g.fillStyle=["#f472b6","#facc15","#ffffff","#a78bfa","#fb923c"][(r()*5)|0];g.fillRect(q,y(X)+4+r()*nh*.5,1.8*s,1.8*s)})}});
+ o.plane=(()=>{const c=BT_cv(60,40),q=c.getContext("2d");q.translate(30,20);q.fillStyle="#ffffff";q.beginPath();q.moveTo(26,0);q.lineTo(-22,-14);q.lineTo(-12,0);q.closePath();q.fill();q.fillStyle="#dbe5f2";q.beginPath();q.moveTo(26,0);q.lineTo(-12,0);q.lineTo(-22,10);q.closePath();q.fill();
+  q.strokeStyle="rgba(100,116,139,.6)";q.lineWidth=1;q.beginPath();q.moveTo(26,0);q.lineTo(-12,0);q.stroke();return c})();
+ return o}
+function BM_draw(k,gy,a,b,dflt,fx){const dk=ALUM(a)<.35;BT.T+=k;BT.X+=.35*k;const T=BT.T,X=BT.X,w=W,h=H,g=x;
+ const key=w+"x"+h+"|"+(gy|0)+"|"+a+"|"+b+"|"+(dflt?1:0);if(BM.key!==key){BM.o=BM_build(w,h,gy,a,b,dflt,dk);BM.key=key}
+ const o=BM.o,s=o.s;g.save();
+ if(!fx){if(o.sky)g.drawImage(o.sky,0,0);
+  if(dk){BT_twinkle(g,o.S,T);g.drawImage(o.mw,0,0);
+   /* aurora: curtains of light that ripple and drift */
+   g.globalCompositeOperation="lighter";const n=Math.ceil(w/8);for(let i=0;i<n;i++){const X0=i*8,cy=h*(.2+.05*Math.sin(X0*.0035+T*.004)+.02*Math.sin(X0*.011-T*.007)),hh=h*(.15+.06*Math.sin(X0*.017+T*.012)),al=.12+.1*Math.sin(X0*.009+T*.01)+.06*Math.sin(X0*.031-T*.02);
+    if(al<=.02)continue;g.globalAlpha=al*.7;g.drawImage(o.ray,X0-14,cy-hh*.75,36,hh)}g.globalAlpha=1;g.globalCompositeOperation="source-over";
+   g.drawImage(o.moon,w*.8-o.moon.G,h*.16-o.moon.G);
+   const ss=Math.floor(T/420),su=(T%420)/420;if(su<.09&&BT_hs(ss)>.3){const v=su/.09,sx=w*(.2+BT_hs(ss*3)*.6)-v*220*s,sy=h*(.06+BT_hs(ss*5)*.15)+v*110*s,gr=g.createLinearGradient(sx,sy,sx+90*s,sy-45*s);gr.addColorStop(0,"rgba(255,255,255,"+(1-v)+")");gr.addColorStop(1,"rgba(255,255,255,0)");g.strokeStyle=gr;g.lineWidth=2;g.beginPath();g.moveTo(sx,sy);g.lineTo(sx+90*s,sy-45*s);g.stroke()}}
+  else{const sx=w*.8,sy=h*.16;g.save();g.translate(sx,sy);g.rotate(T*.0008);g.fillStyle="rgba(255,240,200,.045)";for(let i=0;i<10;i++){g.rotate(BT_TAU/10);g.beginPath();g.moveTo(0,0);g.lineTo(-h*.035,-h*.5);g.lineTo(h*.035,-h*.5);g.fill()}g.restore();
+   g.drawImage(o.sun,sx-o.sun.G,sy-o.sun.G);BT_drift(g,o.Cf,[[.05,.22,0,.025,.75],[.35,.27,1,.02,.65],[.62,.24,0,.03,.7],[.88,.3,1,.018,.6]],X+T*.25,w,h);
+   BT_drift(g,o.C,[[.08,.06,0,.09,.95],[.42,.14,1,.06,.9],[.72,.03,2,.08,.92],[.95,.2,0,.05,.8]],X+T*.35,w,h)}}
+ BT_tile(g,o.far,X,.08,gy-h*.42,w);g.globalAlpha=.55+.15*Math.sin(T*.003);BT_tile(g,o.fog,X+T*.2,.15,gy-h*.32,w);g.globalAlpha=1;
+ BT_tile(g,o.mid,X,.22,gy-h*.29,w);g.globalAlpha=.4;BT_tile(g,o.fog,X+T*.35,.3,gy-h*.2,w);g.globalAlpha=1;
+ BT_tile(g,o.town,X,.42,gy-o.th,w);
+ /* school clock (real time) and flag; a few town windows go dark and light again at night */
+ {const P=o.P,off=((X*.42)%P+P)%P,top=gy-o.th,[sx0,Y,tH,bw]=o.sch,u=13*s;for(const d of[0,P]){const q=sx0-off+d;if(q<-bw||q>w+bw)continue;
+  const cx=q,cy=top+Y-tH+u*1.6,n=new Date(),hr=(n.getHours()%12+n.getMinutes()/60)/12*BT_TAU,mn=n.getMinutes()/60*BT_TAU;g.strokeStyle=dk?"#1f2433":"#1e293b";g.lineCap="round";
+  g.lineWidth=u*.16;g.beginPath();g.moveTo(cx,cy);g.lineTo(cx+Math.sin(hr)*u*.55,cy-Math.cos(hr)*u*.55);g.stroke();g.lineWidth=u*.1;g.beginPath();g.moveTo(cx,cy);g.lineTo(cx+Math.sin(mn)*u*.85,cy-Math.cos(mn)*u*.85);g.stroke();
+  const fx0=q+bw/2+u*1.29,fy0=top+Y-u*11,fw=u*3.2,fh=u*2;g.fillStyle=lvc||"#2563eb";g.beginPath();g.moveTo(fx0,fy0);for(let i=0;i<=10;i++){const t=i/10;g.lineTo(fx0+t*fw,fy0+Math.sin(t*5-T*.12)*u*.35*t)}for(let i=10;i>=0;i--){const t=i/10;g.lineTo(fx0+t*fw,fy0+fh+Math.sin(t*5-T*.12)*u*.35*t)}g.fill();
+  g.fillStyle="rgba(255,255,255,.9)";const mt=.45,my=Math.sin(mt*5-T*.12)*u*.35*mt;g.beginPath();g.arc(fx0+fw*mt,fy0+fh/2+my,u*.45,0,BT_TAU);g.fill()}
+  if(dk&&o.win.length){g.fillStyle="#20263a";const z=Math.floor(T/150);for(let i=0;i<6;i++){const wv=o.win[(BT_hs(z*7+i)*o.win.length)|0];for(const d of[0,P]){const q=wv[0]-off+d;if(q>-20&&q<w+20)g.fillRect(q,top+wv[1],wv[2],wv[3])}}}}
+ BT_tile(g,o.near,X,.62,gy-h*.13,w);
+ if(!fx){if(dk){const ff=BT_glow("253,230,138",.85);for(let i=0;i<Math.round(w/70);i++){const al=.5+.5*Math.sin(T*.045+i*2.1);if(al<.3)continue;g.globalAlpha=al;BT_dot(g,ff,(BT_hs(i*4.1)*w+Math.sin(T*.008+i)*50+T*.15)%w,gy-h*.02-BT_hs(i*6.7)*h*.16+Math.cos(T*.012+i)*12,6*s)}g.globalAlpha=1}
+  else{g.strokeStyle="rgba(51,65,85,.6)";g.lineWidth=1.5*s;const bx=((T*.55)%(w+600))-300;for(let i=0;i<5;i++)BT_bird(g,bx-[0,20,20,40,40][i]*s,h*.28+[0,-10,10,-20,20][i]*s,6.5*s,T*.2+i*.7);
+   /* a paper plane glides across now and then, leaving a dotted trail */
+   const per=1500,u2=(T%per)/per;if(u2<.6){const v=u2/.6,pos=t=>[-80+t*(w+160),h*.33+Math.sin(t*BT_TAU*1.2)*h*.06-t*h*.08];
+    g.fillStyle="rgba(100,116,139,.45)";for(let j=1;j<40;j++){const t=v-j*.006;if(t<0)break;const[px,py]=pos(t);if(j%2)g.fillRect(px,py,2.2,2.2)}
+    const[px,py]=pos(v),[qx,qy]=pos(v+.002);g.save();g.translate(px,py);g.rotate(Math.atan2(qy-py,qx-px));g.drawImage(o.plane,-30*s,-20*s,60*s,40*s);g.restore()}}}
+ g.restore();g.globalAlpha=1;return o.gd}
 function cbg(n){const v=eqV("bg");if(!v)return null;return v.split(",")[n]}
 /* the ground under a shop background: the background's lower colour, darkened */
 const gshade=h=>/^#[0-9a-f]{6}$/i.test(h)?"rgb("+[1,3,5].map(i=>Math.round(parseInt(h.slice(i,i+2),16)*.62)).join(",")+")":h;
@@ -5644,15 +5716,13 @@ window.cubeStumble=()=>{Snd.heat(0);stk=0;boost=0;prog=0;if(!anim)return;cu.sq=M
    keeps the spikes where they were instead of scattering them. */
 let DPR=1,RST=0;
 function rs(){const dpr=Math.min(2,window.devicePixelRatio||1),nw=innerWidth,nh=innerHeight,first=!W;
- if(!first&&nw===W&&nh===H&&dpr===DPR)return;const ow=W||nw;W=nw;H=nh;DPR=dpr;c.width=Math.round(W*dpr);c.height=Math.round(H*dpr);x.setTransform(dpr,0,0,dpr,0,0);
- if(first||!pl.length){sh=[];pl=Array.from({length:14},(_,i)=>({x:i*(W/10),w:50+Math.random()*90,h:60+Math.random()*H*.35}))}
- else pl.forEach(o=>{o.x=o.x/ow*W});
+ if(!first&&nw===W&&nh===H&&dpr===DPR)return;W=nw;H=nh;DPR=dpr;c.width=Math.round(W*dpr);c.height=Math.round(H*dpr);x.setTransform(dpr,0,0,dpr,0,0);
  if(first||!sp.length){sp=[];let p=W*.6;while(p<W+700){sp.push(p);p+=300+Math.random()*300}}
  else{sp=sp.filter(a=>a<W+900);let last=sp[sp.length-1]||W*.6;while(last<W+400){last+=300+Math.random()*300;sp.push(last)}}
- BG2_c=null;SKYG.k=""}
+ SKYG.k=""}
 rs();addEventListener("resize",()=>{clearTimeout(RST);RST=setTimeout(rs,120)});
 addEventListener("orientationchange",()=>{clearTimeout(RST);RST=setTimeout(rs,200)});
-let LFT=0,DTK=1;function fr(){const n=performance.now();DTK=LFT?Math.min(2,Math.max(.15,(n-LFT)/16.667)):1;LFT=n;try{fr0()}catch(e){console.error(e)}requestAnimationFrame(fr)}
+let LFT=0,DTK=1;function fr(){const n=performance.now();DTK=LFT?Math.min(2,Math.max(.15,(n-LFT)/16.667)):1;LFT=n;try{if(!document.body.classList.contains("tmode"))fr0()}catch(e){console.error(e)}requestAnimationFrame(fr)}
 /* v2.5.2: the cube and the scene behind it run gently, at a little over half speed, whenever the cube is
    simply running along — both while you are reading a page and while a question is on screen. Everything
    slows together, so the jumps and the ground still match. Anything that is actually happening runs at
@@ -5674,15 +5744,8 @@ if(scv!==SCF.cv){SCF.prev=SCF.cv;SCF.cv=scv;SCF.t=0}
 if(SCF.prev&&SCF.t<14)x.drawImage(SCF.prev,0,0,W,H);
 if(scv){const f=Math.min(1,SCF.t/14);x.globalAlpha=f;x.drawImage(scv,0,0,W,H);x.globalAlpha=1}
 if(SCF.t<14)SCF.t+=(k||1);else SCF.prev=null;
-const mp=Math.max(m,qte?0.3:0);const bga=!scv,skA=csky(0)||C.b1,skB=csky(1)||C.b2,dflt=!csky(0);const bth=!scv&&BT_draw(k*mp,gy);if(!scv&&!bth)bgScene(k*mp,gy,skA,skB,dflt,!!eqV("anim"));animFx();
-if(!scv&&!bth)pl.forEach(o=>{o.x-=1.2*k*mp;if(o.x<-o.w){o.x=W+20;o.w=50+Math.random()*90;o.h=60+Math.random()*H*.35}
- if(bga){const dk=ALUM(skA)<.35;x.fillStyle=AS(skB,dk?(dflt?.06:-.35):(dflt?-.13:-.38));x.fillRect(o.x,gy-o.h,o.w,o.h);x.fillStyle="#fde68a";x.globalAlpha=dk?.9:dflt?.55:.4;
-  for(let wy=gy-o.h+10;wy<gy-12;wy+=18)for(let wx=o.x+8;wx<o.x+o.w-8;wx+=14)if(((wx-o.x)*7+(wy-gy)*13+o.w|0)%5===0)x.fillRect(wx,wy,4,4);x.globalAlpha=1}
- else{x.fillStyle=C.bf;x.fillRect(o.x,gy-o.h,o.w,o.h);x.strokeStyle=C.bl;x.lineWidth=2;x.strokeRect(o.x,gy-o.h,o.w,o.h)}});
-if(!scv&&!bth)sh.forEach(o=>{o.x-=o.v*(o.s/25)*k*mp;o.r+=.01*o.v*k;if(o.x<-80){o.x=W+80;o.y=Math.random()*H*.8}
-x.save();x.translate(o.x,o.y);x.rotate(o.r);x.strokeStyle=C.sh;x.lineWidth=3;x.beginPath();
-if(o.k===0)x.rect(-o.s/2,-o.s/2,o.s,o.s);else if(o.k===1){x.moveTo(0,-o.s/2);x.lineTo(o.s/2,o.s/2);x.lineTo(-o.s/2,o.s/2);x.closePath()}else x.arc(0,0,o.s/2,0,7);x.stroke();x.restore()});
-x.fillStyle=scv?(dkm?gshade(SCN.gr(sk)):SCN.gr(sk)):bth?BT_gd():csky(1)?AS(csky(1),-.55):AS(C.b2,ALUM(C.b1)<.35?.05:-.1);x.fillRect(0,gy,W,H-gy);
+const mp=Math.max(m,qte?0.3:0);const skA=csky(0)||C.b1,skB=csky(1)||C.b2,dflt=!csky(0);const bth=!scv&&BT_draw(k*mp,gy),bmg=!scv&&!bth?BM_draw(k*mp,gy,skA,skB,dflt,!!eqV("anim")):"";animFx();
+x.fillStyle=scv?(dkm?gshade(SCN.gr(sk)):SCN.gr(sk)):bth?BT_gd():bmg?bmg:csky(1)?AS(csky(1),-.55):AS(C.b2,ALUM(C.b1)<.35?.05:-.1);x.fillRect(0,gy,W,H-gy);
 x.strokeStyle=C.gl;x.lineWidth=1;gx+=SP*k;const off=gx%60;x.beginPath();for(let i=-60;i<W+60;i+=60){const X=Math.round(i-off)+.5;x.moveTo(X,gy);x.lineTo(X,H)}for(let y=gy+30;y<H;y+=30){const Y=Math.round(y)+.5;x.moveTo(0,Y);x.lineTo(W,Y)}x.stroke();
 x.strokeStyle=lvc;x.lineWidth=4;x.beginPath();x.moveTo(0,gy);x.lineTo(W,gy);x.stroke();
 if(qs.mode==="qte"&&qte&&!qte.cb&&!QT.on&&(qte.n=(qte.n||0)+1)>420){qte=null;qs.mode="idle";cu.air=0;cu.y=0}   /* safety: a quiz leap can never get stuck */
@@ -6087,8 +6150,8 @@ XPAGES.houses=houses;XON.houses="tools";
 var TC={tab:"dash",f:"all",sort:"xp",d:{},busy:0,bad:0,err:0};
 const TCF={cls:"cd_admin_classes",stu:"cd_admin_class",asg:"cd_admin_assigns",qz:"cd_admin_quizzes",codes:"cd_admin_list",shop:"cd_admin_shop",ann:"cd_admin_anns",ins:"cd_admin_insights",hx:"cd_admin_houses",lib:"cd_admin_lib",les:"cd_admin_lessons",wb:"cd_admin_boards",live:"cd_admin_live_list"};
 const TCN={cls:["Classes","\u{1F3EB}"],stu:["Students","\u{1F393}"],asg:["Assignments","\u{1F4CB}"],qz:["Quizzes","\u{1F4DD}"],chal:["Challenges","\u{1F3C6}"],codes:["Codes","\u{1F511}"],shop:["Shop XP",""],hx:["House XP",""],ins:["Insights",""],ann:["Announcements",""]};for(const k in TCN)TCN[k][1]=emo(TCN[k][1]);TCN.shop[1]=icn("bag");TCN.hx[1]=icn("trophy");TCN.ins[1]=icn("search");TCN.ann[1]=icn("bell");
-Object.assign(TCN,{dash:["Dashboard",icn("gauge")],lib:["Question Library",icn("books")],les:["Lessons",icn("notepad")],wb:["Whiteboard",icn("pen")],live:["Live",icn("bolt")]});
-const TCNEED={cls:["cls"],stu:["stu","cls","asg"],asg:["asg","cls","qz","stu"],qz:["qz"],chal:["cls"],codes:["codes","cls"],shop:["shop","cls"],hx:["hx"],ins:["ins","cls"],ann:["ann","cls"],dash:["lib","live","les","cls"],lib:["lib"],les:["les","lib","cls"],wb:["wb"],live:["live","lib","les","qz","cls"]};
+Object.assign(TCN,{dash:["Dashboard",icn("gauge")],lib:["Question Library",icn("books")],les:["Lessons",icn("notepad")],wb:["Whiteboard",icn("pen")],live:["Live",icn("bolt")],man:["Manage",icn("folders")]});
+const TCNEED={cls:["cls"],stu:["stu","cls","asg"],asg:["asg","cls","qz","stu"],qz:["qz"],chal:["cls"],codes:["codes","cls"],shop:["shop","cls"],hx:["hx"],ins:["ins","cls"],ann:["ann","cls"],dash:["lib","live","les","cls"],lib:["lib"],les:["les","lib","cls"],wb:["wb"],live:["live","lib","les","qz","cls"],man:["cls"]};
 const TERR=Object.assign({},CLSERR,{bad_text:"Keep it short and suitable for school.",rude_name:"That name is not suitable for school.",no_class:"That class no longer exists.",
  bad_tasks:"Add between 1 and 12 tasks.",bad_quiz:"A quiz needs between 1 and 40 questions.",bad_date:"Pick an end date within the next 120 days.",bad_metric:"Pick what the challenge measures.",
  in_use:"A student is using that code. Free it first.",bad_year:"Pick Year 7, 8 or 9.",bad_house:"Pick North, East, South or West.",not_found:"That no longer exists. Refresh and try again."});
@@ -6116,15 +6179,39 @@ async function tcDo(fn,body,done,stale){if(TC.act)return;TC.act=1;
   if(!r||!r.ok){notify(TERR[r&&r.error]||"That did not work.","err");if(r&&r.error==="bad_key")tcLock();return r}
   if(done)notify(done(r),"ok");(stale||[]).forEach(k=>{if(k==="hse")HSE.d=null;else delete TC.d[k]});fbClose();teach();return r}
  catch(x){TC.act=0;notify(/\b404\b|not exist|schema cache/i.test(String(x&&x.message))?"Run compass-dash-v2.6-update.sql in Supabase first.":"Could not reach the student code service.","err")}}
+/* ===== v2.7.7: the Teacher Panel. Its own layout, apart from the student site: a sidebar (a top bar on tablets and
+   phones) with Dashboard, Question Library, Lessons, Whiteboard, Live and Manage. Manage holds the class, classwork,
+   house and message tools, grouped. While it is open the student nav, footer and game are hidden (body.tmode, set
+   in go()). Every page still needs the admin key, and the database checks it on every request. */
+const TPN=[["dash","Dashboard","gauge"],["lib","Question Library","books"],["les","Lessons","notepad"],["wb","Whiteboard","pen"],["live","Live","bolt"],["man","Manage","folders"]];
+const TPM=[["Classes & students",["cls","stu","codes"],"Your classes, every student's progress and their sign-in codes."],
+ ["Classwork",["asg","qz"],"Set work with due dates and build your own quizzes."],
+ ["Houses & rewards",["chal","hx","shop"],"House challenges, house points and what students can spend in the shop."],
+ ["Insights & messages",["ins","ann"],"How your classes are getting on, and messages on students' home page."]];
+const TPMD={cls:"Create classes and add codes to them",stu:"Progress, codes and resets for each student",codes:"Make, print and manage sign-in codes",asg:"Set tasks with due dates and see who has finished",qz:"Build quizzes from the bank, your library or your own questions",
+ chal:"Start house and class challenges",hx:"See and adjust each house's points",shop:"Each student's spendable XP",ins:"Accuracy and activity across classes and topics",ann:"Post messages to your classes"};
+const tpGroup=k=>TPM.find(g=>g[1].includes(k));
+function tpBig(){ST.tpBig=!ST.tpBig;saveST();document.documentElement.classList.toggle("tpbig",!!ST.tpBig);teach()}
+function tpShell(main,locked){const k=TC.tab,top=tpGroup(k)?"man":k;
+ return`<div class="tp"><div class="tpnav" role="navigation" aria-label="Teacher Panel"><button class="tpbrand" onclick="go('teach','dash')" aria-label="Teacher Panel dashboard"><i class="lg">${logoCube("")}</i><span><b>Compass Dash</b><small>Teacher Panel</small></span></button>
+<div class="tpis">${locked?"":TPN.map(([id,n,ic])=>`<button class="tpi${top===id?" on":""}"${top===id?' aria-current="page"':""} onclick="go('teach','${id}')">${icn(ic)}<span>${n}</span></button>`).join("")}</div>
+<div class="tpfoot"><button class="tpi" onclick="tpBig()" aria-label="Big screen" aria-pressed="${!!ST.tpBig}" title="Larger text and controls for a projector or classroom screen">${icn("laptop")}<span>Big screen${ST.tpBig?" on":""}</span></button><button class="tpi" onclick="go('home')" aria-label="Student site" title="Back to the student site">${icn("back")}<span>Student site</span></button>${locked?"":`<button class="tpi" onclick="tcLock()" aria-label="Lock the Teacher Panel" title="Lock">${icn("lock")}<span>Lock</span></button>`}<small class="tpver">${VER}</small></div></div>
+<div class="tpmain">${main}</div></div>`}
 function teach(t){if(t&&TCN[t])TC.tab=t;
- if(!cdOn())return app.innerHTML=`<h2>Teacher tools</h2><p class="lead">Student codes are not connected yet, so there is no class to manage. See README-student-codes.md.</p>`;
- if(!cdKey())return app.innerHTML=`<h2>Teacher Mode</h2><p class="lead">Lessons, the Question Library, the whiteboard and live quizzes, plus your classes, assignments and student codes.</p><div class="card"><p class="mut" style="margin-top:0">Enter the admin key from your Supabase setup file. It stays unlocked on this device until you close the tab.</p><div class="set" style="border:0"><span><input id="cdk" type="password" autocomplete="off" placeholder="Admin key" onkeydown="if(event.key==='Enter')tcUnlock()"><button class="btn" onclick="tcUnlock()">Unlock</button></span></div><p class="fbe" id="tce" role="alert">${TC.bad?"That key was not accepted.":""}</p></div>`;
- const miss=TCNEED[TC.tab].some(k=>!TC.d[k])||(TC.tab==="chal"&&!HSE.d);
- app.innerHTML=`<div class="tchd"><h2>Teacher Mode</h2><span><button class="btn alt sm" onclick="tcLoad(1)">Refresh</button> <button class="btn alt sm" onclick="tcLock()">Lock</button></span></div>
-<div class="tct">${[["Teach",TMT],["Manage",Object.keys(TCN).filter(k=>!TMT.includes(k))]].map(([g,L])=>`<div class="tcgrp"><span>${g}</span><div class="chips" role="tablist" aria-label="${g}">${L.map(k=>`<button class="chip${TC.tab===k?" on":""}" role="tab" aria-selected="${TC.tab===k}" onclick="go('teach','${k}')">${TCN[k][1]} ${TCN[k][0]}</button>`).join("")}</div></div>`).join("")}</div>
-<div id="tcb">${TC.err?`<div class="card"><p class="mut" style="margin-top:0">${TC.err==="sql"?TMT.includes(TC.tab)?"Run compass-dash-v2.7.5-teacher-mode.sql in Supabase first, then refresh.":(["shop","ins","ann"].includes(TC.tab)?"Run compass-dash-v2.6.8-features.sql in Supabase first, then refresh.":"Run compass-dash-v2.6-update.sql in Supabase first, then refresh."):"Could not reach the student code service."}</p><button class="btn alt" onclick="TC.err=0;tcLoad(1)">Try again</button></div>`:miss?`<p class="mut">Loading…</p>`:TCR[TC.tab]()}</div>`;
+ if(!cdOn())return app.innerHTML=tpShell(`<div class="tplock"><div class="card"><h1>Teacher Panel</h1><p class="mut">Student codes are not connected yet, so there is no class to manage. See README-student-codes.md.</p></div></div>`,1);
+ if(!cdKey())return app.innerHTML=tpShell(`<div class="tplock"><div class="card"><span class="tplk">${icn("lock")}</span><h1>Teacher Panel</h1><p class="mut">Lessons, the Question Library, the whiteboard, live quizzes and everything for running your classes.</p>
+<p class="mut">Enter the admin key from your Supabase setup file. It stays unlocked on this device until you close the tab or leave it for 20 minutes.</p><div class="tcf"><input id="cdk" type="password" autocomplete="off" placeholder="Admin key" aria-label="Admin key" onkeydown="if(event.key==='Enter')tcUnlock()"><button class="btn" onclick="tcUnlock()">Unlock</button></div><p class="fbe" id="tce" role="alert">${TC.bad?"That key was not accepted.":""}</p>
+<p class="mut tpnote">Only teachers have the admin key. Students, <button class="lnk" onclick="go('home')">head back to Learn</button>.</p></div></div>`,1);
+ const miss=TCNEED[TC.tab].some(k=>!TC.d[k])||(TC.tab==="chal"&&!HSE.d),g=tpGroup(TC.tab);
+ app.innerHTML=tpShell(`<header class="tphd"><div>${g?`<p class="tpcrumb"><button class="lnk" onclick="go('teach','man')">Manage</button> <span aria-hidden="true">›</span> ${g[0]}</p>`:""}<h1>${TCN[TC.tab][0]}</h1></div><button class="btn alt sm" onclick="tcLoad(1)">${icn("refresh")} Refresh</button></header>
+${g?`<div class="tpsub"><div class="chips" role="tablist" aria-label="${g[0]}">${g[1].map(k=>`<button class="chip${TC.tab===k?" on":""}" role="tab" aria-selected="${TC.tab===k}" onclick="go('teach','${k}')">${TCN[k][1]} ${TCN[k][0]}</button>`).join("")}</div>
+<select class="tpjump" aria-label="Go to another Manage page" onchange="go('teach',this.value)">${TPM.map(([n,L])=>`<optgroup label="${n}">${L.map(k=>`<option value="${k}"${k===TC.tab?" selected":""}>${TCN[k][0]}</option>`).join("")}</optgroup>`).join("")}</select></div>`:""}
+<div id="tcb">${TC.err?`<div class="card"><p class="mut" style="margin-top:0">${TC.err==="sql"?TMT.includes(TC.tab)?"Run compass-dash-v2.7.5-teacher-mode.sql in Supabase first, then refresh.":(["shop","ins","ann"].includes(TC.tab)?"Run compass-dash-v2.6.8-features.sql in Supabase first, then refresh.":"Run compass-dash-v2.6-update.sql in Supabase first, then refresh."):"Could not reach the student code service."}</p><button class="btn alt" onclick="TC.err=0;tcLoad(1)">Try again</button></div>`:miss?`<p class="mut">Loading…</p>`:TCR[TC.tab]()}</div>`);
  if(miss&&!TC.err&&!TC.busy)tcLoad()}
 const TCR={};
+/* ---- Manage: every management tool, grouped ---- */
+TCR.man=()=>{const C=TC.d.cls||[],num={cls:C.length,asg:TC.d.asg&&TC.d.asg.length,qz:TC.d.qz&&TC.d.qz.length,stu:C.reduce((a,c)=>a+(c.n|0),0)};
+ return`<p class="lead">Everything for running your classes, grouped by what it is for.</p><div class="tpmg">${TPM.map(([n,L,d])=>`<section class="card tpcat"><h2>${n}</h2><p class="mut">${d}</p>${L.map(k=>`<button class="tprow" onclick="go('teach','${k}')"><span class="tpri">${TCN[k][1]}</span><span class="tprt"><b>${TCN[k][0]}</b><small>${TPMD[k]}</small></span>${num[k]!=null?`<span class="tpc">${num[k].toLocaleString()}</span>`:""}${icn("arrowr")}</button>`).join("")}</section>`).join("")}</div>`};
 /* ---- classes ---- */
 TCR.cls=()=>{const C=TC.d.cls;
  return`<p class="lead">Group students into classes. Codes you add to a class put each student straight into it when they sign up.</p>
@@ -6197,7 +6284,7 @@ function tcStuEdit(code){const r=tcStuOf(code);if(!r)return;
 <label>House</label><div class="hpick" id="tsh">${["",...Object.keys(HS)].map(k=>`<button type="button" class="hsb${(r.house||"")===k?" on":""}" style="--hc:${k?HS[k][1]:"var(--mut)"}" onclick="TC.eh='${k}';document.querySelectorAll('#tsh .hsb').forEach(b=>b.classList.toggle('on',b===this))">${k?hsCrest(k,30):'<span class="hsn">–</span>'}<span>${k?HS[k][0]:"None"}</span></button>`).join("")}</div>
 <label for="tsy">Year group</label><select id="tsy"><option value="0">Not set</option>${[7,8,9].map(y=>`<option value="${y}"${r.year===y?" selected":""}>Year ${y}</option>`).join("")}</select>
 <div class="fbr"><button class="btn alt" onclick="fbClose()">Cancel</button><button class="btn" onclick="tcStuSave('${esc(code)}')">Save</button></div>`);TC.eh=r.house||""}
-function tcStuSave(code){if(tcOldDb())notify("Saved, but Teacher tools needs compass-dash-v2.6.8-features.sql to show it","info");tcDo("cd_admin_set",{p_code:code,p_class:+$("tsc").value,p_house:TC.eh||"",p_year:+$("tsy").value},()=>"Saved",["stu","cls","codes"])}
+function tcStuSave(code){if(tcOldDb())notify("Saved, but the Teacher Panel needs compass-dash-v2.6.8-features.sql to show it","info");tcDo("cd_admin_set",{p_code:code,p_class:+$("tsc").value,p_house:TC.eh||"",p_year:+$("tsy").value},()=>"Saved",["stu","cls","codes"])}
 /* one student's picture: subjects, topics to work on and assignment results */
 function tcStu(code){const r=tcStuOf(code);if(!r)return;const s=r.stats||{},T=allT(),ok=typeof s.st==="string"&&s.st.length===T.length;
  const sub=SUBJ.map((u,i)=>{const L=T.map((x,k)=>[x,k]).filter(([x])=>x[0]===i);return{u,p:ok?Math.round(L.reduce((a,[,k])=>a+(+s.st[k]||0),0)/L.length/4*100):0}});
@@ -6818,7 +6905,7 @@ function tmQzLib(s,t){if(!TC.d.lib){tmRpc("cd_admin_lib",{}).then(r=>{if(r){TC.d
 function tmQzAdd(id){const x=tmLib(id),[s,t]=TQ.tg.split(".").map(Number);if(x)tcQzAdd({q:x.q,a:x.a,o:x.o,why:x.why,s:x.s!=null?x.s:s,t:x.t!=null?x.t:t})}
 
 XPAGES.mine=mine;XON.mine="tools";XNAME.mine="My class";
-XPAGES.teach=teach;XON.teach="settings";XNAME.teach="Teacher Mode";
+XPAGES.teach=teach;XON.teach="teach";XNAME.teach="Teacher Panel";
 
 /* ===== v2.6.0: Activities — drag-and-drop sorting, ordering, matching, diagram labelling, gap fills and number lines =====
    Drag a card onto its place, or tap a card and then tap its place (keyboard: Enter on a card, then Enter on a place).
@@ -7036,12 +7123,12 @@ const POL={
 privacy:{t:"Privacy Policy",lead:"How Compass Dash collects, uses and protects information about you. Written for students, parents, carers and schools.",s:[
 ["Who we are",`Compass Dash is a free revision website for students in Years 7 to 9 (ages 11 to 14). It is made and run by the Compass Dash team. If your school gives you a student code, your school decides how Compass Dash is used in class, and we look after student information on the school’s behalf. You can contact us at any time: ${supLink("Privacy question")}.`],
 ["The short version",`<ul><li>You can use Compass Dash without an account, and then everything stays on your own device.</li><li>With a student code we store a username you choose (not your real name), your house, year group and class, and your learning progress, so your teacher can see how you are doing and you can carry on from another device.</li><li>We never show adverts, never sell information, and never use it to track you around the internet.</li><li>You can download your information, delete it from your device, or ask us to delete your account, from Settings › Your data.</li></ul>`],
-["What we collect",`<b>On your device (no account needed).</b> Your progress (answers, mastery, XP, achievements, items from the shop), your settings (theme, sound, accessibility, language) and your privacy choices are saved in your browser’s local storage so the site works. This stays on your device.<br><br><b>If you use a student code.</b> We store your 4-digit student code, the username you chose, your house, year group and class if set, your learning progress (the same information as above, including your XP), summary statistics for leaderboards, assignment results, the date you agreed to this policy and, for students under 13, who gave consent (a parent or carer’s name, or your school).<br><br><b>Feedback.</b> If you send feedback, we store your star rating, category, message, the page you were on and the version of the site. Please do not put personal information in feedback.<br><br><b>Teachers.</b> Teacher tools use an admin key supplied by the school. We do not create teacher accounts or collect teachers’ names.`],
+["What we collect",`<b>On your device (no account needed).</b> Your progress (answers, mastery, XP, achievements, items from the shop), your settings (theme, sound, accessibility, language) and your privacy choices are saved in your browser’s local storage so the site works. This stays on your device.<br><br><b>If you use a student code.</b> We store your 4-digit student code, the username you chose, your house, year group and class if set, your learning progress (the same information as above, including your XP), summary statistics for leaderboards, assignment results, the date you agreed to this policy and, for students under 13, who gave consent (a parent or carer’s name, or your school).<br><br><b>Feedback.</b> If you send feedback, we store your star rating, category, message, the page you were on and the version of the site. Please do not put personal information in feedback.<br><br><b>Teachers.</b> The Teacher Panel uses an admin key supplied by the school. We do not create teacher accounts or collect teachers’ names.`],
 ["What we do not collect",`We do not ask for your real name, email address, phone number, home address, date of birth, photos or location. The display name you can set on your profile stays on your device and is not sent to us. We do not use analytics, advertising or tracking tools, and we do not build profiles of you for marketing. Compass Dash never rewards playing late at night.`],
 ["How we use information",`<ul><li>To run the site: saving your progress, showing your learning path, marking answers and choosing what to revise next.</li><li>For your school: so teachers can set work, see progress and results, and run house competitions.</li><li>To keep people safe: checking usernames are suitable for school, stopping repeated wrong sign-in attempts, and dealing with reports.</li><li>To improve Compass Dash: reading feedback and fixing problems.</li></ul>We rely on your school’s task of educating you and, where needed, on consent. For students under 13 we ask for a parent or carer’s consent before an account is used, unless the school has already collected it.`],
 ["Who can see your information",`<ul><li><b>Your teachers</b> (using the school’s admin key) can see your code, username, house, year group, class, progress and assignment results.</li><li><b>Other signed-in students</b> can see your username, house, XP, topics mastered and when you last played on the leaderboard, and house totals in house competitions. They cannot see your code or your answers. The leaderboard is not shown to anyone who is not signed in.</li><li><b>The Compass Dash team</b> can see account information and feedback to run and support the site.</li><li><b>Service providers</b> that host the site for us: GitHub Pages (the website) and Supabase (the database for student accounts and feedback). Like any website, they receive your device’s internet address when it connects. Google Fonts is only used if you allow it. They only use information to provide their service.</li></ul>We never sell or rent information to anyone.`],
 ["How long we keep it",`Information on your device stays until you delete it (Settings › Your data) or clear your browser. Account information is kept while your school uses Compass Dash, and is deleted when your school or you ask us to, or when a teacher deletes the account. Feedback is kept until it has been dealt with and is then deleted.`],
-["Keeping it safe",`Student codes and usernames are checked by the database every time they are used. Repeated wrong sign-in attempts are slowed down and then blocked for a while. Teacher tools need the school’s admin key and lock again after 20 minutes without use. Feedback has personal details such as email addresses and phone numbers removed before it is sent. Connections are encrypted (HTTPS), and the site limits where it may load content from.`],
+["Keeping it safe",`Student codes and usernames are checked by the database every time they are used. Repeated wrong sign-in attempts are slowed down and then blocked for a while. The Teacher Panel needs the school’s admin key and locks again after 20 minutes without use. Feedback has personal details such as email addresses and phone numbers removed before it is sent. Connections are encrypted (HTTPS), and the site limits where it may load content from.`],
 ["Your rights",`You (and your parent or carer) can ask to see the information we hold about you, to correct it, to delete it, or to object to how it is used. The quickest ways are Settings › Your data, where you can download your information or ask for your account to be deleted, or emailing ${supLink("Data request")}. We reply within one month. If you are unhappy with how we handle your information, please tell us first; you can also complain to the data protection authority where you live.`],
 ["Children",`Compass Dash is designed for children aged 11 to 14, so privacy is set high by default: optional services are off until someone chooses to turn them on, leaderboards only show usernames, usernames are checked for unsuitable words and personal information, and students can report a username. Students under 13 need a parent or carer’s consent (or their school’s) before using an account. Parents and carers can contact us at any time to see or delete their child’s information.`],
 ["Laws we follow",`We aim to meet the data protection laws that apply to schools and children where Compass Dash is used, including the UK GDPR and the Age Appropriate Design Code, and Qatar’s Personal Data Privacy Protection Law (Law No. 13 of 2016).`],
@@ -7057,7 +7144,7 @@ terms:{t:"Terms of Service",lead:"The rules for using Compass Dash. By using the
 ["Changes and contact",`We may update these terms; the version and date are shown below. Questions? Email ${supLink("Terms question")}.`]]},
 cookies:{t:"Cookie Policy",lead:"Compass Dash does not use cookies. It does use your browser’s storage, and you choose whether optional services can be used.",s:[
 ["Cookies",`Compass Dash does not set any cookies, and we do not use advertising, analytics or tracking cookies.`],
-["Storage on your device",`Like cookies, the browser’s local storage can save information on your device. We only use it for things the site needs to work, so these are always on:<ul><li><b>Progress</b> (cg, cgGuest, cgBase, cgPending, cg_bad): your answers, mastery, XP, achievements and items; a copy of this device’s own progress while someone is signed in; the last copy your account confirmed; answers waiting to reach your account (removed after 30 days); and a damaged save kept so it can be repaired.</li><li><b>Study tools</b> (cgDaily, cgExam, cgExamPv, cgCards): the daily challenge, exam countdown dates and flashcard ratings.</li><li><b>Settings</b> (cgSet, cgTheme, cgXs, cgXsSeen): theme, sound, language and accessibility choices.</li><li><b>Privacy and safety</b> (cgConsent, cgConsentLog, cgRL, cgFb): your choices on this banner, the count of wrong sign-in attempts, and when you last sent feedback.</li><li><b>Session</b> (session storage, cleared when the tab closes): the teacher admin key while Teacher tools is unlocked, and usernames you have already reported.</li><li><b>Offline copy</b>: a service worker keeps a copy of the site so it opens without internet. It never stores student account data.</li></ul>Compass Dash shares its web address (compassdash.github.io) with our sister site Compass GCSE, so the two sites’ storage sits side by side in your browser; each only uses its own.`],
+["Storage on your device",`Like cookies, the browser’s local storage can save information on your device. We only use it for things the site needs to work, so these are always on:<ul><li><b>Progress</b> (cg, cgGuest, cgBase, cgPending, cg_bad): your answers, mastery, XP, achievements and items; a copy of this device’s own progress while someone is signed in; the last copy your account confirmed; answers waiting to reach your account (removed after 30 days); and a damaged save kept so it can be repaired.</li><li><b>Study tools</b> (cgDaily, cgExam, cgExamPv, cgCards): the daily challenge, exam countdown dates and flashcard ratings.</li><li><b>Settings</b> (cgSet, cgTheme, cgXs, cgXsSeen): theme, sound, language and accessibility choices.</li><li><b>Privacy and safety</b> (cgConsent, cgConsentLog, cgRL, cgFb): your choices on this banner, the count of wrong sign-in attempts, and when you last sent feedback.</li><li><b>Session</b> (session storage, cleared when the tab closes): the teacher admin key while the Teacher Panel is unlocked, and usernames you have already reported.</li><li><b>Offline copy</b>: a service worker keeps a copy of the site so it opens without internet. It never stores student account data.</li></ul>Compass Dash shares its web address (compassdash.github.io) with our sister site Compass GCSE, so the two sites’ storage sits side by side in your browser; each only uses its own.`],
 ["Optional services",`<b>Google Fonts</b> provides the Inter and Lexend fonts. Loading them sends your device’s internet address to Google. It is off unless you choose Accept all or switch it on in Customise; without it, the site uses fonts already on your device.`],
 ["Changing your choices",`You can change your choices at any time with Cookie settings at the bottom of every page, or in Settings › Your data. We record each choice with the date and the version of this policy, so we can show what was agreed.`]]}};
 function polPage(k){const P=POL[k];
