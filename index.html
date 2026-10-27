@@ -1171,6 +1171,14 @@ body:not(.tmode) #ctw{display:none}
 .offn .ico{width:17px;height:17px;flex:none;color:var(--acc)}
 .updr{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:9500;display:flex;align-items:center;gap:12px;padding:10px 12px 10px 16px;box-shadow:0 14px 40px -16px rgba(0,0,0,.45);max-width:calc(100vw - 24px)}
 .updr>span{display:flex;align-items:center;gap:8px;font-weight:600}.updr .ico{width:18px;height:18px;color:var(--acc)}.updr .mx{position:static}
+/* ===== v2.8.0: teacher accounts ===== */
+.tplock label{display:block;margin:10px 0 4px;font-weight:600;font-size:.9rem}.tplock input{width:100%;box-sizing:border-box}
+.tcsubj{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:.88rem}.tcsubj select{flex:1;min-width:0}
+.ctbl.tst td{vertical-align:top;min-width:200px}.ctbl.tst td.tsn{min-width:140px;white-space:nowrap}
+.tsx{display:flex;flex-direction:column;gap:3px}.tsx .tcact{margin-top:6px;flex-wrap:wrap}.tsx.off b{text-decoration:line-through;color:var(--mut)}
+.tinv{display:inline-block;font-size:1.15rem;font-weight:800;letter-spacing:.12em;padding:2px 10px;border-radius:8px;background:var(--bg);border:1px dashed var(--line);width:max-content}
+.tslips{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.tslip{display:flex;flex-direction:column;gap:6px;padding:14px;border:1.5px dashed var(--line);border-radius:12px;break-inside:avoid}.tslip small{color:var(--mut);line-height:1.4}
 </style>
 </head><body>
 <canvas id="bg" aria-hidden="true"></canvas><nav id="nav"><span class="logo" role="link" tabindex="0" onclick="go('home')" onkeydown="if(event.key==='Enter')go('home')" aria-label="Compass Dash home"><i class="lg"></i>Compass Dash</span><button id="menu" class="menu" aria-label="Open menu" aria-expanded="false" aria-controls="links" onclick="navT()"><svg class="h" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
@@ -4278,7 +4286,8 @@ notify(FB.q?"Feedback saved \u2014 it sends when you're back online":"Feedback s
 // VERSIONING RULE: every update increases the version by exactly 0.01 — the last number goes up by one
 // (next: v2.7.0, v2.7.1, ...). Each of the last two numbers only goes up to 9, then rolls over:
 // after v2.5.9 comes v2.6.0, and after v2.9.9 comes v3.0.0 (that is how v1.9.9 was followed by v2.0.0).
-const VER="v2.7.9",CL=[
+const VER="v2.8.0",CL=[
+["v2.8.0","28 Oct 2026","Teacher accounts",["Every teacher can have their own account: two seats for each subject, each set up once with an invite code and a password the teacher chooses","Teachers see only their subject: its classes and students, assignments, codes, announcements, insights, questions, lessons, whiteboards and live activities","The admin key still works and sees everything, and Manage > School > Teachers shows every seat, its invite code and what teachers have changed","Each class can be given a subject, and classes a teacher makes are set to their subject automatically","Teachers can change their password, and the admin can turn an account off, sign it out or reset the seat"]],
 ["v2.7.9","27 Oct 2026","Offline mode",["Compass Dash now works fully offline: every lesson, quiz, game and the shop, even on patchy school Wi-Fi, where the saved copy opens straight away instead of waiting","Things you do offline (assignment progress, challenges, question reports and feedback) wait on your device and sync as soon as you're back online","My class, announcements, the leaderboard, houses and challenges still open offline, showing when they were last saved","A clearer offline strip that shows what's waiting to sync, and a prompt when a new version is ready","Install Compass Dash as an app on phones, tablets and computers (Settings > Offline and app)"]],
 ["v2.7.8","27 Oct 2026","Quests, challenges and class tools",["Weekly quests: three goals every week, with XP for each and a bonus for finishing all three","Challenge a classmate: play 5 questions, then they play the same 5","A From your teacher area on the home page with live activities, assignments and announcements","Report a question you think is wrong or unclear, right after answering it","Teacher Panel: a wrong-answer breakdown after live activities, a class heatmap, every topic on a student's profile (which now prints), a Do Now starter, and a name picker and timer under Class tools","Reported questions in Manage, under Insights & messages"]],
 ["v2.7.7","27 Oct 2026","Teacher Panel",["Teacher Mode is now the Teacher Panel, with its own layout and navigation, separate from the student site: Dashboard, Question Library, Lessons, Whiteboard, Live and Manage","Manage groups classes, students, codes, assignments, quizzes, house tools, insights and announcements into four clear sections","A Teacher Panel tab in the main menu, a Big screen option for projectors and classroom displays, and a layout that fits tablets and phones"]],
@@ -6174,11 +6183,11 @@ XPAGES.houses=houses;XON.houses="tools";
    Unlocked with the admin key from the Supabase setup file. Every action is checked by the database
    with that key again, so nothing here depends on the page alone. */
 var TC={tab:"dash",f:"all",sort:"xp",d:{},busy:0,bad:0,err:0};
-const TCF={cls:"cd_admin_classes",stu:"cd_admin_class",asg:"cd_admin_assigns",qz:"cd_admin_quizzes",codes:"cd_admin_list",shop:"cd_admin_shop",ann:"cd_admin_anns",ins:"cd_admin_insights",hx:"cd_admin_houses",lib:"cd_admin_lib",les:"cd_admin_lessons",wb:"cd_admin_boards",live:"cd_admin_live_list",rep:"cd_admin_qrep"};
+const TCF={cls:"cd_admin_classes",stu:"cd_admin_class",asg:"cd_admin_assigns",qz:"cd_admin_quizzes",codes:"cd_admin_list",shop:"cd_admin_shop",ann:"cd_admin_anns",ins:"cd_admin_insights",hx:"cd_admin_houses",lib:"cd_admin_lib",les:"cd_admin_lessons",wb:"cd_admin_boards",live:"cd_admin_live_list",rep:"cd_admin_qrep",tch:"cd_admin_teachers"};
 const TCN={cls:["Classes","\u{1F3EB}"],stu:["Students","\u{1F393}"],asg:["Assignments","\u{1F4CB}"],qz:["Quizzes","\u{1F4DD}"],chal:["Challenges","\u{1F3C6}"],codes:["Codes","\u{1F511}"],shop:["Shop XP",""],hx:["House XP",""],ins:["Insights",""],ann:["Announcements",""]};for(const k in TCN)TCN[k][1]=emo(TCN[k][1]);TCN.shop[1]=icn("bag");TCN.hx[1]=icn("trophy");TCN.ins[1]=icn("search");TCN.ann[1]=icn("bell");
-Object.assign(TCN,{dash:["Dashboard",icn("gauge")],lib:["Question Library",icn("books")],les:["Lessons",icn("notepad")],wb:["Whiteboard",icn("pen")],live:["Live",icn("bolt")],man:["Manage",icn("folders")],rep:["Reported questions",icn("alert")]});
-const TCNEED={cls:["cls"],stu:["stu","cls","asg"],asg:["asg","cls","qz","stu"],qz:["qz"],chal:["cls"],codes:["codes","cls"],shop:["shop","cls"],hx:["hx"],ins:["ins","cls"],ann:["ann","cls"],dash:["lib","live","les","cls"],lib:["lib"],les:["les","lib","cls"],wb:["wb"],live:["live","lib","les","qz","cls"],man:["cls"],rep:["rep","lib"]};
-const TERR=Object.assign({},CLSERR,{bad_text:"Keep it short and suitable for school.",rude_name:"That name is not suitable for school.",no_class:"That class no longer exists.",
+Object.assign(TCN,{dash:["Dashboard",icn("gauge")],lib:["Question Library",icn("books")],les:["Lessons",icn("notepad")],wb:["Whiteboard",icn("pen")],live:["Live",icn("bolt")],man:["Manage",icn("folders")],rep:["Reported questions",icn("alert")],tch:["Teachers",icn("user")]});
+const TCNEED={cls:["cls"],stu:["stu","cls","asg"],asg:["asg","cls","qz","stu"],qz:["qz"],chal:["cls"],codes:["codes","cls"],shop:["shop","cls"],hx:["hx"],ins:["ins","cls"],ann:["ann","cls"],dash:["lib","live","les","cls"],lib:["lib"],les:["les","lib","cls"],wb:["wb"],live:["live","lib","les","qz","cls"],man:["cls"],rep:["rep","lib"],tch:["tch"]};
+const TERR=Object.assign({},CLSERR,{not_yours:"That belongs to another subject, or only your school's admin can do it.",bad_text:"Keep it short and suitable for school.",rude_name:"That name is not suitable for school.",no_class:"That class no longer exists.",
  bad_tasks:"Add between 1 and 12 tasks.",bad_quiz:"A quiz needs between 1 and 40 questions.",bad_date:"Pick an end date within the next 120 days.",bad_metric:"Pick what the challenge measures.",
  in_use:"A student is using that code. Free it first.",bad_year:"Pick Year 7, 8 or 9.",bad_house:"Pick North, East, South or West.",not_found:"That no longer exists. Refresh and try again."});
 const clsName=id=>{const c=(TC.d.cls||[]).find(x=>x.id===+id);return c?c.name:""};
@@ -6188,7 +6197,7 @@ const tcDay=d=>d?new Date(d+"T12:00:00").toLocaleDateString(undefined,{weekday:"
 function tcLoad(force){const need=TCNEED[TC.tab].filter(k=>force||!TC.d[k]),hs=TC.tab==="chal"&&(force||!HSE.d);
  if(!need.length&&!hs)return Promise.resolve();
  TC.busy++;
- return Promise.all([...need.map(k=>cdRpc(TCF[k],{p_key:cdKey()}).then(r=>{if(r&&r.ok)TC.d[k]=k==="asg"?lgRows(r.rows||[]):k==="hx"?r:r.rows||[];else if(r&&r.error==="bad_key")TC.bad=1;else TC.err=1})),
+ return Promise.all([...need.map(k=>cdRpc(TCF[k],{p_key:cdKey()}).then(r=>{if(r&&r.ok)TC.d[k]=k==="asg"?lgRows(r.rows||[]):k==="hx"||k==="tch"?r:r.rows||[];else if(r&&r.error==="bad_key")TC.bad=1;else TC.err=1})),
   hs?cdRpc("cd_houses").then(r=>{HSE.d=r&&r.houses?r:{houses:[],chal:[]};HSE.t=Date.now()}):0])
   .catch(e=>{TC.err=/\b404\b|not exist|schema cache/i.test(String(e&&e.message))?"sql":1})
   .then(()=>{TC.busy--;if(TC.bad){try{sessionStorage.removeItem("cdAK")}catch(e){}}if(window.CURP==="teach"||window.CURP==="class")teach()})}
@@ -6196,53 +6205,54 @@ async function tcUnlock(){const k=$("cdk"),e=$("tce");if(!k||!k.value.trim())ret
  const key=k.value.trim();   /* v2.7.4: keep the key before the box is cleared, or an empty key was saved and the panel never opened */
  try{const r=await cdRpc("cd_admin_check",{p_key:key});k.value="";
   if(r&&!r.ok&&(r.error==="bad_key"||r.error==="locked")){RL.fail("admin",r.error==="locked"?(r.mins||15)*60:0);if(rlHold("admin","tce",null))return}
-  if(r&&r.ok){RL.ok("admin");tcSeen();try{sessionStorage.setItem("cdAK",key);sessionStorage.setItem("cdAKt",Date.now())}catch(x){}TC.bad=0;TC.err=0;TC.d={};teach()}else e.textContent=r&&r.error==="locked"?"Too many wrong tries. Admin sign-in is locked here for "+r.mins+" minute"+(r.mins===1?"":"s")+".":"That key was not accepted."}
+  if(r&&r.ok){RL.ok("admin");tcSeen();TC.me=null;try{sessionStorage.removeItem("cdT");sessionStorage.setItem("cdAK",key);sessionStorage.setItem("cdAKt",Date.now())}catch(x){}TC.bad=0;TC.err=0;TC.d={};teach()}else e.textContent=r&&r.error==="locked"?"Too many wrong tries. Admin sign-in is locked here for "+r.mins+" minute"+(r.mins===1?"":"s")+".":"That key was not accepted."}
  catch(x){e.textContent=/\b404\b/.test(String(x.message))?"Run compass-dash-v2.6-update.sql in Supabase first, then try again.":"Could not reach the student code service."}}
-function tcLock(){try{sessionStorage.removeItem("cdAK")}catch(e){}TC.d={};teach()}
+function tcLock(){const k=cdKey();if(k&&k.slice(0,2)==="t:")cdRpc("cd_t_logout",{p_key:k}).catch(()=>{});try{sessionStorage.removeItem("cdAK");sessionStorage.removeItem("cdT")}catch(e){}TC.d={};TC.me=null;TA.mode="t";teach()}
 /* run a teacher action, then reload what it changed */
 async function tcDo(fn,body,done,stale){if(TC.act)return;TC.act=1;
  try{const r=await cdRpc(fn,Object.assign({p_key:cdKey()},body));TC.act=0;
-  if(!r||!r.ok){notify(TERR[r&&r.error]||"That did not work.","err");if(r&&r.error==="bad_key")tcLock();return r}
+  if(!r||!r.ok){notify(TERR[r&&r.error]||"That did not work.","err");if(r&&r.error==="bad_key")tcBad();return r}
   if(done)notify(done(r),"ok");(stale||[]).forEach(k=>{if(k==="hse")HSE.d=null;else delete TC.d[k]});fbClose();teach();return r}
  catch(x){TC.act=0;notify(/\b404\b|not exist|schema cache/i.test(String(x&&x.message))?"Run compass-dash-v2.6-update.sql in Supabase first.":"Could not reach the student code service.","err")}}
 /* ===== v2.7.7: the Teacher Panel. Its own layout, apart from the student site: a sidebar (a top bar on tablets and
    phones) with Dashboard, Question Library, Lessons, Whiteboard, Live and Manage. Manage holds the class, classwork,
    house and message tools, grouped. While it is open the student nav, footer and game are hidden (body.tmode, set
-   in go()). Every page still needs the admin key, and the database checks it on every request. */
+   in go()). Every page needs the admin key or a teacher's sign-in (v2.8.0), and the database checks it on every request. */
 const TPN=[["dash","Dashboard","gauge"],["lib","Question Library","books"],["les","Lessons","notepad"],["wb","Whiteboard","pen"],["live","Live","bolt"],["man","Manage","folders"]];
 const TPM=[["Classes & students",["cls","stu","codes"],"Your classes, every student's progress and their sign-in codes."],
  ["Classwork",["asg","qz"],"Set work with due dates and build your own quizzes."],
  ["Houses & rewards",["chal","hx","shop"],"House challenges, house points and what students can spend in the shop."],
- ["Insights & messages",["ins","ann","rep"],"How your classes are getting on, messages on students' home page, and questions students have reported."]];
+ ["Insights & messages",["ins","ann","rep"],"How your classes are getting on, messages on students' home page, and questions students have reported."],
+ ["School",["tch"],"Teacher accounts for each subject, and what teachers have changed."]];
 const TPMD={cls:"Create classes and add codes to them",stu:"Progress, codes and resets for each student",codes:"Make, print and manage sign-in codes",asg:"Set tasks with due dates and see who has finished",qz:"Build quizzes from the bank, your library or your own questions",
- chal:"Start house and class challenges",hx:"See and adjust each house's points",shop:"Each student's spendable XP",ins:"Accuracy and activity across classes and topics",ann:"Post messages to your classes",rep:"Questions students think are wrong or unclear"};
+ chal:"Start house and class challenges",hx:"See and adjust each house's points",shop:"Each student's spendable XP",ins:"Accuracy and activity across classes and topics",ann:"Post messages to your classes",rep:"Questions students think are wrong or unclear",tch:"Two seats per subject: invites, accounts and the change log"};
 const tpGroup=k=>TPM.find(g=>g[1].includes(k));
+/* v2.8.0: a signed-in teacher doesn't see the admin-only pages */
+const tpHide=k=>!!tpT()&&["hx","tch"].includes(k),tpM=()=>TPM.map(([n,L,d])=>[n,L.filter(k=>!tpHide(k)),d]).filter(g=>g[1].length);
 function tpBig(){ST.tpBig=!ST.tpBig;saveST();document.documentElement.classList.toggle("tpbig",!!ST.tpBig);teach()}
 function tpShell(main,locked){const k=TC.tab,top=tpGroup(k)?"man":k;
- return`<div class="tp"><div class="tpnav" role="navigation" aria-label="Teacher Panel"><button class="tpbrand" onclick="go('teach','dash')" aria-label="Teacher Panel dashboard"><i class="lg">${logoCube("")}</i><span><b>Compass Dash</b><small>Teacher Panel</small></span></button>
+ return`<div class="tp"><div class="tpnav" role="navigation" aria-label="Teacher Panel"><button class="tpbrand" onclick="go('teach','dash')" aria-label="Teacher Panel dashboard"><i class="lg">${logoCube("")}</i><span><b>Compass Dash</b><small>Teacher Panel${tpT()?" · "+esc(SUBJ[tpT().subj].n):""}</small></span></button>
 <div class="tpis">${locked?"":TPN.map(([id,n,ic])=>`<button class="tpi${top===id?" on":""}"${top===id?' aria-current="page"':""} onclick="go('teach','${id}')">${icn(ic)}<span>${n}</span></button>`).join("")}</div>
-<div class="tpfoot"><button class="tpi" onclick="ctOpen()" aria-label="Class tools" title="Name picker and timer">${icn("timer")}<span>Class tools</span></button><button class="tpi" onclick="tpBig()" aria-label="Big screen" aria-pressed="${!!ST.tpBig}" title="Larger text and controls for a projector or classroom screen">${icn("laptop")}<span>Big screen${ST.tpBig?" on":""}</span></button><button class="tpi" onclick="go('home')" aria-label="Student site" title="Back to the student site">${icn("back")}<span>Student site</span></button>${locked?"":`<button class="tpi" onclick="tcLock()" aria-label="Lock the Teacher Panel" title="Lock">${icn("lock")}<span>Lock</span></button>`}<small class="tpver">${VER}</small></div></div>
+<div class="tpfoot">${tpT()?`<button class="tpi" onclick="tAcct()" aria-label="Your account" title="Your account">${icn("user")}<span class="nc">${esc(tpT().name)}</span></button>`:""}<button class="tpi" onclick="ctOpen()" aria-label="Class tools" title="Name picker and timer">${icn("timer")}<span>Class tools</span></button><button class="tpi" onclick="tpBig()" aria-label="Big screen" aria-pressed="${!!ST.tpBig}" title="Larger text and controls for a projector or classroom screen">${icn("laptop")}<span>Big screen${ST.tpBig?" on":""}</span></button><button class="tpi" onclick="go('home')" aria-label="Student site" title="Back to the student site">${icn("back")}<span>Student site</span></button>${locked?"":`<button class="tpi" onclick="tcLock()" aria-label="Lock the Teacher Panel" title="Lock">${icn("lock")}<span>Lock</span></button>`}<small class="tpver">${VER}</small></div></div>
 <div class="tpmain">${navigator.onLine||locked?"":`<p class="offn">${icn("wifioff")} You're offline. Pages you've already opened still show, but saving, AI questions and live activities need internet.</p>`}${main}</div></div>`}
-function teach(t){if(t&&TCN[t])TC.tab=t;
+function teach(t){if(t&&TCN[t])TC.tab=t;if(tpHide(TC.tab))TC.tab="dash";
  if(!cdOn())return app.innerHTML=tpShell(`<div class="tplock"><div class="card"><h1>Teacher Panel</h1><p class="mut">Student codes are not connected yet, so there is no class to manage. See README-student-codes.md.</p></div></div>`,1);
- if(!cdKey())return app.innerHTML=tpShell(`<div class="tplock"><div class="card"><span class="tplk">${icn("lock")}</span><h1>Teacher Panel</h1><p class="mut">Lessons, the Question Library, the whiteboard, live quizzes and everything for running your classes.</p>
-<p class="mut">Enter the admin key from your Supabase setup file. It stays unlocked on this device until you close the tab or leave it for 20 minutes.</p><div class="tcf"><input id="cdk" type="password" autocomplete="off" placeholder="Admin key" aria-label="Admin key" onkeydown="if(event.key==='Enter')tcUnlock()"><button class="btn" onclick="tcUnlock()">Unlock</button></div><p class="fbe" id="tce" role="alert">${TC.bad?"That key was not accepted.":""}</p>
-<p class="mut tpnote">Only teachers have the admin key. Students, <button class="lnk" onclick="go('home')">head back to Learn</button>.</p></div></div>`,1);
+ if(!cdKey())return app.innerHTML=tpShell(tpLockHtml(),1);
  const miss=TCNEED[TC.tab].some(k=>!TC.d[k])||(TC.tab==="chal"&&!HSE.d),g=tpGroup(TC.tab);
- app.innerHTML=tpShell(`<header class="tphd"><div>${g?`<p class="tpcrumb"><button class="lnk" onclick="go('teach','man')">Manage</button> <span aria-hidden="true">›</span> ${g[0]}</p>`:""}<h1>${TCN[TC.tab][0]}</h1></div><button class="btn alt sm" onclick="tcLoad(1)">${icn("refresh")} Refresh</button></header>
-${g?`<div class="tpsub"><div class="chips" role="tablist" aria-label="${g[0]}">${g[1].map(k=>`<button class="chip${TC.tab===k?" on":""}" role="tab" aria-selected="${TC.tab===k}" onclick="go('teach','${k}')">${TCN[k][1]} ${TCN[k][0]}</button>`).join("")}</div>
-<select class="tpjump" aria-label="Go to another Manage page" onchange="go('teach',this.value)">${TPM.map(([n,L])=>`<optgroup label="${n}">${L.map(k=>`<option value="${k}"${k===TC.tab?" selected":""}>${TCN[k][0]}</option>`).join("")}</optgroup>`).join("")}</select></div>`:""}
-<div id="tcb">${TC.err?`<div class="card"><p class="mut" style="margin-top:0">${TC.err==="sql"?TC.tab==="rep"?"Run compass-dash-v2.7.8.sql in Supabase first, then refresh.":TMT.includes(TC.tab)?"Run compass-dash-v2.7.5-teacher-mode.sql in Supabase first, then refresh.":(["shop","ins","ann"].includes(TC.tab)?"Run compass-dash-v2.6.8-features.sql in Supabase first, then refresh.":"Run compass-dash-v2.6-update.sql in Supabase first, then refresh."):"Could not reach the student code service."}</p><button class="btn alt" onclick="TC.err=0;tcLoad(1)">Try again</button></div>`:miss?`<p class="mut">Loading…</p>`:TCR[TC.tab]()}</div>`);
- if(miss&&!TC.err&&!TC.busy)tcLoad()}
+ app.innerHTML=tpShell(`<header class="tphd"><div>${!g&&TC.tab==="dash"&&tpT()?`<p class="tpcrumb nc">Welcome, ${esc(tpT().name)} · ${esc(SUBJ[tpT().subj].n)}</p>`:""}${g?`<p class="tpcrumb"><button class="lnk" onclick="go('teach','man')">Manage</button> <span aria-hidden="true">›</span> ${g[0]}</p>`:""}<h1>${TCN[TC.tab][0]}</h1></div><button class="btn alt sm" onclick="tcLoad(1)">${icn("refresh")} Refresh</button></header>
+${g?`<div class="tpsub"><div class="chips" role="tablist" aria-label="${g[0]}">${g[1].filter(k=>!tpHide(k)).map(k=>`<button class="chip${TC.tab===k?" on":""}" role="tab" aria-selected="${TC.tab===k}" onclick="go('teach','${k}')">${TCN[k][1]} ${TCN[k][0]}</button>`).join("")}</div>
+<select class="tpjump" aria-label="Go to another Manage page" onchange="go('teach',this.value)">${tpM().map(([n,L])=>`<optgroup label="${n}">${L.map(k=>`<option value="${k}"${k===TC.tab?" selected":""}>${TCN[k][0]}</option>`).join("")}</optgroup>`).join("")}</select></div>`:""}
+<div id="tcb">${TC.err?`<div class="card"><p class="mut" style="margin-top:0">${TC.err==="sql"?TC.tab==="tch"?"Run compass-dash-v2.8.0-teacher-accounts.sql in Supabase first, then refresh.":TC.tab==="rep"?"Run compass-dash-v2.7.8.sql in Supabase first, then refresh.":TMT.includes(TC.tab)?"Run compass-dash-v2.7.5-teacher-mode.sql in Supabase first, then refresh.":(["shop","ins","ann"].includes(TC.tab)?"Run compass-dash-v2.6.8-features.sql in Supabase first, then refresh.":"Run compass-dash-v2.6-update.sql in Supabase first, then refresh."):"Could not reach the student code service."}</p><button class="btn alt" onclick="TC.err=0;tcLoad(1)">Try again</button></div>`:miss?`<p class="mut">Loading…</p>`:TCR[TC.tab]()}</div>`);
+ tpTrim();if(miss&&!TC.err&&!TC.busy)tcLoad()}
 const TCR={};
 /* ---- Manage: every management tool, grouped ---- */
 TCR.man=()=>{const C=TC.d.cls||[],num={cls:C.length,asg:TC.d.asg&&TC.d.asg.length,qz:TC.d.qz&&TC.d.qz.length,stu:C.reduce((a,c)=>a+(c.n|0),0),rep:TC.d.rep&&TC.d.rep.filter(r=>r.open).length};
- return`<p class="lead">Everything for running your classes, grouped by what it is for.</p><div class="tpmg">${TPM.map(([n,L,d])=>`<section class="card tpcat"><h2>${n}</h2><p class="mut">${d}</p>${L.map(k=>`<button class="tprow" onclick="go('teach','${k}')"><span class="tpri">${TCN[k][1]}</span><span class="tprt"><b>${TCN[k][0]}</b><small>${TPMD[k]}</small></span>${num[k]!=null?`<span class="tpc">${num[k].toLocaleString()}</span>`:""}${icn("arrowr")}</button>`).join("")}</section>`).join("")}</div>`};
+ return`<p class="lead">Everything for running your classes, grouped by what it is for.</p><div class="tpmg">${tpM().map(([n,L,d])=>`<section class="card tpcat"><h2>${n}</h2><p class="mut">${d}</p>${L.map(k=>`<button class="tprow" onclick="go('teach','${k}')"><span class="tpri">${TCN[k][1]}</span><span class="tprt"><b>${TCN[k][0]}</b><small>${TPMD[k]}</small></span>${num[k]!=null?`<span class="tpc">${num[k].toLocaleString()}</span>`:""}${icn("arrowr")}</button>`).join("")}</section>`).join("")}</div>`};
 /* ---- classes ---- */
 TCR.cls=()=>{const C=TC.d.cls;
  return`<p class="lead">Group students into classes. Codes you add to a class put each student straight into it when they sign up.</p>
 <div class="card"><b>New class</b><div class="tcf"><input id="tcn" maxlength="30" placeholder="Class name, e.g. 7A or Year 8 Science" onkeydown="if(event.key==='Enter')tcClassNew()"><select id="tcy" aria-label="Year group"><option value="">Any year</option><option value="7">Year 7</option><option value="8">Year 8</option><option value="9">Year 9</option></select><button class="btn" onclick="tcClassNew()">Add class</button></div></div>
-${C.length?`<div class="tcgrid">${C.map(c=>`<div class="card tccl"><h3 class="nc">${esc(c.name)}</h3><p class="mut">${c.year?"Year "+c.year+" · ":""}${c.n} student${c.n===1?"":"s"} · ${c.free} free code${c.free===1?"":"s"}</p>
+${C.length?`<div class="tcgrid">${C.map(c=>`<div class="card tccl"><h3 class="nc">${esc(c.name)}</h3><p class="mut">${c.year?"Year "+c.year+" · ":""}${c.n} student${c.n===1?"":"s"} · ${c.free} free code${c.free===1?"":"s"}</p>${tcSubjLine(c)}
 <div class="tcact"><button class="btn sm" onclick="TC.f='${c.id}';go('teach','stu')">Students</button><button class="btn alt sm" onclick="tcCodesFor(${c.id})">Add codes</button><button class="btn alt sm" onclick="tcPrint(${c.id})">Print code slips</button><button class="btn alt sm" onclick="tcClassEdit(${c.id})">Edit</button><button class="btn alt sm danger" onclick="tcClassDel(${c.id})">Delete</button></div></div>`).join("")}</div>`
 :emptyS("\u{1F3EB}","No classes yet","Add your first class above, then add codes to it.")}`};
 function tcClassNew(){const n=($("tcn").value||"").trim(),y=+$("tcy").value||null;if(!n)return notify("Type a name for the class","info");
@@ -6541,7 +6551,7 @@ const TMTP=document.createElement("template");
 const tmTx=h=>{TMTP.innerHTML=String(h==null?"":h);return TMTP.content.textContent.trim()};
 /* a call that is not a tcDo action: returns the result, or null after saying what went wrong */
 async function tmRpc(fn,body){try{const r=await cdRpc(fn,Object.assign({p_key:cdKey()},body));
- if(r&&r.ok)return r;notify(TMERR[r&&r.error]||TERR[r&&r.error]||"That did not work.","err");if(r&&r.error==="bad_key")tcLock();return null}
+ if(r&&r.ok)return r;notify(TMERR[r&&r.error]||TERR[r&&r.error]||"That did not work.","err");if(r&&r.error==="bad_key")tcBad();return null}
  catch(e){notify(/\b404\b/.test(String(e&&e.message))?"Run compass-dash-v2.7.5-teacher-mode.sql in Supabase first.":"Could not reach the student code service.","err");return null}}
 
 /* ---------- questions: the site's bank ("b:s.t.j") and the Question Library ("l:id") ---------- */
@@ -6656,7 +6666,7 @@ async function tmAIGo(){const A=TC.ai,b=$("tag"),e=$("tae");if(!b||b.disabled)re
  try{const x=await fetch(CD_URL.replace(/\/+$/,"")+"/functions/v1/cd-ai",{method:"POST",headers:h,body:JSON.stringify({key:cdKey(),subject:u.n,topic:tp?tp.n:"",subj:A.s,top:A.t>=0?A.t:null,year:A.y,diff:A.d,n:A.n,focus:A.f.trim(),avoid})});
   st=x.status;r=await x.json().catch(()=>null)}catch(x){}
  if(!$("tag"))return;b.disabled=false;b.textContent="Generate";
- if(!r||!r.ok){e.textContent=st===404?"Deploy the cd-ai Edge Function in Supabase first (see the setup steps).":(r&&TMERR[r.error])||"Could not reach the AI service.";if(r&&r.error==="bad_key")tcLock();return}
+ if(!r||!r.ok){e.textContent=st===404?"Deploy the cd-ai Edge Function in Supabase first (see the setup steps).":(r&&TMERR[r.error])||"Could not reach the AI service.";if(r&&r.error==="bad_key")tcBad();return}
  TC.d.lib=[...r.rows,...(TC.d.lib||[])];TC.lq.view="pending";TC.lq.s=-1;TC.lq.q="";fbClose();go("teach","lib");
  notify(r.rows.length+" question"+(r.rows.length===1?"":"s")+" ready for you to check"+(r.left!=null?" · "+r.left+" left today":""),"ok")}
 
@@ -7155,6 +7165,84 @@ addEventListener("online",()=>{if(window.CURP==="teach")teach()});addEventListen
 /* the leaderboard and houses say when they're showing a saved copy */
 const boardBase=board;board=function(){boardBase();if(BRD.off&&cdUser()){const h=app.querySelector("h2");if(h)h.insertAdjacentHTML("afterend",offNote(BRD.off))}};
 const housesBase=houses;houses=function(){housesBase();if(HSE.off){const h=app.querySelector("h2");if(h)h.insertAdjacentHTML("afterend",offNote(HSE.off))}};XPAGES.houses=houses;
+
+/* ===== v2.8.0: teacher accounts =====
+   22 seats, two for each subject (compass-dash-v2.8.0-teacher-accounts.sql). A teacher sets up their seat once with
+   an invite code from the admin, then signs in with a username and password. Their session sits where the admin key
+   used to (sessionStorage cdAK, as "t:..."), so every Teacher Panel tool works unchanged, and the database limits it to
+   their subject. The admin key still works and sees everything; only it manages seats (Manage > School > Teachers). */
+var TA={mode:"t"};
+TC.me=(()=>{try{return JSON.parse(sessionStorage.getItem("cdT")||"null")}catch(e){return null}})();
+const tpT=()=>{const k=cdKey();return k&&k.slice(0,2)==="t:"&&TC.me?TC.me:null};
+const TAERR={no_match:"That username and password don't match.",disabled:"Your school's admin has turned this account off.",bad_invite:"That invite code isn't right, or it has already been used.",
+ bad_user:"Usernames are 3 to 24 letters, numbers, dots or underscores.",taken:"That username is taken. Try another.",bad_text:"Use a name that's suitable for school.",bad_pw:"Passwords need 8 to 72 characters."};
+const taErr=(r,x)=>r&&r.error==="locked"?"Too many wrong tries from here. Wait "+(r.mins||15)+" minutes, then try again.":TAERR[r&&r.error]||
+ (/\b404\b/.test(String(x&&x.message))?"Teacher accounts aren't set up yet. Run compass-dash-v2.8.0-teacher-accounts.sql in Supabase.":"Could not reach the server. Try again.");
+function tStart(r){try{sessionStorage.setItem("cdAK",r.tok);sessionStorage.setItem("cdAKt",Date.now());sessionStorage.setItem("cdT",JSON.stringify(r.t))}catch(e){}
+ Object.assign(TC,{me:r.t,d:{},bad:0,err:0,tab:"dash",f:"all"});TC.lq.s=r.t.subj;TA.mode="t";teach()}
+async function tLogin(){const e=$("tce"),u=($("tlu").value||"").trim(),p=$("tlp").value||"",b=$("tlb");if(!u||!p)return e.textContent="Type your username and password.";
+ if(rlHold("tlogin","tce","tlb"))return;b.disabled=true;e.textContent="Signing in…";let r=null;
+ try{r=await cdRpc("cd_t_login",{p_user:u,p_pw:p})}catch(x){b.disabled=false;return e.textContent=taErr(null,x)}
+ b.disabled=false;if(r&&r.ok){RL.ok("tlogin");return tStart(r)}if(r&&r.error==="no_match")RL.fail("tlogin",0);e.textContent=taErr(r)}
+async function tClaim(){const e=$("tce"),v=id=>($(id).value||"").trim(),inv=v("tiv").toUpperCase(),n=v("tin"),u=v("tiu"),p=$("tip").value||"",b=$("tcb2");
+ if(!inv||!n||!u||!p)return e.textContent="Fill in every box.";if(!/^[A-Za-z0-9_.]{3,24}$/.test(u))return e.textContent=TAERR.bad_user;
+ if(p.length<8)return e.textContent=TAERR.bad_pw;if(p!==$("tip2").value)return e.textContent="The two passwords don't match.";
+ if(rlHold("tlogin","tce","tcb2"))return;b.disabled=true;e.textContent="Setting up your account…";let r=null;
+ try{r=await cdRpc("cd_t_claim",{p_invite:inv,p_user:u,p_name:n,p_pw:p})}catch(x){b.disabled=false;return e.textContent=taErr(null,x)}
+ b.disabled=false;if(r&&r.ok){notify("Welcome, "+r.t.name+"! You're set up as a "+SUBJ[r.t.subj].n+" teacher.","ok");return tStart(r)}
+ if(r&&r.error==="bad_invite")RL.fail("tlogin",0);e.textContent=taErr(r)}
+/* the sign-in screen: teacher username and password, setting up with an invite, or the school's admin key */
+function tpLockHtml(){const m=TA.mode,sw=(to,t)=>`<button class="lnk" onclick="TA.mode='${to}';teach()">${t}</button>`;
+ return`<div class="tplock"><div class="card"><span class="tplk">${icn("lock")}</span><h1>Teacher Panel</h1>${m==="inv"?`<p class="mut">Set up your account with the invite code from your school's Compass Dash admin. You only do this once.</p>
+<label for="tiv">Invite code</label><input id="tiv" class="mono" maxlength="12" autocomplete="off" spellcheck="false" autocapitalize="characters">
+<label for="tin">Your name, as you'd like it shown</label><input id="tin" maxlength="40" autocomplete="name" placeholder="e.g. Mr Smith">
+<label for="tiu">Username</label><input id="tiu" maxlength="24" autocomplete="username" spellcheck="false" autocapitalize="none" placeholder="3 to 24 letters, numbers, dots or underscores">
+<label for="tip">Password</label><input id="tip" type="password" maxlength="72" autocomplete="new-password" placeholder="At least 8 characters">
+<label for="tip2">Password again</label><input id="tip2" type="password" maxlength="72" autocomplete="new-password" onkeydown="if(event.key==='Enter')tClaim()">
+<p class="fbe" id="tce" role="alert"></p><div class="fbr"><button class="btn alt" onclick="TA.mode='t';teach()">Back</button><button class="btn" id="tcb2" onclick="tClaim()">Create account</button></div>`
+:m==="key"?`<p class="mut">The school's admin key, from the Supabase setup file. It sees every subject and manages teacher accounts. It stays unlocked until you close the tab or leave it for 20 minutes.</p><div class="tcf"><input id="cdk" type="password" autocomplete="off" placeholder="Admin key" aria-label="Admin key" onkeydown="if(event.key==='Enter')tcUnlock()"><button class="btn" onclick="tcUnlock()">Unlock</button></div><p class="fbe" id="tce" role="alert">${TC.bad?"That key was not accepted.":""}</p><p class="mut tpnote">${sw("t","Sign in as a teacher instead")}</p>`
+:`<p class="mut">Sign in with your teacher username and password.</p><label for="tlu">Username</label><input id="tlu" maxlength="24" autocomplete="username" spellcheck="false" autocapitalize="none" onkeydown="if(event.key==='Enter')$('tlp').focus()">
+<label for="tlp">Password</label><input id="tlp" type="password" maxlength="72" autocomplete="current-password" onkeydown="if(event.key==='Enter')tLogin()"><p class="fbe" id="tce" role="alert"></p><div class="fbr"><button class="btn" id="tlb" onclick="tLogin()">Sign in</button></div>
+<p class="mut tpnote">New here? ${sw("inv","Set up your account with an invite code")} · ${sw("key","Use the admin key")}</p>`}
+<p class="mut tpnote">Students, <button class="lnk" onclick="go('home')">head back to Learn</button>.</p></div></div>`}
+/* a refused session: still signed in means the admin alone can do that; otherwise sign in again */
+function tcBad(){if(!tpT())return tcLock();cdRpc("cd_t_me",{p_key:cdKey()}).then(r=>{if(r&&r.ok)notify("Only your school's admin can do that","info");else{notify("You were signed out. Sign in again to carry on.","info");tcLock()}}).catch(()=>{})}
+function tAcct(){const t=tpT();if(!t)return;
+ cdShell(`<h2>Your account</h2><p class="mut nc" style="margin-top:0">${esc(t.name)} · ${esc(t.username)} · ${esc(SUBJ[t.subj].n)} teacher</p><label for="tpo">Current password</label><input id="tpo" type="password" autocomplete="current-password">
+<label for="tpn">New password</label><input id="tpn" type="password" maxlength="72" autocomplete="new-password" placeholder="At least 8 characters"><label for="tpn2">New password again</label><input id="tpn2" type="password" maxlength="72" autocomplete="new-password">
+<p class="fbe" id="tpe" role="alert"></p><div class="fbr"><button class="btn alt" onclick="fbClose()">Cancel</button><button class="btn" onclick="tPw()">Change password</button></div>`)}
+async function tPw(){const e=$("tpe"),n=$("tpn").value;if(n.length<8)return e.textContent=TAERR.bad_pw;if(n!==$("tpn2").value)return e.textContent="The new passwords don't match.";
+ try{const r=await cdRpc("cd_t_pw",{p_key:cdKey(),p_old:$("tpo").value,p_new:n});if(r&&r.ok){fbClose();notify("Password changed. Any other devices have been signed out.","ok")}else e.textContent=r&&r.error==="no_match"?"Your current password isn't right.":taErr(r)}
+ catch(x){e.textContent=taErr(null,x)}}
+/* teachers only see the choices they can use: no codes without a class, no house challenges, no posting to everyone */
+function tpTrim(){if(!tpT())return;
+ document.querySelectorAll('#cdnc option[value="0"],#cdnc option[value=""],#chK option[value="house"],#chC option[value="0"],#chC option[value=""],#ancl option[value="0"],#tsc option[value="0"],#tsc option[value=""]').forEach(o=>o.remove());
+ const l=$("cdl");if(l){const c=l.closest(".card");c.querySelectorAll('label[for="cdl"],#cdl').forEach(x=>x.remove());const b=c.querySelector('[onclick="cdAddList()"]');if(b)b.closest("p").remove()}
+ document.querySelectorAll('[onclick^="clsReset("]').forEach(b=>b.remove())}
+const tpLockSel=id=>{const t=tpT(),e=$(id);if(!t||!e)return;e.value=String(t.subj);e.disabled=true;e.title="Your subject"};
+const tmAIBase=tmAI;tmAI=function(){if(tpT())TC.ai=Object.assign(TC.ai||{t:-1,y:7,d:"medium",n:5,f:""},TC.ai&&TC.ai.s===TC.me.subj?{}:{s:TC.me.subj,t:-1});tmAIBase();tpLockSel("tas")};
+const tmQEditBase=tmQEdit;tmQEdit=function(id){if(tpT())TC.lq.s=TC.me.subj;tmQEditBase(id);tpLockSel("tqs")};
+const tcStuEditBase=tcStuEdit;tcStuEdit=function(code){tcStuEditBase(code);tpTrim()};
+/* the admin: which subject each class belongs to */
+const tcSubjLine=c=>tpT()?"":`<label class="tcsubj"><span class="mut">Subject</span><select onchange="tcClsSubj(${c.id},this.value)" aria-label="Subject for ${esc(c.name)}"><option value="">None (only you see it)</option>${SUBJ.map((u,i)=>`<option value="${i}"${c.subj===i?" selected":""}>${esc(u.n)}</option>`).join("")}</select></label>`;
+const tcClsSubj=(id,v)=>tcDo("cd_admin_class_subj",{p_id:id,p_subj:v===""?null:+v},()=>v===""?"Subject cleared":"Now a "+SUBJ[+v].n+" class",["cls"]);
+/* Manage > School > Teachers (admin only): the 22 seats, their invites, and what teachers have changed */
+TCR.tch=()=>{const D=TC.d.tch||{},R=D.rows||[],L=D.log||[];
+ const seat=r=>!r?"":r.username?`<div class="tsx${r.disabled?" off":""}"><b class="nc">${esc(r.name||r.username)}</b><span class="mut nc">${esc(r.username)} · ${r.disabled?"turned off":r.last_seen?"active "+brdAgo(r.last_seen):"not signed in yet"}</span><span class="tcact"><button class="btn alt sm" onclick="tTset(${r.id},'${r.disabled?"enable":"disable"}')">${r.disabled?"Turn on":"Turn off"}</button><button class="btn alt sm" onclick="tTset(${r.id},'logout')"${r.sessions?"":" disabled"}>Sign out</button><button class="btn alt sm danger" onclick="tTset(${r.id},'reset')">Reset seat</button></span></div>`
+  :`<div class="tsx free"><span class="mut">Not set up yet</span><span class="tinv mono">${esc(r.invite)}</span><span class="tcact"><button class="btn alt sm" onclick="tInvCopy('${esc(r.invite)}')">Copy invite</button></span></div>`;
+ return`<p class="lead">Two teacher seats for each subject. Give each teacher the invite code for their seat. They use it once to choose a username and password, then see only their subject: its classes and students, questions, lessons, whiteboards and live activities.</p>
+<p><button class="btn alt" onclick="tInvPrint()">Print invite slips</button></p>
+<div class="card"><div class="ctw"><table class="ctbl tst"><thead><tr><th>Subject</th><th>Seat 1</th><th>Seat 2</th></tr></thead><tbody>${SUBJ.map((u,i)=>`<tr><td class="tsn"><b>${u.i} ${esc(u.n)}</b></td><td>${seat(R.find(r=>r.subj===i&&r.seat===1))}</td><td>${seat(R.find(r=>r.subj===i&&r.seat===2))}</td></tr>`).join("")}</tbody></table></div>
+<p class="mut" style="margin-bottom:0">Teachers see the classes set to their subject. Set each class's subject on the Classes page; classes a teacher makes are set to their subject automatically.</p></div>
+<h3 class="sec">What teachers have done</h3>${L.length?`<div class="card"><div class="ctw" style="max-height:420px"><table class="ctbl"><thead><tr><th>When</th><th>Who</th><th>What</th></tr></thead><tbody>${L.map(x=>`<tr><td class="mut">${new Date(x.at).toLocaleString([],{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})}</td><td class="nc">${esc(x.who)} <span class="mut">${SUBJ[x.subj]?esc(SUBJ[x.subj].n):""}</span></td><td class="nc">${esc(x.what)}</td></tr>`).join("")}</tbody></table></div></div>`:emptyS("\u{1F4CB}","Nothing yet","Changes teachers make show up here.")}`};
+function tTset(id,a){const r=((TC.d.tch||{}).rows||[]).find(x=>x.id===id);if(!r)return;
+ if(a==="reset"&&!confirm("Reset "+SUBJ[r.subj].n+" seat "+r.seat+(r.name?" ("+r.name+")":"")+"?\n\nTheir account is removed and the seat gets a new invite code. Their classes, lessons and questions stay."))return;
+ if(a==="disable"&&!confirm("Turn off "+(r.name||"this account")+"? They're signed out and can't sign in until you turn it back on."))return;
+ tcDo("cd_admin_teacher_set",{p_id:id,p_action:a},()=>({reset:"Seat reset with a new invite code",disable:"Account turned off",enable:"Account turned on",logout:"Signed out everywhere"})[a],["tch"])}
+function tInvCopy(c){(navigator.clipboard?navigator.clipboard.writeText(c):Promise.reject()).then(()=>notify("Invite code copied","ok")).catch(()=>notify("Invite code: "+c,"info"))}
+function tInvPrint(){const R=((TC.d.tch||{}).rows||[]).filter(r=>r.invite);if(!R.length)return notify("Every seat is already set up","info");const site=esc(location.host+location.pathname.replace(/index\.html$/,""));
+ cdShell(`<h2>Teacher invites</h2><div class="tslips">${R.map(r=>`<div class="tslip"><b>Compass Dash Teacher Panel</b><span>${esc(SUBJ[r.subj].n)} teacher · seat ${r.seat}</span><span class="tinv mono">${esc(r.invite)}</span><small>Go to ${site}, open Teacher Panel, choose “Set up your account with an invite code” and enter this code. It works once.</small></div>`).join("")}</div>
+<div class="fbr"><button class="btn alt" onclick="fbClose()">Close</button><button class="btn" onclick="tpPrint()">Print</button></div>`,1)}
 
 XPAGES.mine=mine;XON.mine="tools";XNAME.mine="My class";
 XPAGES.teach=teach;XON.teach="teach";XNAME.teach="Teacher Panel";
