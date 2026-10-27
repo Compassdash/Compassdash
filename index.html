@@ -5,6 +5,11 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="Compass Dash: free KS3 revision with lessons, quizzes and games for Years 7 to 9.">
 <title>Compass Dash</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#2563eb">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Compass Dash">
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAElUlEQVR42sWXz4scRRTHP1XdM7M/kzXJxjUm+AOMRohREQ96EbyIh2AERY8iIvGoHoJCzgrRm+buJYI/UPRggpB/QCIxYBJBc1A0uyG7WXZ3Znqq3nseqrtnJrvZXGZJQzHdPfXqvf6+7/u+KrjDlyt/39nz4KHXZmbnTKL6/utRX0aWe71x7ar796/zp4CTDmDugYPn3jv5yxPN8SamW/zFHopOj0+PPvXr1SsXnswBZmb3rjTGm1J0ETPNwDZfxG2MkJndFnDnvDTHm9nM7N6Vq1cukAPEEHzoWSYS8S7LGs2MyodqGoNOJAYcDisDre7zvEne6M8VgcGYVBTRQCjyTHrBAykAANPksb2yxLX5f4hRAGg1m0xOTdWL5I0mE9t2YaY1VcwM5z3X5/9m8fq1eu7U5CTNVqt+bo1PMza1DVOHlbZ1ADFGWpMNzn75Ofe4P9k9txcz4dLFS5w+c5osyxGJ3HfgGd766Gd6RRvnfE0uLOPsF+/z7KF9+KwFKGdOn+HipYvkeZMYezz36jFeePM4xVqos5ynLwA1RRVi6PHh8Xd56JHHAPjm66/48YfvsDwnxkivaKNmqCqVf+eg6BbcPbuTT06cqL948do8v50/ByqE0COGXvKlWrOsXEJRUTShzurqWr1Iu9MF53BZln6dT3O1sknDVFE1QtFGNS0fogzZ4kAlcQF0AwQs5bPdbrO6ugpAt9tNE8phWImW1kR1DtRARFhbXcU3BO8dIfSGbdUSqU2HUwAJUjVQMw4feYXW2AQqkU6nU3JE6nSLGWqGK1cxVVpjE1y+fJmHHz2I9xlmyvLycs2vZGpI6aNKQT5YIqoJgcXFJWDpltVcpcDVVaCYGSEEFhYWbq2DViIgSgVBXtW6qJZ1qzjn8FmOSixhpzYwM0QFuSmAKKksnXM4n2EqA8JkpaYYIslXpS11CvqpSsBWo59oD64KYlhgzCoVdPX7dbbIAFoMI5DuPZ2VJR5//g32P30Y59yQtFbPjdY4oeiWTvsSGYouL779GaHXwbnhACvbiekddFaW8T7rC1vlX82IITA2vYuJmblN8qhIKMpGagNNNbJt9/0D4rQRdyIxBPKmrwPMKx0QFdQUCV0IdpuGsnEzkqLN5o0s6YiorNcBMxuAfPP9wOZd7/a2aWxQhiaKYVu+B3JehzkAVpbGQAA24kDqtLmyx9+kA2aaJJJUTj7LR+q/0hScS77WKaEmrU6yHFm7sbCe6Ou3eP05t/q/vMam7sL7HMzqZjVAwrJRiJA3x1n673e+/filkSLw8rHv2XnvAWKvg8v6hM/72ydN8qpKFCEUayMNIEokavKBrCNh2iRoOcG2YGucWnHZxFRvToFiJQdMDQzyxtiojwQDPvofOYSAGcReh8kd+zjywU8j9T82tZPY64CxnoSqqcVWSOA84zN7RlyGARFJjUmlDiIH8FmmznlRRYzUa6N0R6xD1ebBic89Psu0DqB9Y3666KxkjeZEZqY4tuZ0aIBzPivaK7RvzE8PysvR7XP7X5/cvttE4tYeTrNc15YX3PLVP04BJ+/06Zz/AY4qMHcZSfJBAAAAAElFTkSuQmCC">
 <link rel="apple-touch-icon" href="data:image/png;base64,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">
 <script>try{document.documentElement.dataset.theme=localStorage.getItem("cgTheme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")}catch(e){}</script>
@@ -1161,6 +1166,11 @@ body:not(.tmode) #ctw{display:none}
 .duc{display:flex;align-items:center;justify-content:space-between;gap:12px}.duc>div{display:flex;flex-direction:column;gap:2px}.duc .ico{width:16px;height:16px;vertical-align:-2px}
 @media(max-width:600px){.wq .wqr{grid-template-columns:1fr auto;}.wq .wqr .pb{grid-column:1/-1}.tmdo{grid-template-columns:22px 1fr 28px}.tmdo .tmbar{display:none}}
 @media print{body.prmod>*:not(#fbm){display:none!important}body.prmod #fbm{position:static;background:none;display:block}body.prmod .fbx{box-shadow:none;max-width:none!important;border:0}body.prmod .fbr,body.prmod .mx{display:none}}
+/* ===== v2.7.9: offline mode ===== */
+.offn{display:flex;align-items:center;gap:8px;margin:6px 0 14px;padding:9px 12px;border-radius:10px;background:color-mix(in srgb,var(--acc) 9%,var(--card));border:1px solid color-mix(in srgb,var(--acc) 25%,var(--line));font-size:.9rem;color:var(--tx)}
+.offn .ico{width:17px;height:17px;flex:none;color:var(--acc)}
+.updr{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:9500;display:flex;align-items:center;gap:12px;padding:10px 12px 10px 16px;box-shadow:0 14px 40px -16px rgba(0,0,0,.45);max-width:calc(100vw - 24px)}
+.updr>span{display:flex;align-items:center;gap:8px;font-weight:600}.updr .ico{width:18px;height:18px;color:var(--acc)}.updr .mx{position:static}
 </style>
 </head><body>
 <canvas id="bg" aria-hidden="true"></canvas><nav id="nav"><span class="logo" role="link" tabindex="0" onclick="go('home')" onkeydown="if(event.key==='Enter')go('home')" aria-label="Compass Dash home"><i class="lg"></i>Compass Dash</span><button id="menu" class="menu" aria-label="Open menu" aria-expanded="false" aria-controls="links" onclick="navT()"><svg class="h" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
@@ -3946,7 +3956,7 @@ function cdSignIn(code,user,lead,info){
  const lh=S.house;cdLoad().then(()=>{cdPendingTake();return cdPushNow()}).then(()=>{cdSync(1);BRD.rows=null;HSE.d=null;MY.d=null;if(!S.cd.house&&HS[lh])cdSetMe(lh,null).then(()=>{applyCos();hcPop()});applyCos();hcPop();cdRefresh()});stuWait()}
 async function cdSignOut(){fbClose();if(S.cdDirty){notify("Saving your progress…","info");await cdPushNow()}cdSync(1);
  let held=false;if(S.cdDirty&&S.cd){try{localStorage.setItem("cgPending",JSON.stringify({code:S.cd.code,user:S.cd.user,p:cdProg(),base:cdBaseGet(),t:Date.now()}));held=true}catch(e){}}   /* v2.6.9: offline sign-out keeps the unsent answers for the next sign-in here */
- cdBaseSet(null,0);cdGuest();notify(held?"Signed out. Some answers could not reach your account yet; they will be saved the next time you sign in on this device.":"Signed out. Your progress is saved to your account",held?"info":"ok");cdRefresh()}
+ cdBaseSet(null,0);cdGuest();OC.clear();notify(held?"Signed out. Some answers could not reach your account yet; they will be saved the next time you sign in on this device.":"Signed out. Your progress is saved to your account",held?"info":"ok");cdRefresh()}
 function cdPendingTake(){let o=null;try{o=JSON.parse(localStorage.getItem("cgPending")||"null")}catch(e){}if(o&&o.t&&Date.now()-o.t>2592e6){try{localStorage.removeItem("cgPending")}catch(e){}return}if(!o||!S.cd||o.code!==S.cd.code)return;
  try{localStorage.removeItem("cgPending")}catch(e){}const merged=cdMerge(cdProg(),o.p,o.base);cdUse(merged,{cd:S.cd,cdRev:S.cdRev,cdDirty:1});cdBaseSet(CDP.base,CDP.baseRev);notify("Answers from your last visit have been added to your account","info");cdPushNow()}
 /* the code or username no longer match (the teacher reset or reissued it): sign out here, keeping the account safe */
@@ -4082,16 +4092,13 @@ addEventListener("visibilitychange",()=>{const now=performance.now();
  else{if(G&&G.paused!=null){G.dl=now+G.paused;G.paused=null}if(QZ&&QZ.paused!=null){QZ.end=now+QZ.paused;QZ.paused=null}if(window.QT&&QT.paused!=null){QT.end=now+QT.paused;QT.paused=null}}});
 /* v2.4.4: offline play. Everything works without internet (progress is saved on this device); a small note says
    so, and the moment the connection returns a signed-in student's progress is sent to their account. */
-function netShow(){let e=$("netp");if(!e){e=document.createElement("div");e.id="netp";e.className="netp";e.setAttribute("role","status");e.hidden=true;document.body.appendChild(e)}
- if(!navigator.onLine){e.hidden=false;e.dataset.off="1";e.innerHTML=icn("wifioff")+" Offline: you can keep playing"+(cdUser()?". Your progress will sync when you are back online.":".");return}
- if(e.dataset.off){delete e.dataset.off;e.hidden=false;e.innerHTML=icn("checkc")+" Back online"+(cdUser()?": saving your progress":"");clearTimeout(e._t);e._t=setTimeout(()=>{if(navigator.onLine)e.hidden=true},3000)}else e.hidden=true}
 addEventListener("offline",netShow);
 addEventListener("online",()=>{netShow();if(cdUser()){(CDP.ready?cdPushNow():cdLoad()).then(()=>cdSync(1))}});
 /* ---- class leaderboard (students) ---- */
 let BRD={mode:"wk",rows:null,busy:0};
 const brdAgo=t=>{if(!t)return"not yet";const d=(Date.now()-new Date(t).getTime())/864e5;return d<1?"today":d<2?"yesterday":Math.floor(d)+" days ago"};
 function boardLoad(force){if(BRD.busy)return;BRD.busy=1;if(force)BRD.rows=null;
- cdRpc("cd_board").then(r=>{BRD.rows=Array.isArray(r)?r:[];BRD.err=0}).catch(()=>{BRD.rows=[];BRD.err=1})
+ cdRpc("cd_board").then(r=>{BRD.rows=Array.isArray(r)?r:[];BRD.err=0;BRD.off=0;OC.set("brd",BRD.rows)}).catch(()=>{const c=OC.get("brd");if(c){BRD.rows=c.v;BRD.off=c.t;BRD.err=0}else{BRD.rows=[];BRD.err=1}})
   .then(()=>{BRD.busy=0;if(window.CURP==="board")board()})}
 const boardMode=m=>{BRD.mode=m;board()};
 function board(){const me=cdUser(),k=BRD.mode==="wk"?"wk":"xp",R=BRD.rows;
@@ -4228,7 +4235,7 @@ function fbAdmCsv(){const rows=[["When","Stars","Category","Message","Page","Fea
    compass-dash-v2.6.3-feedback.sql has been run there, it still goes to Formspree, so nothing is lost. */
 const FBERR={too_many:"too many messages in a few minutes, please wait a little",busy:"a lot of feedback has been sent today, please try again tomorrow",too_long:"it is too long",empty:"it is empty",bad_rating:"choose a star rating"};
 async function fbPost(e){
- if(cdOn()){try{const r=await cdRpc("cd_feedback_send",{p_rating:e.r,p_cat:e.c||null,p_msg:e.m,p_page:e.page||null,p_feature:e.feature||null,p_ver:e.ver});
+ if(cdOn()){try{const r=await obSend("cd_feedback_send",{p_rating:e.r,p_cat:e.c||null,p_msg:e.m,p_page:e.page||null,p_feature:e.feature||null,p_ver:e.ver},"feedback");FB.q=!!(r&&r.queued);
    if(r&&r.ok)return true;throw new Error(FBERR[r&&r.error]||"it was not saved")}
   catch(x){throw x}}
  throw new Error("feedback is not available right now. Please email "+SUPPORT)}   /* v2.7.0: no third-party fallback */
@@ -4264,14 +4271,15 @@ const box=$("fbm")&&$("fbm").firstChild;if(!box)return;
 box.innerHTML=`<button class="mx" onclick="fbClose()" aria-label="Close">\u00d7</button>
 <div class="mic" style="border-color:var(--good);color:var(--good)">${icn("checkc")}</div>
 <h2 style="text-align:center">Thank you!</h2>
-<p class="mut" style="text-align:center">Your feedback was sent to the developer.</p>
+<p class="mut" style="text-align:center">${FB.q?"You're offline, so it will be sent as soon as you're back online.":"Your feedback was sent to the developer."}</p>
 <p style="text-align:center"><button class="btn" onclick="fbClose()">Close</button></p>`;
-notify("Feedback sent \u2014 thank you")}
+notify(FB.q?"Feedback saved \u2014 it sends when you're back online":"Feedback sent \u2014 thank you")}
 /* ===== Polish layer: notifications, homepage, about/changelog, nav menu ===== */
 // VERSIONING RULE: every update increases the version by exactly 0.01 — the last number goes up by one
 // (next: v2.7.0, v2.7.1, ...). Each of the last two numbers only goes up to 9, then rolls over:
 // after v2.5.9 comes v2.6.0, and after v2.9.9 comes v3.0.0 (that is how v1.9.9 was followed by v2.0.0).
-const VER="v2.7.8",CL=[
+const VER="v2.7.9",CL=[
+["v2.7.9","27 Oct 2026","Offline mode",["Compass Dash now works fully offline: every lesson, quiz, game and the shop, even on patchy school Wi-Fi, where the saved copy opens straight away instead of waiting","Things you do offline (assignment progress, challenges, question reports and feedback) wait on your device and sync as soon as you're back online","My class, announcements, the leaderboard, houses and challenges still open offline, showing when they were last saved","A clearer offline strip that shows what's waiting to sync, and a prompt when a new version is ready","Install Compass Dash as an app on phones, tablets and computers (Settings > Offline and app)"]],
 ["v2.7.8","27 Oct 2026","Quests, challenges and class tools",["Weekly quests: three goals every week, with XP for each and a bonus for finishing all three","Challenge a classmate: play 5 questions, then they play the same 5","A From your teacher area on the home page with live activities, assignments and announcements","Report a question you think is wrong or unclear, right after answering it","Teacher Panel: a wrong-answer breakdown after live activities, a class heatmap, every topic on a student's profile (which now prints), a Do Now starter, and a name picker and timer under Class tools","Reported questions in Manage, under Insights & messages"]],
 ["v2.7.7","27 Oct 2026","Teacher Panel",["Teacher Mode is now the Teacher Panel, with its own layout and navigation, separate from the student site: Dashboard, Question Library, Lessons, Whiteboard, Live and Manage","Manage groups classes, students, codes, assignments, quizzes, house tools, insights and announcements into four clear sections","A Teacher Panel tab in the main menu, a Big screen option for projectors and classroom displays, and a layout that fits tablets and phones"]],
 ["v2.7.6","26 Oct 2026","Living backgrounds",["Every background is now its own place: Volcano erupts with lava fountains, glowing flows and lightning in the ash, Event Horizon is a black hole with a blazing accretion disk, and the rest have their own scenery and movement","A new main background: a valley town with a school whose clock tells the real time and whose flag flies in your colour, with sunbeams, clouds and a paper plane by day and stars, the moon and a moving aurora by night","The shop shows a picture of each background's scene","Titles now come with your level and update as you level up, from Learner at Level 0 to Compass Legend at Level 50. Anyone who bought a title gets the XP back","Admin Panel: Unlock all achievements, and Re-lock for the shop now keeps what you owned before"]],
@@ -4407,7 +4415,7 @@ function resetProgress(){const nm=S.nm,cd=S.cd,rev=S.cdRev;                /* th
 function resetAll(){if(confirm((cdUser()?"Reset progress for "+cdUser()+" on every device?\n\nYou are signed in, so this also resets your account: your teacher will see your XP and stats start again. ":"Reset progress on this device?\n\n")+"This clears stats, mastery, achievements, mistakes, playtime and shop purchases. Your settings, theme and display name are kept. This cannot be undone."))resetProgress()}
 /* v2.6.6: announcements from a teacher, shown on the Learn page until they end or the student closes them */
 let ANN={d:null,t:0};
-function annLoad(){if(!cdOn()||!cdUser()||Date.now()-ANN.t<6e4)return;ANN.t=Date.now();cdRpc("cd_anns",cdA()).then(r=>{if(r&&r.ok){ANN.d=r.rows||[];const e=$("annw");if(e&&window.CURP==="home")e.outerHTML=annHtml()}}).catch(()=>{})}
+function annLoad(){if(!cdOn()||!cdUser()||Date.now()-ANN.t<6e4)return;ANN.t=Date.now();cdRpc("cd_anns",cdA()).then(r=>{if(r&&r.ok){ANN.d=r.rows||[];OC.set("ann",ANN.d);const e=$("annw");if(e&&window.CURP==="home")e.outerHTML=annHtml()}}).catch(()=>{const c=OC.get("ann");if(c&&!ANN.d){ANN.d=c.v;const e=$("annw");if(e&&window.CURP==="home")e.outerHTML=annHtml()}})}
 function annHtml(){const L=(ANN.d||[]).filter(a=>!(ST.annx||[]).includes(a.id));if(!L.length)return`<div id="annw"></div>`;
  return`<div id="annw">${L.slice(0,3).map(a=>`<div class="card ann" role="status"><span class="anni">${icn("bell")}</span><div class="annb"><span class="mut">From your teacher${a.class?" · "+esc(a.class):""}</span><p class="nc">${esc(a.body)}</p></div><button class="mx" aria-label="Close" onclick="annX(${a.id})">\u00d7</button></div>`).join("")}</div>`}
 function annX(id){ST.annx=(ST.annx||[]).concat(id).slice(-50);saveST();const e=$("annw");if(e)e.outerHTML=annHtml()}
@@ -4500,7 +4508,7 @@ function toggleMore(){MOREON=!MOREON;about();if(MOREON){const e=$("fullog");if(e
 /* ===== v2.7.1: the trailer is a 20-second video (compass-dash-trailer.mp4 next to this page) ===== */
 function trailer(){return`<video class="trv" id="trl" src="compass-dash-trailer.mp4" poster="compass-dash-trailer.jpg" controls playsinline preload="metadata" aria-label="The Compass Dash trailer"></video>`}
 /* the About page can have its own copy behind the pop-up, so the pop-up plays the video inside it */
-function trailerOpen(){cdShell(trailer(),1);const e=$("fbm").querySelector("video");if(ST.motion&&!matchMedia("(prefers-reduced-motion: reduce)").matches)trailerPlay(e);else trailerWire(e)}
+function trailerOpen(){if(!navigator.onLine)return notify("The trailer needs internet. Try again when you're back online.","info");cdShell(trailer(),1);const e=$("fbm").querySelector("video");if(ST.motion&&!matchMedia("(prefers-reduced-motion: reduce)").matches)trailerPlay(e);else trailerWire(e)}
 function trailerPlay(e){e=e||$("trl");if(!e||!e.play)return;trailerWire(e);e.currentTime=0;e.play().catch(()=>{})}
 /* The game music pauses while the trailer plays and comes back after. The video stops when its window
    closes (the window is hidden, not removed, so watch for it leaving the screen). */
@@ -6113,7 +6121,7 @@ const MET={xp:"XP earned",ans:"Questions answered",cor:"Correct answers",mast:"T
 const metN=m=>MET[m]||(/^sa\d$/.test(m)&&SUBJ[+m[2]]?SUBJ[+m[2]].n+" questions answered":m);
 const dLeft=t=>{const d=(new Date(t).getTime()-Date.now())/864e5;return d<=0?"Ended":d<1?"Ends today":Math.ceil(d)+" day"+(Math.ceil(d)===1?"":"s")+" left"};
 function hsLoad(force){if(!cdOn()||HSE.busy||(!force&&HSE.d&&Date.now()-HSE.t<60000))return;HSE.busy=1;
- cdRpc("cd_houses").then(r=>{HSE.d=r&&r.houses?r:{houses:[],chal:[]};HSE.err=0;HSE.t=Date.now()}).catch(()=>{HSE.err=1})
+ cdRpc("cd_houses").then(r=>{HSE.d=r&&r.houses?r:{houses:[],chal:[]};HSE.err=0;HSE.off=0;HSE.t=Date.now();OC.set("hse",HSE.d,1)}).catch(()=>{const c=OC.get("hse");if(c&&!HSE.d){HSE.d=c.v;HSE.off=c.t;HSE.t=Date.now()}else HSE.err=1})
   .then(()=>{HSE.busy=0;if(window.CURP==="houses")houses();else if((window.CURP==="home"||window.CURP==="tools")&&$("hsc"))$("hsc").outerHTML=hsHomeCard()})}
 const myHouse=()=>cdUser()?(S.cd.house&&HS[S.cd.house]?S.cd.house:""):(HS[S.house]?S.house:"");
 /* the four houses in order for this week or all time */
@@ -6214,7 +6222,7 @@ function tpShell(main,locked){const k=TC.tab,top=tpGroup(k)?"man":k;
  return`<div class="tp"><div class="tpnav" role="navigation" aria-label="Teacher Panel"><button class="tpbrand" onclick="go('teach','dash')" aria-label="Teacher Panel dashboard"><i class="lg">${logoCube("")}</i><span><b>Compass Dash</b><small>Teacher Panel</small></span></button>
 <div class="tpis">${locked?"":TPN.map(([id,n,ic])=>`<button class="tpi${top===id?" on":""}"${top===id?' aria-current="page"':""} onclick="go('teach','${id}')">${icn(ic)}<span>${n}</span></button>`).join("")}</div>
 <div class="tpfoot"><button class="tpi" onclick="ctOpen()" aria-label="Class tools" title="Name picker and timer">${icn("timer")}<span>Class tools</span></button><button class="tpi" onclick="tpBig()" aria-label="Big screen" aria-pressed="${!!ST.tpBig}" title="Larger text and controls for a projector or classroom screen">${icn("laptop")}<span>Big screen${ST.tpBig?" on":""}</span></button><button class="tpi" onclick="go('home')" aria-label="Student site" title="Back to the student site">${icn("back")}<span>Student site</span></button>${locked?"":`<button class="tpi" onclick="tcLock()" aria-label="Lock the Teacher Panel" title="Lock">${icn("lock")}<span>Lock</span></button>`}<small class="tpver">${VER}</small></div></div>
-<div class="tpmain">${main}</div></div>`}
+<div class="tpmain">${navigator.onLine||locked?"":`<p class="offn">${icn("wifioff")} You're offline. Pages you've already opened still show, but saving, AI questions and live activities need internet.</p>`}${main}</div></div>`}
 function teach(t){if(t&&TCN[t])TC.tab=t;
  if(!cdOn())return app.innerHTML=tpShell(`<div class="tplock"><div class="card"><h1>Teacher Panel</h1><p class="mut">Student codes are not connected yet, so there is no class to manage. See README-student-codes.md.</p></div></div>`,1);
  if(!cdKey())return app.innerHTML=tpShell(`<div class="tplock"><div class="card"><span class="tplk">${icn("lock")}</span><h1>Teacher Panel</h1><p class="mut">Lessons, the Question Library, the whiteboard, live quizzes and everything for running your classes.</p>
@@ -6472,8 +6480,8 @@ TCR.codes=()=>{const R=TC.d.codes,f=TC.f,L=R.filter(r=>f==="all"||(f==="none"?!r
    Finishing a task anywhere counts: reading the lesson, finishing practice or the test, an activity or the quiz. */
 function myLoad(force){if(!cdOn()||!cdUser())return Promise.resolve();if(MY.p&&!force)return MY.p;
  if(!force&&MY.d&&Date.now()-MY.t<120000)return Promise.resolve();
- MY.p=cdRpc("cd_my",cdA()).then(r=>{if(r&&r.ok){MY.d=r;lgRows(r.assigns);MY.t=Date.now();MY.err=0;cdInfo(r);saveQ()}else if(r&&r.error==="no_match")cdLost();else MY.err=1})
-  .catch(()=>{MY.err=1}).then(()=>{MY.p=null;if(window.CURP==="mine")mine();else if((window.CURP==="home"||window.CURP==="tools")&&$("myc"))$("myc").outerHTML=myHomeCard();if(window.CURP==="home"&&$("inbw"))$("inbw").outerHTML=inbAsg()});
+ MY.p=cdRpc("cd_my",cdA()).then(r=>{if(r&&r.ok){OC.set("my",r);MY.d=obMy(r);MY.off=0;lgRows(r.assigns);MY.t=Date.now();MY.err=0;cdInfo(r);saveQ()}else if(r&&r.error==="no_match")cdLost();else MY.err=1})
+  .catch(()=>{const c=OC.get("my");if(c){MY.d=obMy(c.v);lgRows(MY.d.assigns);MY.off=c.t;MY.err=0}else MY.err=1}).then(()=>{MY.p=null;if(window.CURP==="mine")mine();else if((window.CURP==="home"||window.CURP==="tools")&&$("myc"))$("myc").outerHTML=myHomeCard();if(window.CURP==="home"&&$("inbw"))$("inbw").outerHTML=inbAsg()});
  return MY.p}
 const tkDone=(a,i)=>(a.done||[]).find(x=>x.task===i);
 const asgOpen=a=>a.tasks.some((_,i)=>!tkDone(a,i));
@@ -6483,7 +6491,7 @@ function myHomeCard(){const A=MY.d?MY.d.assigns.filter(asgOpen):null;
 /* record a finished task with the database (the best score is kept) */
 function asgReport(a,i,ok,n){const d=tkDone(a,i);if(d&&(d.out_of?d.score/d.out_of:1)>=(n?ok/n:1))return;
  a.done=(a.done||[]).filter(x=>x.task!==i).concat([{task:i,score:ok,out_of:n}]);
- cdRpc("cd_assign_done",Object.assign(cdA(),{p_assign:a.id,p_task:i,p_score:ok,p_out:n})).then(r=>{if(r&&r.ok)notify("Assignment task done: "+a.title)}).catch(()=>{})}
+ obSend("cd_assign_done",Object.assign(cdA(),{p_assign:a.id,p_task:i,p_score:ok,p_out:n}),"assignment progress","asg").then(r=>{if(r&&r.ok)notify(r.queued?"Saved offline: "+a.title+" updates when you're back online":"Assignment task done: "+a.title,r.queued?"info":undefined)}).catch(()=>{})}
 function asgHook(kind,o){if(!cdUser())return;
  const run=()=>{if(!MY.d)return;MY.d.assigns.forEach(a=>a.tasks.forEach((t,i)=>{if(t.t!==kind)return;
   if(kind==="quiz"?+t.quiz===+o.quiz:kind==="ex"?t.ex===o.ex:(+t.s===o.s&&+t.ti===o.ti))asgReport(a,i,o.ok,o.n)}))};
@@ -6504,13 +6512,13 @@ function mine(){
  if(!cdOn())return app.innerHTML=`<h2>My class</h2><p class="lead">Classes are not switched on for this site yet.</p>`;
  if(!cdUser())return app.innerHTML=`<h2>My class</h2>${emptyS("\u{1F511}","Sign in to see your class","Enter the 4-digit code from your teacher. Your assignments and quizzes then show here.",`<button class="btn sm" onclick="cdOpen()">Enter student code</button>`)}`;
  const D=MY.d,c=S.cd,h=myHouse();
- if(!D){app.innerHTML=`<h2>My class</h2><p class="mut">${MY.err?"Could not load your class. Try again in a moment.":"Loading your class…"}</p>`;if(!MY.err)myLoad(1);return}
+ if(!D){app.innerHTML=`<h2>My class</h2><p class="mut">${MY.err?navigator.onLine?"Could not load your class. Try again in a moment.":"You're offline, and your class hasn't been saved on this device yet.":"Loading your class…"}</p>`;if(!MY.err)myLoad(1);return}
  const A=D.assigns,open=A.filter(asgOpen),done=A.filter(a=>!asgOpen(a));
  const card=a=>{const n=a.tasks.filter((_,i)=>tkDone(a,i)).length,late=a.due&&dBetween(dayS(),a.due)<0&&asgOpen(a);
   return`<div class="card tcas${asgOpen(a)?"":" over"}"><div class="chhd"><div><b>${esc(a.title)}</b><span class="mut">${dueTxt(a.due)} · ${n} of ${a.tasks.length} done</span></div><span class="chip2${late?" late":asgOpen(a)?" live":""}">${asgOpen(a)?late?"Overdue":"To do":icn("check")+" Done"}</span></div>
 <span class="pb"><i style="width:${n/a.tasks.length*100}%"></i></span>
 <ol class="tklist my">${a.tasks.map((t,i)=>{const d=tkDone(a,i);return`<li class="${d?"dn":""}"><span>${d?icn("check")+" ":""}${tkLabel(t,D.quizzes)}${d&&d.out_of?` <span class="mut">· ${d.score}/${d.out_of}</span>`:""}</span><button class="btn ${d?"alt":""} sm" onclick="myTask(${a.id},${i})">${d?"Again":"Start"}</button></li>`}).join("")}</ol></div>`};
- ljCheck();app.innerHTML=`<div class="tchd"><h2>My class</h2><span><button class="btn alt sm" onclick="go('duel')">${icn("aim")} Challenge a classmate</button> <button class="btn sm" onclick="go('live')">${icn("bolt")} Join live</button></span></div>${ljHome()}<div class="card hsme">${h?hsCrest(h,56):""}<div><h3 style="margin:0">${D.class?esc(D.class.name):"No class yet"}</h3><p class="mut" style="margin:2px 0 0">${esc(c.user)}${h?" · "+HS[h][0]+" house":""}${c.year?" · Year "+c.year:""}${D.class?"":" · your teacher can add you to a class"}</p></div></div>
+ ljCheck();app.innerHTML=`<div class="tchd"><h2>My class</h2><span><button class="btn alt sm" onclick="go('duel')">${icn("aim")} Challenge a classmate</button> <button class="btn sm" onclick="go('live')">${icn("bolt")} Join live</button></span></div>${MY.off?offNote(MY.off):""}${ljHome()}<div class="card hsme">${h?hsCrest(h,56):""}<div><h3 style="margin:0">${D.class?esc(D.class.name):"No class yet"}</h3><p class="mut" style="margin:2px 0 0">${esc(c.user)}${h?" · "+HS[h][0]+" house":""}${c.year?" · Year "+c.year:""}${D.class?"":" · your teacher can add you to a class"}</p></div></div>
 <h3 class="sec">To do</h3>${open.length?open.map(card).join(""):emptyS("✅","Nothing to do right now","When your teacher sets an assignment it appears here.")}
 ${done.length?`<h3 class="sec">Finished</h3>${done.map(card).join("")}`:""}
 <p class="mut"><button class="btn alt sm" onclick="myLoad(1)">Refresh</button> <button class="btn alt sm" onclick="go('houses')">Houses and challenges</button></p>`}
@@ -6879,7 +6887,7 @@ function ljHome(){return`<div id="ljw">${ljBan()}</div>`}
 /* on the home page and My class: anything running for this student's class */
 function ljCheck(){if(!cdOn()||!cdUser()||Date.now()-LJ.t<15000)return;LJ.t=Date.now();
  cdRpc("cd_live_mine",cdA()).then(r=>{if(!r||!r.ok)return;LJ.rows=(r.rows||[]).filter(x=>/^\d{6}$/.test(x.pin)&&TMKIND[x.kind]);const e=$("ljw");if(e)e.innerHTML=ljBan()}).catch(()=>{})}
-function ljPage(id){
+function ljPage(id){if(!navigator.onLine)return app.innerHTML=`<h2>Join live</h2>${emptyS(icn("wifioff"),"Live activities need internet","Join from here once you're back online. Everything else keeps working offline.")}`;
  if(!cdOn()||!cdUser())return app.innerHTML=`<h2>Join live</h2>${emptyS("\u{1F511}","Sign in to join","Live quizzes and polls need your student code, so your teacher sees your answers.",cdOn()?`<button class="btn sm" onclick="cdOpen()">Enter student code</button>`:"")}`;
  if(!id){LJ.t=0;app.innerHTML=`<h2>Join live</h2><p class="lead">Enter the PIN your teacher shows on the board.</p><div class="card"><div class="tcf"><input id="ljpin" inputmode="numeric" maxlength="7" placeholder="6-digit PIN" class="mono ljpin" onkeydown="if(event.key==='Enter')ljJoin(this.value)"><button class="btn" onclick="ljJoin($('ljpin').value)">Join</button></div><p class="fbe" id="ljerr" role="alert"></p></div>${ljHome()}`;ljCheck();return}
  if(LJ.id!==id)Object.assign(LJ,{id,st:null,ans:{},err:0});
@@ -6939,9 +6947,9 @@ async function qrSend(){const e=$("qre"),q=QRL[QR.id],note=($("qrn").value||"").
  let L=[];try{L=JSON.parse(localStorage.getItem("cgQr")||"[]").filter(t=>Date.now()-t<36e5)}catch(x){}
  if(L.length>=5)return e.textContent="That's a lot of reports in one go. Try again in a little while.";
  $("qrs").disabled=true;
- try{const r=await cdRpc("cd_qrep_add",Object.assign(cdUser()?cdA():{p_code:"",p_user:""},{p_qid:"b:"+QR.id,p_q:qrText(q),p_reason:QR.r,p_note:note}));
+ try{const r=await obSend("cd_qrep_add",Object.assign(cdUser()?cdA():{p_code:"",p_user:""},{p_qid:"b:"+QR.id,p_q:qrText(q),p_reason:QR.r,p_note:note}),"question report");
   if(!r||!r.ok){$("qrs").disabled=false;return e.textContent=r&&r.error==="bad_text"?"Keep it short and suitable for school.":r&&r.error==="busy"?"Lots of reports today. Try again tomorrow.":"That didn't send. Try again."}
-  try{localStorage.setItem("cgQr",JSON.stringify(L.concat(Date.now())))}catch(x){}fbClose();notify("Thanks. Your teacher will check that question.","ok")}
+  try{localStorage.setItem("cgQr",JSON.stringify(L.concat(Date.now())))}catch(x){}fbClose();notify(r.queued?"Report saved. It sends when you're back online.":"Thanks. Your teacher will check that question.","ok")}
  catch(x){$("qrs").disabled=false;e.textContent=/\b404\b/.test(String(x&&x.message))?"Reporting isn't switched on yet. Tell your teacher instead.":"Could not reach the server. Try again."}}
 TCR.rep=()=>{const R=TC.d.rep||[];
  if(!R.length)return emptyS("✅","No reported questions","When a student reports a question as wrong or unclear, it shows up here.");
@@ -7045,14 +7053,14 @@ var DU={rows:null,mates:null,nc:0,err:0,p:null};
 const DUERR={not_classmate:"You can only challenge someone in your class.",duel_limit:"That's 20 challenges today. Try again tomorrow.",already_played:"You've already played that one.",not_found:"That challenge no longer exists."};
 MN.du="Challenge";
 function duLoad(){if(DU.p)return DU.p;
- DU.p=Promise.all([cdRpc("cd_duel_list",cdA()),DU.mates?null:cdRpc("cd_duel_mates",cdA())]).then(([a,b])=>{if(a&&a.ok){DU.rows=a.rows;DU.err=0}else DU.err=1;if(b&&b.ok){DU.mates=b.rows;DU.nc=b.no_class?1:0}})
-  .catch(e=>{DU.err=/\b404\b/.test(String(e&&e.message))?"sql":1}).then(()=>{DU.p=null;if(window.CURP==="duel")duel()});return DU.p}
+ DU.p=Promise.all([cdRpc("cd_duel_list",cdA()),DU.mates?null:cdRpc("cd_duel_mates",cdA())]).then(([a,b])=>{if(a&&a.ok){DU.rows=a.rows;DU.err=0;DU.off=0}else DU.err=1;if(b&&b.ok){DU.mates=b.rows;DU.nc=b.no_class?1:0}if(a&&a.ok)OC.set("du",{rows:DU.rows,mates:DU.mates,nc:DU.nc})})
+  .catch(e=>{const c=OC.get("du");if(c&&isNetErr(e)){Object.assign(DU,c.v);DU.off=c.t;DU.err=0}else DU.err=/\b404\b/.test(String(e&&e.message))?"sql":1}).then(()=>{DU.p=null;if(window.CURP==="duel")duel()});return DU.p}
 const duT=ms=>(ms/1e3).toFixed(1)+" s",duSub=d=>esc((SUBJ[d.subj]||{n:""}).n);
 function duel(){const h="<h2>Challenge a classmate</h2>";
  if(!cdOn()||!cdUser())return app.innerHTML=h+emptyS("\u{1F511}","Sign in to challenge a classmate","Enter the 4-digit code from your teacher first.",`<button class="btn sm" onclick="cdOpen()">Enter student code</button>`);
  if(!DU.rows){app.innerHTML=h+`<p class="mut">${DU.err==="sql"?"Challenges aren't switched on yet. Ask your teacher.":DU.err?"Could not load your challenges. Try again in a moment.":"Loading…"}</p>`;if(!DU.err)duLoad();return}
  const M=DU.mates||[],R=DU.rows,todo=R.filter(d=>!d.mine&&d.b_ok==null),wait=R.filter(d=>d.mine&&d.b_ok==null),done=R.filter(d=>d.b_ok!=null);
- app.innerHTML=h+`<p class="lead">Answer 5 questions, then your classmate answers the same 5. Most right wins, and the faster time breaks a tie.</p>
+ app.innerHTML=h+offNote(DU.off)+`<p class="lead">Answer 5 questions, then your classmate answers the same 5. Most right wins, and the faster time breaks a tie.</p>
 ${todo.length?`<h3 class="sec">Your turn</h3>${todo.map(d=>`<div class="card duc"><div><b class="nc">${esc(d.opp||"A classmate")} challenged you</b><span class="mut">${duSub(d)} · ${d.items.length} questions · ${brdAgo(d.created)}</span></div><button class="btn" onclick="duPlay(${d.id})">Play</button></div>`).join("")}`:""}
 <div class="card"><b>New challenge</b>${DU.nc?`<p class="mut">You need to be in a class to challenge classmates. Your teacher can add you to one.</p>`:M.length?`<div class="tcf"><select id="duo" aria-label="Classmate">${M.map(m=>`<option value="${m.sid}">${esc(m.name)}</option>`).join("")}</select><select id="dus" aria-label="Subject">${SUBJ.map((u,i)=>`<option value="${i}">${esc(u.n)}</option>`).join("")}</select><button class="btn" onclick="duNew()">Play 5 questions</button></div>`:`<p class="mut">Nobody else in your class has signed in yet.</p>`}</div>
 ${wait.length?`<h3 class="sec">Waiting for them</h3>${wait.map(d=>`<div class="card duc"><div><b class="nc">You challenged ${esc(d.opp||"a classmate")}</b><span class="mut">${duSub(d)} · you got ${d.a_ok} of ${d.items.length} in ${duT(d.a_ms)}</span></div><span class="chip2">Waiting</span></div>`).join("")}`:""}
@@ -7066,12 +7074,87 @@ function duNew(){const o=+$("duo").value,s=+$("dus").value,u=SUBJ[s],L=[];let n=
  if(L.length<3)return notify("Not enough questions in that subject","info");const m=(DU.mates||[]).find(x=>x.sid===o);duRun(L,"Challenge: "+(m?m.name:"classmate"),{opp:o,s})}
 function duPlay(id){const d=(DU.rows||[]).find(x=>x.id===id);if(d)duRun(d.items,"Challenge from "+(d.opp||"a classmate"),{id})}
 function duDone(z){const ms=Math.round(performance.now()-z.opt.t0),D=z.opt.du;
- (D.id?cdRpc("cd_duel_play",Object.assign(cdA(),{p_id:D.id,p_ok:z.ok,p_ms:ms})):cdRpc("cd_duel_new",Object.assign(cdA(),{p_opp:D.opp,p_subj:D.s,p_items:z.ids,p_ok:z.ok,p_ms:ms})))
+ (D.id?obSend("cd_duel_play",Object.assign(cdA(),{p_id:D.id,p_ok:z.ok,p_ms:ms}),"challenge result","duel_play"):obSend("cd_duel_new",Object.assign(cdA(),{p_opp:D.opp,p_subj:D.s,p_items:z.ids,p_ok:z.ok,p_ms:ms}),"challenge","duel_new"))
   .then(r=>{if(!r||!r.ok)return notify(DUERR[r&&r.error]||"Could not save the challenge.","err");
+   if(r.queued)return notify("You're offline, so your challenge is saved here and sends when you're back online. You got "+z.ok+" of "+z.ids.length+".","info");
    if(!D.id)return notify("Challenge sent! You got "+z.ok+" of "+z.ids.length+".","ok");
    const w=z.ok>r.a_ok||z.ok===r.a_ok&&ms<r.a_ms;notify((w?"You won! ":z.ok===r.a_ok&&ms===r.a_ms?"A draw! ":"They won this time. ")+"You "+z.ok+", them "+r.a_ok+".",w?"ok":"info")})
   .catch(()=>notify("Could not reach the server, so the challenge was not saved.","err")).then(()=>{DU.rows=null})}
 XPAGES.duel=duel;XON.duel="tools";XNAME.duel="Challenge a classmate";
+
+/* ===== v2.7.9: offline mode =====
+   The site itself is kept on the device by sw.js, so every lesson, quiz, game and the shop work without internet.
+   Here: anything that has to reach the server (assignment progress, challenges, question reports, feedback) waits
+   in an outbox on this device and is sent, oldest first, as soon as the connection is back. Lesson progress already
+   syncs on its own (cd_save). The last copy of class data (assignments, announcements, the leaderboard, houses and
+   challenges) is kept for the signed-in student, so those pages still open offline, marked with when they were saved. */
+const OB={k:"cgOutbox",busy:0};
+const obAll=()=>{try{return JSON.parse(localStorage.getItem(OB.k)||"[]").filter(x=>Date.now()-x.t<2592e6)}catch(e){return[]}};
+const obPut=L=>{try{L.length?localStorage.setItem(OB.k,JSON.stringify(L.slice(-200))):localStorage.removeItem(OB.k)}catch(e){}netShow()};
+const isNetErr=e=>!navigator.onLine||e instanceof TypeError||/failed to fetch|networkerror|load failed|network/i.test(String(e&&e.message));
+/* send it now if possible; if the connection is down, keep it for later */
+async function obSend(fn,body,label,kind){
+ if(navigator.onLine){try{return await cdRpc(fn,body)}catch(e){if(!isNetErr(e))throw e}}
+ const L=obAll();L.push({fn,body,label:label||"",kind:kind||"",t:Date.now(),n:0});obPut(L);return{ok:true,queued:true}}
+async function obFlush(){if(OB.busy||!navigator.onLine||!cdOn())return;let L=obAll();if(!L.length)return netShow();OB.busy=1;let sent=0;
+ while(L.length){const x=L[0];let r=null;
+  try{r=await cdRpc(x.fn,x.body)}catch(e){if(isNetErr(e))break;if(/HTTP 5/.test(String(e.message))&&++x.n<3){obPut(L);break}}   /* a server hiccup: try again later */
+  L.shift();obPut(L);if(r&&r.ok){sent++;obDone(x,r)}else if(x.label)notify("Could not sync your "+x.label+(r&&r.error&&DUERR[r.error]?": "+DUERR[r.error]:""),"err")}
+ OB.busy=0;netShow();if(!sent)return;
+ notify(sent===1?"Synced 1 thing you did offline":"Synced "+sent+" things you did offline","ok");
+ MY.t=0;DU.rows=null;if(window.CURP==="mine"||window.CURP==="home")myLoad(1);if(window.CURP==="duel")duel()}
+/* what to say once something that waited has gone through */
+function obDone(x,r){if(x.kind!=="duel_play")return;const b=x.body,w=b.p_ok>r.a_ok||b.p_ok===r.a_ok&&b.p_ms<r.a_ms;
+ notify("Challenge result: "+(w?"you won":b.p_ok===r.a_ok&&b.p_ms===r.a_ms?"a draw":"they won")+", "+b.p_ok+" to "+r.a_ok+".",w?"ok":"info")}
+/* assignment tasks finished offline count straight away, even before the server has them */
+function obMy(d){if(!d||!d.assigns)return d;obAll().filter(x=>x.fn==="cd_assign_done").forEach(x=>{const a=d.assigns.find(y=>y.id===x.body.p_assign);
+ if(a&&!(a.done||[]).some(t=>t.task===x.body.p_task))a.done=(a.done||[]).concat([{task:x.body.p_task,score:x.body.p_score,out_of:x.body.p_out}])});return d}
+setInterval(obFlush,45000);addEventListener("online",()=>setTimeout(obFlush,1500));setTimeout(obFlush,4000);
+
+/* the last copy of class data, kept per signed-in student (cleared on sign-out); house scores aren't personal, so anyone's copy is kept */
+const OC={k:"cgOff",me:()=>S.cd&&cdUser()?S.cd.code+"/"+cdUser():"",
+ all(){try{return JSON.parse(localStorage.getItem(this.k)||"{}")}catch(e){return{}}},
+ get(n){const o=this.all()[n];return o&&(o.u===this.me()||o.u==="*")?o:null},
+ set(n,v,pub){const u=pub?"*":this.me();if(!u)return;const o=this.all();o[n]={u,t:Date.now(),v};try{localStorage.setItem(this.k,JSON.stringify(o))}catch(e){}},
+ clear(){try{localStorage.removeItem(this.k)}catch(e){}}};
+const offNote=t=>t?`<p class="offn">${icn("wifioff")} Offline. Showing what was saved ${brdAgo(new Date(t).toISOString())}${brdAgo(new Date(t).toISOString())==="today"?" at "+new Date(t).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"}):""}.</p>`:"";
+
+/* the status strip at the bottom: offline, how much is waiting, and back online */
+function netShow(){let e=$("netp");if(!e){e=document.createElement("div");e.id="netp";e.className="netp";e.setAttribute("role","status");e.hidden=true;document.body.appendChild(e)}
+ const n=obAll().length,w=n?` · ${n} thing${n===1?"":"s"} to sync`:"";
+ if(!navigator.onLine){e.hidden=false;e.dataset.off="1";e.innerHTML=icn("wifioff")+" Offline: you can keep learning"+w+(cdUser()||n?". It all syncs when you're back online.":".");return}
+ if(e.dataset.off||OB.busy){delete e.dataset.off;e.hidden=false;e.innerHTML=icn("refresh")+" Back online"+(cdUser()||n?": syncing"+w:"");clearTimeout(e._t);e._t=setTimeout(()=>{if(navigator.onLine&&!OB.busy)e.hidden=true},3500)}else e.hidden=true}
+
+/* a newer version of the site has been saved in the background */
+function updReady(){if($("updr"))return;const e=document.createElement("div");e.id="updr";e.className="card updr";e.setAttribute("role","status");
+ e.innerHTML=`<span>${icn("sparkles")} A new version of Compass Dash is ready.</span><button class="btn sm" onclick="location.reload()">Refresh</button><button class="mx" aria-label="Later" onclick="this.parentNode.remove()">×</button>`;document.body.appendChild(e)}
+let INS=null;
+addEventListener("beforeinstallprompt",e=>{e.preventDefault();INS=e;const r=$("insr");if(r)r.hidden=false});
+addEventListener("appinstalled",()=>{INS=null;notify("Compass Dash is installed","ok");const r=$("insr");if(r)r.hidden=true});
+const isIOS=()=>/iPad|iPhone|iPod/.test(navigator.userAgent)||navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1,
+ isApp=()=>matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
+function insGo(){if(!INS)return;INS.prompt();INS.userChoice.then(()=>{INS=null;const r=$("insr");if(r)r.hidden=true}).catch(()=>{})}
+if("serviceWorker"in navigator){navigator.serviceWorker.addEventListener("message",e=>{const d=e.data||{};if(d.type==="cd-update")updReady();if(d.type==="cd-status")offStat(d.saved)});
+ navigator.serviceWorker.ready.then(()=>caches.match(new URL("./",location.href).href)).then(m=>{if(m&&!ST.offOK){ST.offOK=1;saveST();notify("Compass Dash is saved on this device, so it works offline too","info")}}).catch(()=>{})}
+
+/* Settings: offline mode, what's waiting to sync, and installing the app */
+function offCard(){const n=obAll().length;
+ return`<h3 class="sec">Offline and app</h3><div class="card setcard" id="offc"><div class="set"><div><b>Offline mode</b><span class="mut" id="offs">Checking…</span></div><button class="btn alt sm" onclick="offKeep()">Keep on this device</button></div>
+<div class="set"><div><b>Waiting to sync</b><span class="mut">${n?n+" thing"+(n===1?"":"s")+" you did offline":"Nothing waiting"}</span></div><button class="btn alt sm" onclick="obFlush()"${n&&navigator.onLine?"":" disabled"}>Sync now</button></div>
+${isApp()?"":`<div class="set" id="insr"${INS||isIOS()?"":" hidden"}><div><b>Install the app</b><span class="mut">${isIOS()&&!INS?"In Safari, tap Share, then Add to Home Screen.":"Add Compass Dash to your home screen or desktop. It opens full screen and works offline."}</span></div>${INS||!isIOS()?`<button class="btn sm" onclick="insGo()">Install</button>`:""}</div>`}</div>`}
+function offStat(saved){const e=$("offs");if(!e)return;
+ if(!("serviceWorker"in navigator)||!window.caches)return e.textContent="This browser can't keep the site for offline use.";
+ if(saved===false)return e.textContent="Not saved yet. Open Compass Dash once with internet and it will be.";
+ Promise.all([navigator.storage&&navigator.storage.estimate?navigator.storage.estimate():null,navigator.storage&&navigator.storage.persisted?navigator.storage.persisted():false])
+  .then(([q,keep])=>{e.textContent="Ready: Compass Dash works without internet on this device"+(q&&q.usage?" ("+Math.max(1,Math.round(q.usage/1048576))+" MB)":"")+(keep?". It's kept, so your browser won't clear it.":".")}).catch(()=>{})}
+function offAsk(){if(!("serviceWorker"in navigator))return offStat(false);navigator.serviceWorker.getRegistration().then(r=>{if(!r||!r.active)return offStat(false);r.active.postMessage({type:"cd-status"})}).catch(()=>offStat(false))}
+function offKeep(){if(!navigator.storage||!navigator.storage.persist)return notify("This browser decides for itself when to clear saved sites","info");
+ navigator.storage.persist().then(ok=>{notify(ok?"Compass Dash will be kept on this device":"Your browser decides when to clear saved sites. It usually keeps ones you use often.",ok?"ok":"info");offAsk()})}
+const settingsBase=settings;settings=function(){settingsBase();const c=document.querySelector("#app .lay>div:last-child")||app;c.insertAdjacentHTML("beforeend",offCard());offAsk()};
+addEventListener("online",()=>{if(window.CURP==="teach")teach()});addEventListener("offline",()=>{if(window.CURP==="teach")teach()});
+/* the leaderboard and houses say when they're showing a saved copy */
+const boardBase=board;board=function(){boardBase();if(BRD.off&&cdUser()){const h=app.querySelector("h2");if(h)h.insertAdjacentHTML("afterend",offNote(BRD.off))}};
+const housesBase=houses;houses=function(){housesBase();if(HSE.off){const h=app.querySelector("h2");if(h)h.insertAdjacentHTML("afterend",offNote(HSE.off))}};XPAGES.houses=houses;
 
 XPAGES.mine=mine;XON.mine="tools";XNAME.mine="My class";
 XPAGES.teach=teach;XON.teach="teach";XNAME.teach="Teacher Panel";
