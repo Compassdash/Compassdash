@@ -1076,7 +1076,7 @@ body.tmpon{overflow:hidden}
 .spin{display:inline-block;width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px}@keyframes spin{to{transform:rotate(360deg)}}
 @media(max-width:700px){.tmslk{min-width:0}.tmpbar{flex-wrap:wrap}.tmpd{top:96px}}
 /* ===== v2.7.7: Teacher Panel ===== */
-#nav .links button.tpl{display:inline-flex;align-items:center;gap:6px;border:1.5px solid color-mix(in srgb,var(--acc) 45%,var(--line));border-radius:999px;padding-inline:12px}
+#nav .links button.tpl{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding-inline:12px}
 #nav .links button.tpl .ico{width:16px;height:16px}
 body.tmode #bg,body.tmode #nav,body.tmode #bkw,body.tmode .foot,body.tmode #pchip,body.tmode #calcb{display:none!important}
 body.tmode{background:var(--bg)}
@@ -1179,6 +1179,47 @@ body:not(.tmode) #ctw{display:none}
 .tinv{display:inline-block;font-size:1.15rem;font-weight:800;letter-spacing:.12em;padding:2px 10px;border-radius:8px;background:var(--bg);border:1px dashed var(--line);width:max-content}
 .tslips{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
 .tslip{display:flex;flex-direction:column;gap:6px;padding:14px;border:1.5px dashed var(--line);border-radius:12px;break-inside:avoid}.tslip small{color:var(--mut);line-height:1.4}
+/* ===== v2.8.1: Settings layout, Visual Detail, Teacher Panel link ===== */
+.setpg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 26px;align-items:start;margin-top:6px}
+.setcol{min-width:0}
+.sset{margin:0 0 26px}
+.sset>.sec{display:flex;align-items:center;gap:7px;margin:0 0 10px;text-shadow:0 0 4px var(--bg),0 0 10px var(--bg),0 0 18px var(--bg)}.sset>.sec .ico{width:15px;height:15px;color:var(--acc)}
+.setpg .setcard{padding:2px 20px}
+.setpg .set{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px 20px;padding:15px 0}
+.setpg .set>div:first-child>b{display:block;margin-bottom:3px}
+.setpg .set>div:first-child>.mut{display:block;line-height:1.45}
+.setpg .set>:not(:first-child){justify-self:end}
+.setpg .set.wide{grid-template-columns:minmax(0,1fr)}.setpg .set.wide>:not(:first-child){justify-self:stretch}
+.setpg .rng{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.setpg .rng input[type=range]{flex:1;min-width:120px;width:auto}
+.setpg .rng>.mut{min-width:3ch;text-align:right;font-variant-numeric:tabular-nums}
+.setpg .tlw{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-start}
+/* the Visual Detail slider: three stops, each named under its place on the track */
+.vdsl{display:flex;flex-direction:column;gap:6px;padding-top:2px}
+.vdsl input[type=range]{width:100%;margin:0;height:28px;cursor:pointer}
+.vdlb{display:grid;grid-template-columns:1fr 1fr 1fr;font-size:.82rem;color:var(--mut)}
+.vdlb span{display:inline-flex;align-items:center;gap:5px;cursor:pointer;user-select:none;padding:3px 0;font-weight:600}
+.vdlb span:nth-child(2){justify-content:center}.vdlb span:nth-child(3){justify-content:flex-end}
+.vdlb span .ico{width:15px;height:15px}
+.vdlb span.on{color:var(--acc)}
+.vdlb span:hover{color:var(--tx)}.vdlb span.on:hover{color:var(--acc)}
+@media(max-width:980px){.setpg{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.setpg .setcard{padding:2px 14px}.setpg .set{grid-template-columns:minmax(0,1fr)}.setpg .set>:not(:first-child){justify-self:start}.setpg .set.wide>:not(:first-child){justify-self:stretch}
+ .vdlb{font-size:.76rem}.vdlb span .ico{display:none}}
+/* Super Focus: decorative motion in the page itself is stilled too (feedback such as toasts and right/wrong still shows) */
+html.vd0 .nm-shimmer,html.vd0 .nm-rainbow,html.vd0 .sw3.anim,html.vd0 .sbig::before,html.vd0 .cm-now .cmn::after{animation:none!important}
+html.vd0{--t-page:.14s}
+/* Recreational: cards lift a little more when you point at them */
+html.vd2:not(.rm) .card.game:hover,html.vd2:not(.rm) .sit:hover{transform:translateY(-4px);box-shadow:0 14px 30px color-mix(in srgb,var(--acc) 18%,rgba(15,23,42,.12))}
+html.vd2:not(.rm) .card.game,html.vd2:not(.rm) .sit{transition:transform .22s var(--ease-out,ease),box-shadow .22s var(--ease-out,ease)}
+/* the Teacher Panel link: no outline, a faint blue wash instead, with its cap icon in blue */
+#nav .links button.tpl{border:0;background:color-mix(in srgb,#3b82f6 10%,transparent);color:var(--tx)}
+#nav .links button.tpl .ico{color:#3b82f6}
+#nav .links button.tpl:hover{background:color-mix(in srgb,#3b82f6 17%,transparent)}
+html[data-theme=dark] #nav .links button.tpl{background:color-mix(in srgb,#60a5fa 14%,transparent)}
+html[data-theme=dark] #nav .links button.tpl .ico{color:#60a5fa}
+html[data-theme=dark] #nav .links button.tpl:hover{background:color-mix(in srgb,#60a5fa 22%,transparent)}
+html.a11y-hc #nav .links button.tpl{box-shadow:inset 0 0 0 1px color-mix(in srgb,#3b82f6 45%,transparent)}
+@media(max-width:1000px){#nav .links button.tpl{border-radius:var(--r);padding-inline:14px}}
 </style>
 </head><body>
 <canvas id="bg" aria-hidden="true"></canvas><nav id="nav"><span class="logo" role="link" tabindex="0" onclick="go('home')" onkeydown="if(event.key==='Enter')go('home')" aria-label="Compass Dash home"><i class="lg"></i>Compass Dash</span><button id="menu" class="menu" aria-label="Open menu" aria-expanded="false" aria-controls="links" onclick="navT()"><svg class="h" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
@@ -2411,19 +2452,60 @@ async function adminLogin(){const e=$("aerr"),f=$("apw"),pw=f?f.value:"";if(!pw)
  catch(x){e.textContent=/\b404\b/.test(String(x.message))?"Run compass-dash-v2.6.8-features.sql in Supabase first, then try again.":"Could not reach the database. Check your connection and try again."}}
 const seg=(o,cur,fn)=>`<div class="seg" role="radiogroup">${o.map(a=>`<button role="radio" aria-checked="${cur===a[0]}" class="${cur===a[0]?"on":""}" onclick="${fn}('${a[0]}')">${a[1]}</button>`).join("")}</div>`;
 document.addEventListener("keydown",e=>{const b=e.target;if(!b||!b.matches||!b.matches(".seg [role=radio]"))return;const d=e.key==="ArrowRight"||e.key==="ArrowDown"?1:e.key==="ArrowLeft"||e.key==="ArrowUp"?-1:0;if(!d)return;e.preventDefault();const L=[...b.parentElement.querySelectorAll("[role=radio]")],n=L[(L.indexOf(b)+d+L.length)%L.length];if(n){const oc=n.getAttribute("onclick");n.focus();n.click();setTimeout(()=>{if(!n.isConnected&&oc){const m=[...document.querySelectorAll(".seg [role=radio]")].find(x=>x.getAttribute("onclick")===oc);if(m)m.focus({preventScroll:true})}},30)}});
-function settings(){let mode="auto";try{mode=localStorage.getItem("cgTheme")||"auto"}catch(e){}
-app.innerHTML=`<h2>Settings</h2><div class="lay l11"><div><div class="card setcard"><div class="set"><div><b>Appearance</b><span class="mut">Light, dark, or match your device.</span></div>${seg([["light","Light"],["dark","Dark"],["auto","Auto"]],mode,"setMode")}</div>
-<div class="set"><div><b>Language</b><span class="mut">Menus, buttons and headings. Lessons and questions stay in English.</span></div><div class="seg nc" dir="ltr" role="radiogroup" aria-label="Language">${[["en","English"],["fr","Français"],["ar","العربية"]].map(a=>`<button role="radio" aria-checked="${(ST.lang||"en")===a[0]}" class="${(ST.lang||"en")===a[0]?"on":""}" onclick="setLang('${a[0]}')">${a[1]}</button>`).join("")}</div></div>
-<div class="set"><div><b>Quick-time events</b><span class="mut">Occasional spike challenges during practice.</span></div>${seg([["1","On"],["0","Off"]],ST.qte===false?"0":"1","setQte")}</div><div class="set"><div><b>Double Spikes</b><span class="mut">Occasional two-question challenges in the Spike quiz.</span></div>${seg([["1","On"],["0","Off"]],ST.dbl===false?"0":"1","setDbl")}</div><div class="set"><div><b>Motion</b><span class="mut">Animated background and cube.</span></div>${seg([["1","On"],["0","Off"]],ST.motion?"1":"0","setMo")}</div><div class="set"><div><b>House colours</b><span class="mut">Colour the site in your house colour${myHouse()?" ("+HS[myHouse()][0]+")":""}. Off unless you turn it on. A UI theme from the shop takes priority.</span></div>${seg([["1","On"],["0","Off"]],ST.hacc===true?"1":"0","setHacc")}</div>
-<div class="set"><div><b>UI transparency</b><span class="mut">See more of the background behind cards and menus.</span></div><span><input type="range" min="0" max="50" step="5" value="${Math.round((1-(ST.uia==null?1:ST.uia))*100)}" aria-label="UI transparency" oninput="setUia(this.value)"><span class="mut" id="uia_l">${Math.round((1-(ST.uia==null?1:ST.uia))*100)}%</span></span></div>
-</div><h3 class="sec">Student and teacher login</h3><div class="card setcard">${cdRow()}<div class="set"><div><b>Teacher Panel</b><span class="mut">Lessons, the Question Library, the whiteboard, live quizzes and class management. Needs the admin key.</span></div><button class="btn alt" onclick="go('teach')">Open</button></div></div></div><div><div class="card setcard"><div class="set"><div><b>Sound effects</b><span class="mut">Clicks, answers, jumps and crashes.</span></div><span>${seg([["1","On"],["0","Off"]],ST.sfx?"1":"0","setSfx")}<input type="range" min="0" max="100" value="${Math.round(ST.sv*100)}" aria-label="Sound effects volume" oninput="setVol('sv',this.value)"><span class="mut" id="sv_l">${Math.round(ST.sv*100)}%</span></span></div>
-<div class="set"><div><b>Music</b><span class="mut">A different soundtrack for each difficulty, from calm at Easy to a boss fight at Insane.</span></div><span>${seg([["1","On"],["0","Off"]],ST.music?"1":"0","setMus")}<input type="range" min="0" max="100" value="${Math.round(ST.mv*100)}" aria-label="Music volume" oninput="setVol('mv',this.value)"><span class="mut" id="mv_l">${Math.round(ST.mv*100)}%</span></span></div></div>
-<h3 class="sec">Accessibility</h3><div class="card setcard"><div class="set"><div><b>Easy-read font</b><span class="mut">A clearer font with more space between letters and lines. Helpful for dyslexia.</span></div>${seg([["1","On"],["0","Off"]],ST.afont?"1":"0","setA11y.bind(null,'afont')")}</div>
+/* ===== v2.8.1: Settings, regrouped, and Visual Detail =====
+   Visual Detail (Accessibility) sets how busy the site looks: 0 Super Focus, 1 Neutral (the default), 2 Recreational.
+   It is saved with the other settings (ST.vd) and read by the game canvas through window.VDL every frame, so a change
+   shows straight away. Super Focus keeps a plain sky and the ground, with no scenery, shop effects, particles, trails,
+   rings or screen shake; streak labels, the crash and every piece of feedback stay. Recreational adds drifting light
+   over every background, ambient specks when none are equipped, more particles, longer trails and sparkle on leaps.
+   Text, questions, lessons and controls look the same at every level. */
+const VDN=[["Super Focus","target","A calm, plain background with no scenery, particles, trails or screen shake, so nothing pulls your eye from the question. Your backgrounds and effects come back when you switch."],
+ ["Neutral","scale","Balanced: your backgrounds and shop effects, as they were designed."],
+ ["Recreational","sparkles","Everything on: drifting light over every background, more particles, longer trails and extra sparkle on every leap."]];
+const vdLv=()=>ST.vd==null?1:Math.max(0,Math.min(2,ST.vd|0));
+function vdApply(){const v=vdLv(),h=document.documentElement;window.VDL=v;h.classList.toggle("vd0",v===0);h.classList.toggle("vd2",v===2);h.dataset.vd=v}
+function setVd(v){ST.vd=Math.max(0,Math.min(2,+v|0));saveST();vdApply();vdShow()}
+function vdShow(){const v=vdLv(),r=$("vd_r"),d=$("vd_d");if(r){r.value=v;r.setAttribute("aria-valuetext",VDN[v][0]);r.style.setProperty("--p",v*50+"%")}if(d)d.textContent=VDN[v][2];
+ document.querySelectorAll(".vdlb>span").forEach((e,i)=>e.classList.toggle("on",i===v))}
+const vdRow=()=>{const v=vdLv();return`<div class="set wide vdset"><div><b>Visual detail</b><span class="mut" id="vd_d" aria-live="polite">${VDN[v][2]}</span></div>
+<div class="vdsl"><input type="range" id="vd_r" min="0" max="2" step="1" value="${v}" aria-label="Visual detail" aria-valuetext="${VDN[v][0]}" style="--p:${v*50}%" oninput="setVd(this.value)">
+<div class="vdlb" aria-hidden="true">${VDN.map((n,i)=>`<span class="${i===v?"on":""}" onclick="setVd(${i})">${icn(n[1])}${n[0]}</span>`).join("")}</div></div></div>`};
+vdApply();
+
+/* Recreational: soft light drifting slowly over whatever background is showing (below the horizon is left alone) */
+const VDB={k:"",sp:null,L:null};
+function vdRich(g,w,h,gy,t){if(!w||!h)return;const dk=document.documentElement.dataset.theme==="dark";
+ if(VDB.k!==(dk?"d":"l")){VDB.k=dk?"d":"l";const c=document.createElement("canvas");c.width=c.height=64;const q=c.getContext("2d"),r=q.createRadialGradient(32,32,0,32,32,32);
+  r.addColorStop(0,dk?"rgba(190,210,255,.55)":"rgba(255,252,240,.95)");r.addColorStop(.45,dk?"rgba(150,180,255,.18)":"rgba(255,244,214,.38)");r.addColorStop(1,"rgba(255,255,255,0)");q.fillStyle=r;q.fillRect(0,0,64,64);VDB.sp=c}
+ if(!VDB.L){let sd=811;const rn=()=>(sd=sd*16807%2147483647)/2147483647;VDB.L=Array.from({length:16},()=>({x:rn(),y:.08+rn()*.62,r:26+rn()*70,s:.05+rn()*.18,p:rn()*6.28,a:.22+rn()*.34}))}
+ g.save();g.globalCompositeOperation=dk?"lighter":"source-over";
+ VDB.L.forEach(b=>{const X=((b.x*(w+240)+t*b.s)%(w+240))-120,Y=b.y*gy+Math.sin(t*.006+b.p)*14,R=b.r*(1+.12*Math.sin(t*.01+b.p));if(Y+R<0||Y-R>gy)return;
+  g.globalAlpha=b.a*(.7+.3*Math.sin(t*.013+b.p*2));g.drawImage(VDB.sp,X-R,Y-R,R*2,R*2)});
+ g.restore()}
+
+/* the Settings page: eight groups in two balanced columns (one on tablets and phones), each setting on its own row */
+const setSec=(id,ic,t,body)=>`<section class="sset" id="${id}"><h3 class="sec">${icn(ic)}${t}</h3><div class="card setcard">${body}</div></section>`;
+function settings(){let mode="auto";try{mode=localStorage.getItem("cgTheme")||"auto"}catch(e){}const ua=Math.round((1-(ST.uia==null?1:ST.uia))*100),oo=v=>[["1","On"],["0","Off"]];
+app.innerHTML=`<h2>Settings</h2><p class="lead">Changes apply straight away and are saved on this device.</p><div class="setpg"><div class="setcol">
+${setSec("setlook","palette","Appearance",`<div class="set"><div><b>Theme</b><span class="mut">Light, dark, or match your device.</span></div>${seg([["light","Light"],["dark","Dark"],["auto","Auto"]],mode,"setMode")}</div>
+<div class="set wide"><div><b>Language</b><span class="mut">Menus, buttons and headings. Lessons and questions stay in English.</span></div><div class="seg nc" dir="ltr" role="radiogroup" aria-label="Language">${[["en","English"],["fr","Français"],["ar","العربية"]].map(a=>`<button role="radio" aria-checked="${(ST.lang||"en")===a[0]}" class="${(ST.lang||"en")===a[0]?"on":""}" onclick="setLang('${a[0]}')">${a[1]}</button>`).join("")}</div></div>
+<div class="set"><div><b>House colours</b><span class="mut">Colour the site in your house colour${myHouse()?" ("+HS[myHouse()][0]+")":""}. Off unless you turn it on. A UI theme from the shop takes priority.</span></div>${seg(oo(),ST.hacc===true?"1":"0","setHacc")}</div>
+<div class="set wide"><div><b>UI transparency</b><span class="mut">See more of the background behind cards and menus.</span></div><span class="rng"><input type="range" min="0" max="50" step="5" value="${ua}" aria-label="UI transparency" oninput="setUia(this.value)"><span class="mut" id="uia_l">${ua}%</span></span></div>`)}
+${setSec("seta11y","eye","Accessibility",`${vdRow()}
+<div class="set"><div><b>Motion</b><span class="mut">Animated background and cube. Off stops every animation.</span></div>${seg(oo(),ST.motion?"1":"0","setMo")}</div>
+<div class="set"><div><b>Easy-read font</b><span class="mut">A clearer font with more space between letters and lines. Helpful for dyslexia.</span></div>${seg(oo(),ST.afont?"1":"0","setA11y.bind(null,'afont')")}</div>
 <div class="set"><div><b>Text size</b><span class="mut">Makes text and buttons bigger everywhere.</span></div>${seg([["1","Normal"],["2","Large"],["3","Larger"]],String(ST.ats||1),"setA11y.bind(null,'ats')")}</div>
-<div class="set"><div><b>High contrast</b><span class="mut">Stronger text, borders and focus outlines. Works in light and dark.</span></div>${seg([["1","On"],["0","Off"]],ST.ahc?"1":"0","setA11y.bind(null,'ahc')")}</div>
-<div class="set"><div><b>Keyboard shortcuts</b><span class="mut"><kbd>1</kbd>–<kbd>4</kbd> pick an answer (<kbd>1</kbd>–<kbd>5</kbd> in a quick-time event, <kbd>T</kbd>/<kbd>F</kbd> for true or false) · <kbd>Enter</kbd> next question · <kbd>Tab</kbd> moves between controls · <kbd>Esc</kbd> close a window</span></div></div></div>
-<h3 class="sec">Privacy and safety</h3><div class="card setcard"><div class="set"><div><b>Your data</b><span class="mut">See what is saved, download it, delete it, or ask for your account to be deleted.</span></div><button class="btn alt" onclick="go('mydata')">Open</button></div><div class="set"><div><b>Cookie settings</b><span class="mut">Choose whether optional services, like Google Fonts, can be used.</span></div><button class="btn alt" onclick="ckOpen()">Change</button></div><div class="set"><div><b>Policies</b><span class="mut">How we use information, and the rules for using Compass Dash.</span></div><span class="tlw"><button class="btn alt sm" onclick="go('privacy')">Privacy</button><button class="btn alt sm" onclick="go('terms')">Terms</button><button class="btn alt sm" onclick="go('cookies')">Cookies</button></span></div><div class="set"><div><b>Help and support</b><span class="mut">Questions, problems or data requests: <a href="mailto:compassdashedu@gmail.com?subject=Compass%20Dash%20support">compassdashedu@gmail.com</a></span></div></div></div>
-<h3 class="sec">About and tools</h3><div class="card"><div class="set"><div><b>Compass GCSE</b><span class="mut">Our GCSE revision site: practice by exam board, full papers and progress tracking.</span></div><a class="btn alt" href="https://compassdash.github.io/Compass-GCSE/" target="_blank" rel="noopener">Open Compass GCSE</a></div><div class="set"><div><b>About &amp; changelog</b><span class="mut">Compass Dash ${VER} and recent updates.</span></div><button class="btn alt" onclick="go('about')">Open</button></div><div class="set"><div><b>Admin panel</b><span class="mut">Password protected tools.</span></div><button class="btn alt" onclick="go('admin')">Open</button></div></div></div></div>`}
+<div class="set"><div><b>High contrast</b><span class="mut">Stronger text, borders and focus outlines. Works in light and dark.</span></div>${seg(oo(),ST.ahc?"1":"0","setA11y.bind(null,'ahc')")}</div>
+<div class="set"><div><b>Keyboard shortcuts</b><span class="mut"><kbd>1</kbd>–<kbd>4</kbd> pick an answer (<kbd>1</kbd>–<kbd>5</kbd> in a quick-time event, <kbd>T</kbd>/<kbd>F</kbd> for true or false) · <kbd>Enter</kbd> next question · <kbd>Tab</kbd> moves between controls · <kbd>Esc</kbd> close a window</span></div></div>`)}
+${setSec("setsnd","speaker","Sound",`<div class="set wide"><div><b>Sound effects</b><span class="mut">Clicks, answers, jumps and crashes.</span></div><span class="rng">${seg(oo(),ST.sfx?"1":"0","setSfx")}<input type="range" min="0" max="100" value="${Math.round(ST.sv*100)}" aria-label="Sound effects volume" oninput="setVol('sv',this.value)"><span class="mut" id="sv_l">${Math.round(ST.sv*100)}%</span></span></div>
+<div class="set wide"><div><b>Music</b><span class="mut">A different soundtrack for each difficulty, from calm at Easy to a boss fight at Insane.</span></div><span class="rng">${seg(oo(),ST.music?"1":"0","setMus")}<input type="range" min="0" max="100" value="${Math.round(ST.mv*100)}" aria-label="Music volume" oninput="setVol('mv',this.value)"><span class="mut" id="mv_l">${Math.round(ST.mv*100)}%</span></span></div>`)}
+</div><div class="setcol">
+${setSec("setacc","user","Student and teacher login",`${cdRow()}<div class="set"><div><b>Teacher Panel</b><span class="mut">Lessons, the Question Library, the whiteboard, live quizzes and class management. Needs the admin key or a teacher account.</span></div><button class="btn alt" onclick="go('teach')">Open</button></div>`)}
+${setSec("setplay","spike","Gameplay",`<div class="set"><div><b>Quick-time events</b><span class="mut">Occasional spike challenges during practice.</span></div>${seg(oo(),ST.qte===false?"0":"1","setQte")}</div>
+<div class="set"><div><b>Double Spikes</b><span class="mut">Occasional two-question challenges in the Spike quiz.</span></div>${seg(oo(),ST.dbl===false?"0":"1","setDbl")}</div>`)}
+${setSec("setpriv","shield","Privacy and safety",`<div class="set"><div><b>Your data</b><span class="mut">See what is saved, download it, delete it, or ask for your account to be deleted.</span></div><button class="btn alt" onclick="go('mydata')">Open</button></div><div class="set"><div><b>Cookie settings</b><span class="mut">Choose whether optional services, like Google Fonts, can be used.</span></div><button class="btn alt" onclick="ckOpen()">Change</button></div><div class="set wide"><div><b>Policies</b><span class="mut">How we use information, and the rules for using Compass Dash.</span></div><span class="tlw"><button class="btn alt sm" onclick="go('privacy')">Privacy</button><button class="btn alt sm" onclick="go('terms')">Terms</button><button class="btn alt sm" onclick="go('cookies')">Cookies</button></span></div><div class="set"><div><b>Help and support</b><span class="mut">Questions, problems or data requests: <a href="mailto:compassdashedu@gmail.com?subject=Compass%20Dash%20support">compassdashedu@gmail.com</a></span></div></div>`)}
+${setSec("setabout","compass","About and tools",`<div class="set"><div><b>Compass GCSE</b><span class="mut">Our GCSE revision site: practice by exam board, full papers and progress tracking.</span></div><a class="btn alt" href="https://compassdash.github.io/Compass-GCSE/" target="_blank" rel="noopener">Open</a></div><div class="set"><div><b>About &amp; changelog</b><span class="mut">Compass Dash ${VER} and recent updates.</span></div><button class="btn alt" onclick="go('about')">Open</button></div><div class="set"><div><b>Admin panel</b><span class="mut">Password protected tools.</span></div><button class="btn alt" onclick="go('admin')">Open</button></div>`)}
+</div></div>`}
 function setMode(m){if(m==="auto"){try{localStorage.removeItem("cgTheme")}catch(e){}setTheme(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")}else setTheme(m,1);settings()}
 function setQFreq(v){if(!needAdmin())return;ST.qfreq=+v;ST.qte=true;saveST();admin();notify("Quick-time events set to "+({".1":"rare","0.1":"rare","0.22":"normal","0.45":"often","1":"every question"}[v]||v))}
 function setDbl(v){ST.dbl=v==="1";saveST();settings();notify("Double Spikes "+(ST.dbl?"on":"off"))}
@@ -3179,7 +3261,7 @@ function go(p,i,nb){dsTestEnd();if(window.PVW&&p!=="shop")pvEnd(1);if(window.qte
  PAGES[p](i);
  try{const si=p==="subject"?i:(p==="topic"&&i)?i[0]:null;
   if(si!=null&&SUBJ[si])document.body.dataset.sub=(SKN[SUBJ[si].n]||[""])[0];
-  else delete document.body.dataset.sub}catch(e){}calcBtn();const wd=p==="shop"||p==="inv"||p==="ach"||p==="home";app.classList.toggle("wide",wd);const bw=$("bkw");if(bw)bw.classList.toggle("wide",wd);pgIn();syncBack();scrollTo(0,0);pageA11y(p,nb)}
+  else delete document.body.dataset.sub}catch(e){}calcBtn();const wd=p==="shop"||p==="inv"||p==="ach"||p==="home"||p==="settings";app.classList.toggle("wide",wd);const bw=$("bkw");if(bw)bw.classList.toggle("wide",wd);pgIn();syncBack();scrollTo(0,0);pageA11y(p,nb)}
 /* v2.6.9: page entrance as a staggered reveal (no forced layout), and each page announces itself: the title follows the
    page and keyboard focus moves to its heading, so screen readers and keyboard users land on the new content */
 function pgIn(){[...app.children].forEach((c,i)=>c.style.setProperty("--i",Math.min(i,6)));app.classList.add("pg");clearTimeout(pgIn.t);pgIn.t=setTimeout(()=>app.classList.remove("pg"),700)}   /* the reveal plays on a real page change, not on every re-render */
@@ -4286,7 +4368,8 @@ notify(FB.q?"Feedback saved \u2014 it sends when you're back online":"Feedback s
 // VERSIONING RULE: every update increases the version by exactly 0.01 — the last number goes up by one
 // (next: v2.7.0, v2.7.1, ...). Each of the last two numbers only goes up to 9, then rolls over:
 // after v2.5.9 comes v2.6.0, and after v2.9.9 comes v3.0.0 (that is how v1.9.9 was followed by v2.0.0).
-const VER="v2.8.0",CL=[
+const VER="v2.8.1",CL=[
+["v2.8.1","28 Oct 2026","Visual detail",["A Visual detail slider in Settings, under Accessibility: Super Focus for a calm, plain background with no particles, trails or screen shake; Neutral, as before; or Recreational for drifting light over every background, more particles, longer trails and extra sparkle. It changes straight away and is remembered on this device","Settings are regrouped into Appearance, Accessibility, Sound, Login, Gameplay, Offline, Privacy and About, in two even columns on wide screens and one on tablets and phones, with each control beside the setting it changes","The Teacher Panel link in the menu has a soft blue background instead of an outline"]],
 ["v2.8.0","28 Oct 2026","Teacher accounts",["Every teacher can have their own account: two seats for each subject, each set up once with an invite code and a password the teacher chooses","Teachers see only their subject: its classes and students, assignments, codes, announcements, insights, questions, lessons, whiteboards and live activities","The admin key still works and sees everything, and Manage > School > Teachers shows every seat, its invite code and what teachers have changed","Each class can be given a subject, and classes a teacher makes are set to their subject automatically","Teachers can change their password, and the admin can turn an account off, sign it out or reset the seat"]],
 ["v2.7.9","27 Oct 2026","Offline mode",["Compass Dash now works fully offline: every lesson, quiz, game and the shop, even on patchy school Wi-Fi, where the saved copy opens straight away instead of waiting","Things you do offline (assignment progress, challenges, question reports and feedback) wait on your device and sync as soon as you're back online","My class, announcements, the leaderboard, houses and challenges still open offline, showing when they were last saved","A clearer offline strip that shows what's waiting to sync, and a prompt when a new version is ready","Install Compass Dash as an app on phones, tablets and computers (Settings > Offline and app)"]],
 ["v2.7.8","27 Oct 2026","Quests, challenges and class tools",["Weekly quests: three goals every week, with XP for each and a bonus for finishing all three","Challenge a classmate: play 5 questions, then they play the same 5","A From your teacher area on the home page with live activities, assignments and announcements","Report a question you think is wrong or unclear, right after answering it","Teacher Panel: a wrong-answer breakdown after live activities, a class heatmap, every topic on a student's profile (which now prints), a Do Now starter, and a name picker and timer under Class tools","Reported questions in Manage, under Insights & messages"]],
@@ -5594,7 +5677,7 @@ function jumpFx(big){if(!anim)return;const v=eqV("jump"),tr=stTier(),cx=lcx+SZ/2
   if(vd)rg.push({x:cx,y:cy+2,r:SZ*.3,l:1,w:3,c:"#6d28d9",disk:"#1e1b4b"});
   burst(n,()=>({x:cx+(Math.random()-.5)*22,y:cy,vx:(Math.random()-.5)*(nova?13:7)*(1+tr*.15),vy:-1-Math.random()*(nova?10:5)*(1+tr*.15),l:1,sh,
    s:sh==="dot"?5+Math.random()*5:sh==="rect"?5+Math.random()*3:9+Math.random()*5,rot:Math.random()*6.28,vr:(Math.random()-.5)*.3,c:pal[Math.random()*pal.length|0]}))}
- if(!tr)return;
+ if(!tr){if(window.VDL===2&&big)burst(8,()=>({x:cx+(Math.random()-.5)*SZ,y:cy-SZ*.4,vx:(Math.random()-.5)*4.5,vy:-1.5-Math.random()*3.5,g:.18,d:.03,s:7+Math.random()*4,sh:"spark",l:1,c:Math.random()<.5?"#fde68a":lvc||"#93c5fd"}));return}
  const base=lvc&&lvc.length===7?lvc:"#3b82f6",col=()=>tr===1?base:tr===2?"hsl("+(38+Math.random()*18|0)+",96%,"+(55+Math.random()*14|0)+"%)":"hsl("+((t*6+Math.random()*120)%360|0)+",92%,62%)";
  burst(5+tr*5,()=>({x:cx+(Math.random()-.5)*SZ,y:cy,vx:(Math.random()-.5)*(4+tr*3),vy:-2-Math.random()*(3+tr*2.6),g:.42,d:.022,s:3.5+tr*1.4+Math.random()*3,gl:tr>=2&&document.documentElement.dataset.theme==="dark",l:1,c:col()}));
  if(big||tr>=2)rg.push({x:cx,y:cy+2,r:SZ*.35,l:1,w:2+tr,c:tr===1?base:tr===2?"#f59e0b":"hsl("+(t*6%360|0)+",90%,58%)"});
@@ -5610,7 +5693,7 @@ function ptShape(p,s){const X=p.x,Y=p.y;p.rot=(p.rot||0)+(p.vr||0);x.fillStyle=x
   case"bolt":x.lineWidth=2;x.beginPath();x.moveTo(X,Y-s*.6);x.lineTo(X-s*.25,Y-s*.05);x.lineTo(X+s*.15,Y-s*.05);x.lineTo(X-s*.1,Y+s*.6);x.stroke();break;
   case"petal":x.beginPath();x.ellipse(X,Y,s*.5,s*.3,p.rot,0,7);x.fill();break;
   default:x.save();x.translate(X,Y);x.rotate(p.rot);x.fillRect(-s/2,-s/2,s,s);x.restore()}}
-function ringStep(k){if(!rg.length)return;rg=rg.filter(o=>o.l>0);
+function ringStep(k){if(!rg.length)return;rg=rg.filter(o=>o.l>0&&(window.VDL!==0||o.lb));
  rg.forEach(o=>{if(o.dl>0){o.dl-=k;return}o.l-=(o.lb?.017:.032)*k;const a=Math.max(0,Math.min(1,o.l));
   if(o.lb){if(o.y0==null)o.y0=o.y;const p=1-a;o.y=o.y0-34*(1-Math.pow(1-p,3));x.globalAlpha=Math.min(1,(1-p*p)*1.6);x.font="800 "+o.sz+"px system-ui,-apple-system,Segoe UI,sans-serif";x.textAlign="center";x.lineJoin="round";
    x.lineWidth=5;x.strokeStyle="rgba(15,23,42,.8)";x.strokeText(o.lb,o.x,o.y);x.fillStyle=o.c;x.fillText(o.lb,o.x,o.y);x.textAlign="start"}
@@ -5634,9 +5717,9 @@ function ambShape(v,q){const X=q.x,Y=q.y,r=q.r*1.35,lt=document.documentElement.
  if(v==="#fde047"||v==="#f97316"){const o=x.globalAlpha;x.globalAlpha=o*.22;x.fillStyle=q.c;x.beginPath();x.arc(X,Y,r*2.4,0,7);x.fill();x.globalAlpha=o}
  x.fillStyle=q.c;x.beginPath();x.arc(X,Y,r,0,7);x.fill()}
 let AMBV=null;
-function ambStep(k){const v=eqV("part");if(!v){if(amb.length)amb=[];AMBV=null;return}
- if(AMBV!==v){AMBV=v;amb=Array.from({length:50},()=>Object.assign(ambNew(v),{y:Math.random()*H*.92,l:.4+Math.random()*.6}))}   /* a full sky straight away, like the shop picture */
- if(k&&amb.length<70&&Math.random()<.7*k)amb.push(ambNew(v));
+function ambStep(k){const v=window.VDL===0?null:eqV("part")||(window.VDL===2?"motes":null);if(!v){if(amb.length)amb=[];AMBV=null;return}
+ if(AMBV!==v){AMBV=v;amb=Array.from({length:window.VDL===2?80:50},()=>Object.assign(ambNew(v),{y:Math.random()*H*.92,l:.4+Math.random()*.6}))}   /* a full sky straight away, like the shop picture */
+ if(k&&amb.length<(window.VDL===2?110:70)&&Math.random()<.7*k)amb.push(ambNew(v));
  amb=amb.filter(q=>{q.x+=q.vx*k;q.y+=q.vy*k;q.l-=q.d*k;
   if(q.l<=0||q.y>H+25||q.y<-25||q.x<-35||q.x>W+35)return false;
   x.globalAlpha=Math.max(0,Math.min(1,q.l))*q.a;ambShape(v,q);
@@ -5660,7 +5743,7 @@ function animFx(){const v=eqV("anim");if(!v)return;const dk=document.documentEle
   x.globalAlpha=1;x.fillStyle="#ede9fe";x.beginPath();x.arc(cx,cy,5,0,7);x.fill()}}
 let TRA=0,boost=0,prog=0,px=0,stk=0,gx=0,bigNext=0,pt=[],lcx=0,lgy=0;const qs={mode:"idle",dl:0,dur:15000,x:0,v:6,t:0,pend:[],shake:0,stop:0};const SS=t=>{t=Math.max(0,Math.min(1,t));return t*t*(3-2*t)},SKYG={k:"",g:null},SCF={cv:null,prev:null,t:14};
 let qte=null;const JV=11.8,JF=34,JA=70,QFLOOR=125;
-function burst(n,f){pt=pt.concat(Array.from({length:n},f));if(pt.length>140)pt=pt.slice(-140)}
+function burst(n,f){if(window.VDL===0)return;if(window.VDL===2)n=Math.round(n*1.6);const cap=window.VDL===2?220:140;pt=pt.concat(Array.from({length:n},f));if(pt.length>cap)pt=pt.slice(-cap)}
 /* v2.3.0 death: the character shatters into a 4 x 4 grid of its own pieces. They burst out, tumble,
    bounce once off the ground and fade away in under half a second, then the cube pops straight back. */
 let shd=[];
@@ -5765,20 +5848,20 @@ const IDLE_SPEED=.55;
 function fr0(){const full=qs.mode!=="idle"||!!qs.die||QT.on;   /* "idle" means the cube is just running */
  let k=anim?(full?1:IDLE_SPEED)*DTK:0;if(qs.stop>0){qs.stop-=1;k=0}   /* v2.6.9: a crash freezes the world for a few frames (hit-stop) */
  t+=k;window.CHT=t;cu.hit=(cu.hit||0)*(1-.09*(k||1));if(cu.hit<.01)cu.hit=0;
- {let ox=0,oy=0;if(qs.shake>0){const d=qs.shake/8;ox=(Math.random()-.5)*9*d;oy=(Math.random()-.5)*6*d;qs.shake=Math.max(0,qs.shake-(k||1))}x.setTransform(DPR,0,0,DPR,ox*DPR,oy*DPR)}
+ {let ox=0,oy=0;if(qs.shake>0){const d=window.VDL===0?0:qs.shake/8;ox=(Math.random()-.5)*9*d;oy=(Math.random()-.5)*6*d;qs.shake=Math.max(0,qs.shake-(k||1))}x.setTransform(DPR,0,0,DPR,ox*DPR,oy*DPR)}
 if(ch==="gx"&&!xsOn())setChar(eqChar());boost*=1-.03*k;px+=(prog-px)*.05*k;
 {/* squash and stretch settle like a spring: a flattening overshoots into a stretch and eases back */
  cu.sv=(cu.sv||0)+(0-cu.sq)*.26*k;cu.sv*=Math.pow(.74,k);cu.sq+=cu.sv*k;if(Math.abs(cu.sq)<.004&&Math.abs(cu.sv)<.004){cu.sq=0;cu.sv=0}}
 hf+=((qs.mode==="hold"?qs.hs:1)-hf)*(qs.mode==="hold"?.5:.12)*k;if(qs.mode!=="hold"&&1-hf<.002)hf=1;
 const mb=1+Math.min(stk,10)*.08+boost*1.2,qf=(qte?qte.sp:1)*hf,m=mb*qf,SP=SPD*m;const gy=H*.86,cx=Math.max(44,Math.min(W*.18,(W-820)/2-124))+px*Math.min(W*.4,300);
 {const a0=csky(0)||C.b1,b0=csky(1)||C.b2,kk=H+"|"+a0+"|"+b0;if(SKYG.k!==kk){const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,a0);g.addColorStop(1,b0);SKYG.k=kk;SKYG.g=g}x.fillStyle=SKYG.g;x.fillRect(0,0,W,H)}
-const sk=document.body.dataset.sub,dkm=document.documentElement.dataset.theme==="dark",scv=sk?SCN.get(sk,Math.round(W*DPR),Math.round(H*DPR),Math.round(gy*DPR),dkm,DPR):null;
+const sk=window.VDL!==0&&document.body.dataset.sub,dkm=document.documentElement.dataset.theme==="dark",scv=sk?SCN.get(sk,Math.round(W*DPR),Math.round(H*DPR),Math.round(gy*DPR),dkm,DPR):null;
 /* v2.6.9: a scene fades in over the sky instead of popping, and crossfades when the subject or theme changes */
 if(scv!==SCF.cv){SCF.prev=SCF.cv;SCF.cv=scv;SCF.t=0}
 if(SCF.prev&&SCF.t<14)x.drawImage(SCF.prev,0,0,W,H);
 if(scv){const f=Math.min(1,SCF.t/14);x.globalAlpha=f;x.drawImage(scv,0,0,W,H);x.globalAlpha=1}
 if(SCF.t<14)SCF.t+=(k||1);else SCF.prev=null;
-const mp=Math.max(m,qte?0.3:0);const skA=csky(0)||C.b1,skB=csky(1)||C.b2,dflt=!csky(0);const bth=!scv&&BT_draw(k*mp,gy),bmg=!scv&&!bth?BM_draw(k*mp,gy,skA,skB,dflt,!!eqV("anim")):"";animFx();
+const mp=Math.max(m,qte?0.3:0);const skA=csky(0)||C.b1,skB=csky(1)||C.b2,dflt=!csky(0);const vf=window.VDL===0,bth=!scv&&!vf&&BT_draw(k*mp,gy),bmg=!scv&&!bth&&!vf?BM_draw(k*mp,gy,skA,skB,dflt,!!eqV("anim")):"";if(!vf)animFx();if(window.VDL===2&&window.vdRich)vdRich(x,W,H,gy,t);
 x.fillStyle=scv?(dkm?gshade(SCN.gr(sk)):SCN.gr(sk)):bth?BT_gd():bmg?bmg:csky(1)?AS(csky(1),-.55):AS(C.b2,ALUM(C.b1)<.35?.05:-.1);x.fillRect(0,gy,W,H-gy);
 x.strokeStyle=C.gl;x.lineWidth=1;gx+=SP*k;const off=gx%60;x.beginPath();for(let i=-60;i<W+60;i+=60){const X=Math.round(i-off)+.5;x.moveTo(X,gy);x.lineTo(X,H)}for(let y=gy+30;y<H;y+=30){const Y=Math.round(y)+.5;x.moveTo(0,Y);x.lineTo(W,Y)}x.stroke();
 x.strokeStyle=lvc;x.lineWidth=4;x.beginPath();x.moveTo(0,gy);x.lineTo(W,gy);x.stroke();
@@ -5831,7 +5914,7 @@ if(cu.y>=0){cu.y=0;cu.air=0;cu.r=((cu.r0||0)+(cu.rT||0))%(2*Math.PI);cu.r0=cu.r;
 else cu.dx*=1-.075*k;
 cu.tilt+=(cu.tt-cu.tilt)*.12*k;}
 /* the trail is a shop cosmetic now, so nothing streams behind the cube by default */
-if(!eqV("trail")){if(tr.length)tr=[]}else if(k){tr.forEach(p=>p.x-=SP*k);TRA+=k;if(TRA>=1){TRA%=1;tr.push({x:cx+cu.dx+SZ/2,y:gy-SZ/2+cu.y,r:cu.r+cu.tilt});if(tr.length>12)tr.shift()}}
+if(!eqV("trail")||window.VDL===0){if(tr.length)tr=[]}else if(k){tr.forEach(p=>p.x-=SP*k);TRA+=k;if(TRA>=1){TRA%=1;tr.push({x:cx+cu.dx+SZ/2,y:gy-SZ/2+cu.y,r:cu.r+cu.tilt});while(tr.length>(window.VDL===2?18:12))tr.shift()}}
 const gxa=chInfo(ch).k==="galaxy";
 tr.forEach((p,i)=>{const f=i/tr.length;
  if(gxa){const a=f*(.32+.4*Math.min(1,boost+stk/10+(cu.air?.5:0))),z=SZ*(.22+.62*f);x.globalCompositeOperation="lighter";x.globalAlpha=a;x.fillStyle=GX.pal[(i+(t>>2))%4];x.save();x.translate(p.x,p.y);x.rotate(p.r||0);x.fillRect(-z/2,-z/2,z,z);x.restore();x.globalAlpha=1;x.globalCompositeOperation="source-over";return}
@@ -7149,9 +7232,9 @@ if("serviceWorker"in navigator){navigator.serviceWorker.addEventListener("messag
 
 /* Settings: offline mode, what's waiting to sync, and installing the app */
 function offCard(){const n=obAll().length;
- return`<h3 class="sec">Offline and app</h3><div class="card setcard" id="offc"><div class="set"><div><b>Offline mode</b><span class="mut" id="offs">Checking…</span></div><button class="btn alt sm" onclick="offKeep()">Keep on this device</button></div>
+ return`<section class="sset" id="setoff"><h3 class="sec">${icn("wifioff")}Offline and app</h3><div class="card setcard" id="offc"><div class="set"><div><b>Offline mode</b><span class="mut" id="offs">Checking…</span></div><button class="btn alt sm" onclick="offKeep()">Keep on this device</button></div>
 <div class="set"><div><b>Waiting to sync</b><span class="mut">${n?n+" thing"+(n===1?"":"s")+" you did offline":"Nothing waiting"}</span></div><button class="btn alt sm" onclick="obFlush()"${n&&navigator.onLine?"":" disabled"}>Sync now</button></div>
-${isApp()?"":`<div class="set" id="insr"${INS||isIOS()?"":" hidden"}><div><b>Install the app</b><span class="mut">${isIOS()&&!INS?"In Safari, tap Share, then Add to Home Screen.":"Add Compass Dash to your home screen or desktop. It opens full screen and works offline."}</span></div>${INS||!isIOS()?`<button class="btn sm" onclick="insGo()">Install</button>`:""}</div>`}</div>`}
+${isApp()?"":`<div class="set" id="insr"${INS||isIOS()?"":" hidden"}><div><b>Install the app</b><span class="mut">${isIOS()&&!INS?"In Safari, tap Share, then Add to Home Screen.":"Add Compass Dash to your home screen or desktop. It opens full screen and works offline."}</span></div>${INS||!isIOS()?`<button class="btn sm" onclick="insGo()">Install</button>`:""}</div>`}</div></section>`}
 function offStat(saved){const e=$("offs");if(!e)return;
  if(!("serviceWorker"in navigator)||!window.caches)return e.textContent="This browser can't keep the site for offline use.";
  if(saved===false)return e.textContent="Not saved yet. Open Compass Dash once with internet and it will be.";
@@ -7160,7 +7243,7 @@ function offStat(saved){const e=$("offs");if(!e)return;
 function offAsk(){if(!("serviceWorker"in navigator))return offStat(false);navigator.serviceWorker.getRegistration().then(r=>{if(!r||!r.active)return offStat(false);r.active.postMessage({type:"cd-status"})}).catch(()=>offStat(false))}
 function offKeep(){if(!navigator.storage||!navigator.storage.persist)return notify("This browser decides for itself when to clear saved sites","info");
  navigator.storage.persist().then(ok=>{notify(ok?"Compass Dash will be kept on this device":"Your browser decides when to clear saved sites. It usually keeps ones you use often.",ok?"ok":"info");offAsk()})}
-const settingsBase=settings;settings=function(){settingsBase();const c=document.querySelector("#app .lay>div:last-child")||app;c.insertAdjacentHTML("beforeend",offCard());offAsk()};
+const settingsBase=settings;settings=function(){settingsBase();const c=$("setpriv");c?c.insertAdjacentHTML("beforebegin",offCard()):app.insertAdjacentHTML("beforeend",offCard());offAsk()};   /* v2.8.1: just above Privacy */
 addEventListener("online",()=>{if(window.CURP==="teach")teach()});addEventListener("offline",()=>{if(window.CURP==="teach")teach()});
 /* the leaderboard and houses say when they're showing a saved copy */
 const boardBase=board;board=function(){boardBase();if(BRD.off&&cdUser()){const h=app.querySelector("h2");if(h)h.insertAdjacentHTML("afterend",offNote(BRD.off))}};
