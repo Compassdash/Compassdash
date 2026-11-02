@@ -16,12 +16,13 @@
    (Compass GCSE, on the same address, uses "gc" and is left alone). Carry those keys across in the address fragment,
    which is never sent to any server; the new page copies them in and tidies the address. */
 (function () {
-  var to = "https://compass-ed.github.io/dash/", data = {}, size = 0;
-  try { for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); if (/^cg/.test(k)) { data[k] = localStorage.getItem(k); size += data[k].length; } } } catch (e) {}
-  var keys = Object.keys(data).sort(function (a, b) { return a === "cg" ? -1 : b === "cg" ? 1 : data[a].length - data[b].length; });
-  while (size > 1400000 && keys.length > 1) { var drop = keys.pop(); size -= data[drop].length; delete data[drop]; }   /* stay well under browser address limits; the main save "cg" always goes */
-  var url = to + location.search;
-  if (Object.keys(data).length) url += "#cg-move=" + btoa(unescape(encodeURIComponent(JSON.stringify(data)))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  var to = "https://compass-ed.github.io/dash/", data = {};
+  try { for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); if (/^cg/.test(k)) data[k] = localStorage.getItem(k); } } catch (e) {}
+  var rank = function (k) { return k === "cg" ? 0 : k === "cgPending" ? 1 : 2; };   /* unsent answers go right after the main save */
+  var keys = Object.keys(data).sort(function (a, b) { return rank(a) - rank(b) || data[a].length - data[b].length; });
+  var build = function () { return to + location.search + (keys.length ? "#cg-move=" + btoa(unescape(encodeURIComponent(JSON.stringify(data)))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "") : ""); };
+  var url = build();
+  while (url.length > 900000 && keys.length > 1) { delete data[keys.pop()]; url = build(); }   /* the whole address stays under every browser's limit (Firefox: about 1M); the main save "cg" always goes */
   document.getElementById("go").href = url;
   location.replace(url);
 })();
