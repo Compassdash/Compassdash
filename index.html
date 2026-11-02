@@ -2,29 +2,87 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; base-uri 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' https://compass-ed.github.io; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin"><!-- the new page checks it came from here before it takes the saved progress -->
 <meta name="robots" content="noindex">
-<title>Compass Dash has moved</title>
-<style>body{font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;max-width:560px;margin:14vh auto;padding:0 20px;color:#111}h1{font-size:24px;margin:0 0 8px}a{color:#1b8e99;font-weight:700}</style>
+<meta name="theme-color" content="#000000">
+<title>Compass Dash is now part of Compass Ed</title>
+<link rel="icon" href="icon-192.png">
+<style>
+:root{--bg:#f6f9fa;--card:#fff;--ink:#000;--ink2:#2b3335;--mute:#5c6b6e;--line:#e1e8ea;--cyan:#4cc4cf;--cyan3:#1b8e99;--soft:#e3f6f8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0b0f10;--card:#141a1c;--ink:#fff;--ink2:#d5dcde;--mute:#9aa8ab;--line:#26302f;--cyan3:#7fd8e0;--soft:#13292c;color-scheme:dark}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:24px 16px;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+main{width:100%;max-width:520px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:40px 32px 32px;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,.04),0 24px 60px -28px rgba(0,0,0,.25);animation:up .5s cubic-bezier(.2,.8,.2,1) both}
+.move{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 26px}
+.move img{width:64px;height:64px;border-radius:16px;display:block;box-shadow:0 6px 18px -8px rgba(0,0,0,.35)}
+.move .from{opacity:.75;transform:scale(.88)}
+.move svg{width:28px;height:28px;color:var(--cyan3);flex:none;animation:nudge 1.8s ease-in-out .6s infinite}
+.eyebrow{display:inline-block;margin:0 0 12px;padding:4px 12px;border-radius:999px;background:var(--soft);color:var(--cyan3);font-size:13px;font-weight:700;letter-spacing:.02em}
+h1{margin:0 0 12px;font-size:clamp(24px,6vw,30px);line-height:1.2;letter-spacing:-.02em;font-weight:800}
+p{margin:0 0 12px;color:var(--ink2)}
+.keep{display:flex;gap:8px;align-items:center;justify-content:center;margin:18px 0 26px;font-size:14px;color:var(--mute)}
+.keep svg{width:18px;height:18px;flex:none;color:var(--cyan3)}
+.go{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;padding:14px 22px;border-radius:999px;background:var(--cyan);color:#000;font-weight:800;font-size:17px;text-decoration:none;transition:transform .15s,box-shadow .15s,background .15s}
+.go:hover{background:#5fd0da;box-shadow:0 10px 24px -12px rgba(27,142,153,.8);transform:translateY(-1px)}
+.go:active{transform:translateY(0)}
+.go:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.go svg{width:20px;height:20px;flex:none}
+.addr{margin:16px 0 0;font-size:13px;color:var(--mute)}
+.addr b{color:var(--ink2);font-weight:600}
+[dir=rtl] .move svg,[dir=rtl] .go svg{transform:scaleX(-1)}
+[dir=rtl] .move svg{animation-name:nudgeR}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@keyframes nudgeR{0%,100%{transform:scaleX(-1) translateX(0)}50%{transform:scaleX(-1) translateX(5px)}}
+@media (prefers-reduced-motion:reduce){main,.move svg{animation:none}.go{transition:none}}
+@media (max-width:420px){main{padding:32px 20px 24px;border-radius:20px}.move img{width:56px;height:56px}}
+</style>
 </head>
 <body>
-<h1>Compass Dash has moved into Compass Ed</h1>
-<p>Taking you there now, with the progress saved on this device. If nothing happens, <a id="go" href="https://compass-ed.github.io/dash/">open Compass Dash</a>.</p>
+<main>
+  <div class="move" aria-hidden="true">
+    <img class="from" src="icon-192.png" alt="">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <img src="https://compass-ed.github.io/assets/icon-192.png" alt="">
+  </div>
+  <span class="eyebrow" id="t-eyebrow">Compass Dash has moved</span>
+  <h1 id="t-title">Compass Dash is now part of Compass Ed</h1>
+  <p id="t-lead">The same lessons, games and challenges now live inside Compass Ed, your school's online campus, with one sign-in for both.</p>
+  <div class="keep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span id="t-keep">The progress saved on this device comes with you.</span></div>
+  <a class="go" id="go" href="https://compass-ed.github.io/dash/"><span id="t-go">Continue to Compass Ed</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <p class="addr"><span id="t-addr">New address:</span> <b dir="ltr">compass-ed.github.io/dash</b></p>
+</main>
 <script>
-/* Compass Dash now lives at compass-ed.github.io/dash/. Its progress is kept in this browser under keys starting "cg"
-   (Compass GCSE, on the same address, uses "gc" and is left alone). Carry those keys across in the address fragment,
-   which is never sent to any server; the new page copies them in and tidies the address. */
+/* Compass Dash now lives at compass-ed.github.io/dash/, as part of Compass Ed. This page says so and waits for the visitor.
+   The button carries this browser's Compass Dash progress (keys starting "cg"; Compass GCSE on the same address uses "gc"
+   and is left alone) in the address fragment, which is never sent to any server; the new page copies it in and tidies the address. */
 (function () {
+  /* the language the visitor chose in Compass Dash (or their browser's), so the news reaches them in it */
+  var lang = "en";
+  try { lang = (JSON.parse(localStorage.getItem("cgSet") || "{}").lang) || ""; } catch (e) {}
+  if (!/^(en|fr|ar)$/.test(lang)) lang = /^ar/i.test(navigator.language) ? "ar" : /^fr/i.test(navigator.language) ? "fr" : "en";
+  var T = {
+    fr: { eyebrow: "Compass Dash a déménagé", title: "Compass Dash fait désormais partie de Compass Ed", lead: "Les mêmes leçons, jeux et défis se trouvent maintenant dans Compass Ed, le campus en ligne de ton école, avec une seule connexion pour les deux.", keep: "La progression enregistrée sur cet appareil te suit.", go: "Continuer vers Compass Ed", addr: "Nouvelle adresse :" },
+    ar: { eyebrow: "انتقل Compass Dash", title: "أصبح Compass Dash جزءًا من Compass Ed", lead: "الدروس والألعاب والتحديات نفسها أصبحت الآن داخل Compass Ed، الحرم المدرسي الإلكتروني لمدرستك، مع تسجيل دخول واحد لكليهما.", keep: "ينتقل معك التقدّم المحفوظ على هذا الجهاز.", go: "المتابعة إلى Compass Ed", addr: "العنوان الجديد:" }
+  };
+  if (T[lang]) {
+    document.documentElement.lang = lang; if (lang === "ar") document.documentElement.dir = "rtl";
+    for (var k in T[lang]) { var el = document.getElementById("t-" + k); if (el) el.textContent = T[lang][k]; }
+    document.title = T[lang].title;
+  }
+
   var to = "https://compass-ed.github.io/dash/", data = {};
-  try { for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); if (/^cg/.test(k)) data[k] = localStorage.getItem(k); } } catch (e) {}
+  try { for (var i = 0; i < localStorage.length; i++) { var key = localStorage.key(i); if (/^cg/.test(key)) data[key] = localStorage.getItem(key); } } catch (e) {}
   var rank = function (k) { return k === "cg" ? 0 : k === "cgPending" ? 1 : 2; };   /* unsent answers go right after the main save */
   var keys = Object.keys(data).sort(function (a, b) { return rank(a) - rank(b) || data[a].length - data[b].length; });
   var build = function () { return to + location.search + (keys.length ? "#cg-move=" + btoa(unescape(encodeURIComponent(JSON.stringify(data)))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "") : ""); };
   var url = build();
   while (url.length > 900000 && keys.length > 1) { delete data[keys.pop()]; url = build(); }   /* the whole address stays under every browser's limit (Firefox: about 1M); the main save "cg" always goes */
-  document.getElementById("go").href = url;
-  location.replace(url);
+  if (keys.length) document.getElementById("go").href = url;
+  else document.querySelector(".keep").hidden = true;   /* nothing saved here: no promise to make */
 })();
 </script>
 </body>

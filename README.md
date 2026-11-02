@@ -1,10 +1,10 @@
 # Compass Dash
 
-> **Compass Dash has moved into Compass Ed:** [compass-ed.github.io/dash](https://compass-ed.github.io/dash/). The old address forwards there and carries each browser's saved progress across. The app's code now lives in the [Compass Ed repository](https://github.com/compass-ed/compass-ed.github.io) under `dash/`.
+> **Compass Dash has moved into Compass Ed:** [compass-ed.github.io/dash](https://compass-ed.github.io/dash/). The old address now shows a page saying Compass Dash is part of Compass Ed, with a Continue to Compass Ed button that carries each browser's saved progress across. The app's code now lives in the [Compass Ed repository](https://github.com/compass-ed/compass-ed.github.io) under `dash/`.
 
 **A free KS3 revision site with lessons, quizzes and games.**
 
-▶ **Play it here: [compassdash.github.io/Compassdash](https://compassdash.github.io/Compassdash/)**
+▶ **Play it here: [compass-ed.github.io/dash](https://compass-ed.github.io/dash/)**
 
 Studying for GCSEs? Try our sister site, **[Compass GCSE](https://compassdash.github.io/Compass-GCSE/)**.
 
